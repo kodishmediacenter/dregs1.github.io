@@ -1,3 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+ <addon 
+  id="repository.dregs1" 
+  name="[COLOR orange]dre[/COLOR] [COLOR lime]gs1[/COLOR] [COLORcyan]Repository[/COLOR]" 
+  version="0.1" 
+  provider-name="@By_Black_Eagle">
+  <requires>
+    <import addon="xbmc.addon" version="12.0.0"/>  
+  </requires>
+  <extension point="xbmc.addon.repository" name="[COLOR red]dregs1[COLOR red]Repositorio[/COLOR]">
+  <dir minversion="19.9.9">
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/nexus/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/nexus/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/nexus</datadir>
+      <hashes>false</hashes>
+  </dir>   
+  <dir minversion="19.0.0">
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix</datadir>
+      <hashes>false</hashes>
+  </dir>    
+  <dir minversion="17.0.0" maxversion="18.9.0">
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/leia</datadir>
+      <hashes>false</hashes>
+  </dir>
+  <dir minversion="16.0.0" maxversion="17.0.0">
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/krypton/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/krypton/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/krypton</datadir>
+      <hashes>false</hashes>
+  </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>repositorio Dregs1</summary>
+    <description>repositorio oficial Dregs1 - Proibido reproducao sem autorização prévia</description>
+    <disclaimer></disclaimer>
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+<addon id="plugin.video.aguia.hentai.18" name="[COLORlime]AGUIA[/COLOR] [COLORyellow]HENTAI+18[/COLOR]" version="0.0.1" provider-name="@By_Black_Eagle"> 
+    <requires>
+        <import addon="script.module.simplejson" />
+        <import addon="script.module.six" />
+        <import addon="script.module.kodi-six" />
+		<import addon="script.module.requests"/>
+		<import addon="script.module.beautifulsoup4"/>
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+		<summary lang="pt">hentai é um addon de animes aguia hentai 18</summary>
+		<description lang="pt">Todos os videos são de sites terceiros, não hospedamos conteudo</description>
+        <platform>all</platform>
+        <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>    
 </addons>
