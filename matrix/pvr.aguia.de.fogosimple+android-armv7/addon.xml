@@ -3,7 +3,7 @@
   id="pvr.aguia.de.fogosimple"
   version="19.0.3"
   name="[COLORorange]ÁGUIA DE [COLORred]FOGO[/COLOR] SIMPLE"
-  provider-name="ArrowNegra">
+  provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
   <requires>
 <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
