@@ -65,10 +65,9 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+android-aarch64/inputstream.adaptive-20.3.14.zip</path>	  
   </extension>
 </addon>
-	
+
 <addon
   id="inputstream.adaptive"
   version="20.3.14"
@@ -134,7 +133,6 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+android-armv7/inputstream.adaptive-20.3.14.zip</path>	  
   </extension>
 </addon>
 
@@ -203,7 +201,6 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+windows-i686/inputstream.adaptive-20.3.14.zip</path>	  
   </extension>
 </addon>
 
@@ -272,22 +269,21 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+windows-x86_64/inputstream.adaptive-20.3.14.zip</path>  
   </extension>
 </addon>
 
 <addon
   id="inputstream.ffmpegdirect"
-  version="20.5.0"
+  version="19.0.3"
   name="Inputstream FFmpeg Direct"
   provider-name="Ross Nicholson">
   <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
+<import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.global.filesystem" minversion="1.1.7" version="1.1.7"/>
+<import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6"/>
 <import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4"/>
 <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
+<import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1"/></requires>
   <extension
     point="kodi.inputstream"
     name="ffmpegdirect"
@@ -304,42 +300,332 @@
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
     </assets>
+    <news>
+v19.0.3
+- Revert: Update source URL to kodi mirror
+
+v19.0.2
+- Update source URL to kodi mirror
+
+v19.0.1
+- Translations updates from Weblate
+
+v19.0.0
+- Changed test builds to released 'Kodi 19 Matrix'
+- Increased version to 19.0.0
+  - With start of Kodi 20 Nexus, takes addon as major the same version number as Kodi.
+    This done to know easier to which Kodi the addon works.
+
+v1.21.8
+Translations updates from Weblate
+  - am_et, bs_ba, cy_gb, es_ar, eu_es, fa_ir, ml_in, mn_mn, mt_mt, my_mm, ro_md, si_lk, ta_in, tg_tj, uk_ua, uz_uz
+
+v1.21.7
+- Translations updates from Weblate
+  - de_de, pl_pl
+
+v1.21.6
+- Translations updates from Weblate
+  - da_dk
+
+v1.21.5
+Translations updates from Weblate
+  - he_il, zh_cn
+
+v1.21.4
+- Workaround/hack for incorrect program change detection for catchup streams
+- Simplify program number property logic
+- Language update from Weblate
+
+v1.21.3
+- Fixed: fix hls bitrate selection
+
+v1.21.2
+- Fixed: Allow timezone shift when live URLs have placeholders
+
+v1.21.1
+- Fixed: remove workaround for ffmpeg deprecated function on windowsstore
+- Fixed: Replace deprecated av_init_packet() from ffmpeg
+
+v1.21.0
+- Update: FFmpeg to 4.4
+- Update: Update gas preprocessor for ffmpeg4.4
+- Fixed: Ignore deprecation warning as errors for ffmpegs av_init_packet() for windowsstore
+
+v1.20.1
+- Fixed: release version fix
+
+v1.20.0
+- Update: FFmpeg to 4.3.2
+- Added: If open_mode is default make sure the right protocols default to open with ffmpeg
+
+v1.19.4
+- Fixed: Fix locking on EOF detection of terminating catchup stream by using std:recursive_mutex
+
+v1.19.3
+- Update: move verbose playback timeshift logging to debug level
+- Update: Update cmakelists to reference FFMPEGDIRECT at build time
+
+v1.19.2
+- Update: Demuxer additions from kodi
+
+v1.19.1
+- Fixed: Ensure all values in GetTimes() default to zero
+
+v1.19.0
+- Added: FFmpeg patch for satip improvements
+- Added: SafeLocaltime and custom catchup timestamp formats
+- Added: Now timestamp and custom timestamp format for live catchup URL
+- Added: Use curl for mingw package downloads
+
+v1.18.2
+- Update: Redact inputstream property URLs when logged
+
+v1.18.1
+- Update: Add temporary ffmpeg patch for embedded EIT (EPG) data in mepgts streams
+
+v1.18.0
+- Update: inputstream API 3.0.1
+  - Fix wrong flags bit shift
+
+v1.17.0
+- Update: inputstream API 3.0.0
+
+v1.16.0
+- Update: Inputstream API 2.3.4
+- Added: German translation
+- Added: Debian build test to Travis CI
+
+v1.15.5
+- Update: Use add-on supplied StringUtils and remove local version
+- Update: Remove local threading code and use addon supplied instead
+- Update: Use new addon supplied CEndTime class based on chrono
+- Update: Add autoreconf step to lib zvbi
+
+v1.15.4
+- Update: Remove p8-platforms and add local StringUtils for cpp17
+- Update: Nettle patch for xcode 12
+
+v1.15.3
+- Update: gnutls 3.6.15 and nettle 3.6 bump
+
+v1.15.2
+- Update: bump to fix version number
+
+v1.15.1
+- Fixed: Use correct index for streams using a program number, fixes EIT data embedded in streams
+- Update: FFmpeg to 4.3.1
+
+v1.15.0
+- Added: Add fast open for manifest stream and test setting for realtime off
+- Fixed: Honour realtime stream property
+- Fixed: Fix using prev button to seek back to start of stream
+- Fixed: Ensure no slash at end of timeshift buffer path
+- Fixed: Make sure write segment file is closed when buffer is destroyed
+- Fixed: Use overwrite when opening files for write for compatibility with SMB on Android
+- Fixed: Don't start timeshift and exit if index file cannot be created
+- Update: If any timeshift file cannot be created log free disk space
+- Fixed: Avoid crash for zero byte or partial timeshift segment files
+- Fixed: Only read ffmpeg logging setting on stream start
+- Update: Redact username and password for urls in log statements
+- Fixed: Only create timeshift directory if it does not exist
+
+v1.14.5
+- Fixed: Fix lintian spellings and mimetype log statement
+- Update: Readme
+
+v1.14.4
+- Fixed: Use kodi's own FFmpeg for ubuntu packaging
+
+v1.14.3
+- Update: Use FFmpeg 4.3
+
+v1.14.2
+- Fixed: Debian packaging
+
+v1.14.1
+- Update: Kodi API Bump
+
+v1.14.0
+- Added: Add HLS bandwidth limit and teletext/fps advanced settings
+- Fixed: Add missing ATTRIBUTE_HIDDEN qualifer to InputSteamFFmpegDirect class
+- Fixed: Fix memory leak for DemuxStreams
+- Update: README
+
+v1.13.0
+- Added: Add setting for user to limit the length of the timeshift buffer
+
+v1.12.0
+- Added: Support seeking for VOD streams or regular file playback
+- Fixed: Update HLS iformat name and remove hls workaround which is fixed in current FFmpeg
+- Added: Timeshift for live streams (experimental)
+- Added: Add support for Kodi user-agent and cookies when calling FFmpeg directly
+- Added: Support multiple occurrences of year, month and day in catchup format specifiers
+- Added: Add option to turn FFmpeg logging on/off
+
+v1.11.0
+- Update: inputstream API 2.3.1
+- Update: Global API 1.2.0
+
+v1.10.0
+- Added: Continued playback of catchtup streams which don't support delayed live streams
+- Added: Skip unsupported seeks like ones too close to live or those less one minute for streams that only allow a 1 minute granulaity
+- Added: Limit seeking for terminating 1 second streams to within 1 minute of live and for 60 streams 2 minutes
+- Update: Debian control file
+- Update: gas-preprocessor to latest version and remove patch that is no longer required
+- Update: .gitignore
+- Fixed: Fix arch typo ffmpeg darwin_embedded
+- Fixed: Cleanup apple frameworks usage in cmakelists
+- Added: Change logging implementation and deprecate use of NOTICE level
+- Added: Allow streams to be opened using cURL in addition to FFmpeg
+- Update: Fix TS Streams by disallowing streaminfo for realtime streams
+- Update: MKV Attachment and IsTransportStreamReady() updates from kodi
+
+v1.9.2
+- Update: Use generic mimetype from stream and remove old mime_type property
+
+v1.9.1
+- Update: Inpustream API 2.3.0
+
+v1.9.0
+- Added: HTTP Proxy support
+- Update: Remove PauseStream for Inputstream API 2.2.0
+- Fixed: fix changelog.in for debian packaging
+
+v1.8.2
+- Fixed: Ubuntu packaging
+- Added: Updated RTP patch
+
+v1.8.1
+- Fixed: Suppress verbose logging on libxml2 on osx that causes travis builds to fail
+
+v1.8.0
+- Added: Support live URL in addition to catchup URL
+- Added: Support resuming from pause and to catchup stream
+- Update: Remove CanSeekStream and CanPauseStream for Inputstream API v2.1.0
+- Update: .gitignore
+
+v1.7.3
+- Update: Remove pthreads library as now w32pthreads is used instead
+- Update: libxml2 disable unused components for common depends and remove unrequired patch
+- Update: Update libxml2 to 2.9.10 for windows, disable html module and remove unrequired patches
+- Update: Enable asm for gnutls and nettle for darwin_embedded
+
+v1.7.2
+- Update: w32pthreads
+- Fixed: gnutls disable tools for OSX 10.15.4 compatibility
+- Fixed: libxml2 patch for OSX 10.15.4/Xcode 11.4 compatibility
+- Update: SPDX, headers and badges
+- Update: gnutls to 3.6.13
+- Update: gmp on android to 6.2.0
+
+v1.7.1
+- Fixed: tvOS build
+
+v1.7.0
+- Update: remove unrequired gnutls patch
+- Fixed: Replace ;'s workaround for cmake bug for ffmpeg LDFLAGS
+- Added: Patch for ffmpeg using rtp protocol where sources option is not retained
+- Update: Document programme_catchup_id stream property in README
+- Added: Support for timestamp catchup format specifier
+- Added: Support duration units format specifer to convert duration to mins or hours
+- Update: Update darwin deprecated thread call
+- Fixed: validate duration format specifier and cap to time now
+- Added: Add optional stream property for live catchup url
+- Added: Support for offset catchup format specifier
+- Fixed: Disable Neon for arm for iOS/tvOS
+- Fixed: Raspberry Pi build
+
+v1.6.0
+- Added: Support catchup-id stream property
+- Added: Enable pthreads for FFmpeg on Windows to allow circular buffer for UDP streams
+- Added: Fanart and icon
+- Added: Move from appveyor to Azure DevOps to windows CI
+- Added: Source and license to addon.xml
+- Added: p8-platform to addon depends
+- Fixed: Remove kodi protocol options before opening URL
+- Fixed: Wrong mms/rtp/udp url being used
+- Fixed: Android linkage for ffmpeg broken
+- Fixed: Travis status image
+- Update: To gnutls-3.6.12
+
+v1.5.0
+- Update: FFmpeg-n4.2.2, patches refreshed
+
+v1.4.1
+- Update: Cleanup logging
+
+v1.4.0
+- Added: gnutls patch to add libdl to support newer OSes
+- Added: Add support for mms and rtp/udp streams with sources
+- Fixed: Add workaround for CMake and Frameworks on Darwin
+
+v1.3.0
+- Added: Support for Windows and iOS
+- Update: To gmp-6.2.0
+- Update: To nettle-3.5.1
+- Update: To gnutls-3.6.11.1
+
+v1.2.1
+- Fixed: Support for XCode build with GCC via travis
+
+v1.2.0
+- Added: Jenkinsfile and .travel.yml
+- Added: Support for Android and linux
+- Fixed: Some depnds errors for iOS, still more to fix
+- Added: Clang and g++ build supported from Travis, osx travis not working
+
+v1.1.0
+- Added: Support for chapters
+
+v1.0.0
+- Added: Initial version working for both normal streams and those supporting catchup
+
+Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/inputstream.ffmpegdirect/changelog.txt
+    </news>
     <summary lang="ca_ES">Client InputStream per a fluxos FFmpeg (libavformat)</summary>
+    <summary lang="cs_CZ">Klient toků FFmpeg (libavformat) protokolu InputStream</summary>
     <summary lang="da_DK">InputStream-klient til FFmpeg-streams (libavformat)</summary>
     <summary lang="de_DE">InputStream-Client für FFmpeg-Streams (libavformat)</summary>
     <summary lang="en_GB">InputStream Client for FFmpeg streams (libavformat)</summary>
+    <summary lang="es_ES">Cliente de InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="es_MX">Cliente InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="fi_FI">InputStream asiakasohjelma FFmpeg suoratoistoille (libavformat)</summary>
+    <summary lang="fr_FR">Client InputStream pour les flux FFmpeg (format libav)</summary>
+    <summary lang="hr_HR">InputStream klijent za FFmpeg strujanja (libavformat)</summary>
     <summary lang="ko_KR">FFmpeg 스트림용 InputStream 클라이언트(libavformat)</summary>
     <summary lang="pl_PL">Klient InputStream dla strumieni FFmpeg (libavformat)</summary>
     <summary lang="ru_RU">InputStream клиент для FFmpeg потоков (libavformat)</summary>
     <summary lang="zh_CN">FFmpeg 流的 InputStream 客户端（libavformat）</summary>
     <description lang="ca_ES">Client InputStream per a fluxos que es poden obrir mitjançant el libavformat de FFmpeg o el cURL de Kodi. S’admeten formats de flux comuns, com ara TS simple, HLS i DASH (sense DRM), així com molts altres.[CR][CR]El complement també és compatible amb els serveis Archive/Catchup , on hi ha una finestra de reproducció (normalment en dies) i pot canviar de temps en aquest interval.[CR][CR]Per a la documentació, visiteu: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="cs_CZ">Klient protokolu InputStream pro toky, které mohou být otevřeny pomocí FFmpeg libavformat nebo Kodi cURL.Běžné formáty toků jako prosté TS, HLS, DASH (bez DRM) a mnoho dalších jsou podporovány.[CR][CR]Doplněk má též podporu pro služby Archive/Catchup, které mají dobu pro opětovné přehrání (obvykle ve dnech) a mohou mít v tomto období časový posun.[CR][CR]Pro dokumentaci navštivte: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="da_DK">InputStream-klient til streams, der kan åbnes af enten FFmpeg&apos;s libavformat eller Kodi&apos;s cURL. Almindelige streamformater som f.eks. almindelig TS, HLS og DASH (uden DRM) understøttes såvel som mange andre.[CR][CR]Add-on&apos;et har også understøttelse af Arkiv-/Catchup-tjenester, hvor der er et afspilningsvindue (normalt i dage) og kan tidsforskyde på tværs af dette spænd.[CR][CR]For dokumentation besøg: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="de_DE">InputStream-Client für Streams, die entweder mit dem libav-Format von FFmpeg oder mit cURL von Kodi geöffnet werden können. Gängige Stream-Formate wie TS, HLS und DASH (ohne DRM) werden ebenso unterstützt wie viele andere.[CR][CR]Das Addon unterstützt auch Archiv-/Aufholdienste, bei denen Wiedergabefenster vorhanden sind (normalerweise in Tagen), und kann über diesen Zeitraum hinweg eine Zeitverschiebung bewirken.[CR][CR]Dokumentation unter: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="en_GB">InputStream Client for streams that can be opened by either FFmpeg&apos;s libavformat or Kodi&apos;s cURL. Common stream formats such as plain TS, HLS and DASH (without DRM) are supported as well as many others.[CR][CR]The addon also has support for Archive/Catchup services where there is a replay windows (usually in days) and can timeshift across that span.[CR][CR]For documenation visit: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="es_ES">Un cliente de InputStream que puede abrir flujos con libavformat de FFmpeg o cURL de Kodi. Los formatos flujos comunes como son TS puro, HLS y DASH (sin DRM) se soportan bien, así como muchos otros.[CR][CR]El addon también tiene soporte para los servicios de Archivado/Rebobinado si hay ventanas de reproducción (normalmente días) en las que se pueda volver a ver.[CR][CR]La documentación está en: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="es_MX">Cliente InputStream para flujos de datos que pueden abrirse con libavformat de FFmpeg o cURL integrado en Kodi. Formatos de flujo comunes tales como TS simple, HLS y DASH (sin DRM) también están soportados, al igual que muchos otros.[CR][CR]El complemento también soporta servicios Archive/Catchup donde hay un espacio de repetición (usualmente en días) y se puede mover a través del tiempo de dicho espacio.[CR][CR]Para documentación visita: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="fi_FI">InputStream asiakasohjelma suoratoistoille, jotka voidaan avata joko FFmpegin libavformaatilla tai Kodin cURL:llä. Yleisiä suoratoistomuotoja, kuten tavallinen TS, HLS ja DASH (ilman DRM:ää), tuetaan sekä monia muita.[CR][CR]Lisäosa tukee myös Arkisto-/Catchup-palveluita, joissa on uusintaikkunoita (yleensä päivissä) ja voi siirtyä aikavälillä.[CR][CR]Dokumentaatiot löytyvät osoitteesta: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="fr_FR">InputStream Client pour les flux pouvant être ouverts soit par le libavformat de FFmpeg, soit par le cURL de Kodi. Les formats de flux courants tels que TS, HLS et DASH (sans DRM) sont pris en charge ainsi que bien d&apos;autres. et peut être décalé dans le temps dans la période.[CR][CR]Pour la documentation, visitez : https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="hr_HR">InputStream klijent za strujanja koja se mogu otvoriti ili FFmpeg libavformatom ili Kodijevim cURL-om. Uobičajeni formati strujanja poput običnog TS, HLS i DASH (bez DRM zaštite sadržaja) formata su podržani kao i mnogi drugi.[CR][CR]Dodatak ima još podršku za Arhive/Hvatanje usluga gdje postoji prozor ponovne raprodukcije (uobičajeno u danima) i može se vremenski premotavati u zadanom vremenskom razdoblju.[CR][CR]Za dokumentaciju posjetite: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ko_KR">FFmpeg의 libavformat 또는 Kodi의 cURL로 열 수 있는 스트림용 InputStream 클라이언트. 일반 TS, HLS 및 DASH(DRM 제외)와 같은 일반적인 스트림 형식은 물론 다른 많은 형식도 지원됩니다.[CR][CR]이 애드온은 재생 창(보통 며칠)이 있는 아카이브/따라잡기 서비스도 지원합니다. 해당 범위에서 타임시프트할 수 있습니다.[CR][CR]문서를 보려면 https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md를 방문하세요</description>
     <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
-    <path>inputstream.ffmpegdirect+android-aarch64/inputstream.ffmpegdirect-20.5.0.zip</path>
   </extension>
 </addon>
 
 <addon
   id="inputstream.ffmpegdirect"
-  version="20.5.0"
+  version="19.0.3"
   name="Inputstream FFmpeg Direct"
   provider-name="Ross Nicholson">
   <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
+<import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.global.filesystem" minversion="1.1.7" version="1.1.7"/>
+<import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6"/>
 <import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4"/>
 <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
+<import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1"/></requires>
   <extension
     point="kodi.inputstream"
     name="ffmpegdirect"
@@ -356,42 +642,332 @@
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
     </assets>
+    <news>
+v19.0.3
+- Revert: Update source URL to kodi mirror
+
+v19.0.2
+- Update source URL to kodi mirror
+
+v19.0.1
+- Translations updates from Weblate
+
+v19.0.0
+- Changed test builds to released 'Kodi 19 Matrix'
+- Increased version to 19.0.0
+  - With start of Kodi 20 Nexus, takes addon as major the same version number as Kodi.
+    This done to know easier to which Kodi the addon works.
+
+v1.21.8
+Translations updates from Weblate
+  - am_et, bs_ba, cy_gb, es_ar, eu_es, fa_ir, ml_in, mn_mn, mt_mt, my_mm, ro_md, si_lk, ta_in, tg_tj, uk_ua, uz_uz
+
+v1.21.7
+- Translations updates from Weblate
+  - de_de, pl_pl
+
+v1.21.6
+- Translations updates from Weblate
+  - da_dk
+
+v1.21.5
+Translations updates from Weblate
+  - he_il, zh_cn
+
+v1.21.4
+- Workaround/hack for incorrect program change detection for catchup streams
+- Simplify program number property logic
+- Language update from Weblate
+
+v1.21.3
+- Fixed: fix hls bitrate selection
+
+v1.21.2
+- Fixed: Allow timezone shift when live URLs have placeholders
+
+v1.21.1
+- Fixed: remove workaround for ffmpeg deprecated function on windowsstore
+- Fixed: Replace deprecated av_init_packet() from ffmpeg
+
+v1.21.0
+- Update: FFmpeg to 4.4
+- Update: Update gas preprocessor for ffmpeg4.4
+- Fixed: Ignore deprecation warning as errors for ffmpegs av_init_packet() for windowsstore
+
+v1.20.1
+- Fixed: release version fix
+
+v1.20.0
+- Update: FFmpeg to 4.3.2
+- Added: If open_mode is default make sure the right protocols default to open with ffmpeg
+
+v1.19.4
+- Fixed: Fix locking on EOF detection of terminating catchup stream by using std:recursive_mutex
+
+v1.19.3
+- Update: move verbose playback timeshift logging to debug level
+- Update: Update cmakelists to reference FFMPEGDIRECT at build time
+
+v1.19.2
+- Update: Demuxer additions from kodi
+
+v1.19.1
+- Fixed: Ensure all values in GetTimes() default to zero
+
+v1.19.0
+- Added: FFmpeg patch for satip improvements
+- Added: SafeLocaltime and custom catchup timestamp formats
+- Added: Now timestamp and custom timestamp format for live catchup URL
+- Added: Use curl for mingw package downloads
+
+v1.18.2
+- Update: Redact inputstream property URLs when logged
+
+v1.18.1
+- Update: Add temporary ffmpeg patch for embedded EIT (EPG) data in mepgts streams
+
+v1.18.0
+- Update: inputstream API 3.0.1
+  - Fix wrong flags bit shift
+
+v1.17.0
+- Update: inputstream API 3.0.0
+
+v1.16.0
+- Update: Inputstream API 2.3.4
+- Added: German translation
+- Added: Debian build test to Travis CI
+
+v1.15.5
+- Update: Use add-on supplied StringUtils and remove local version
+- Update: Remove local threading code and use addon supplied instead
+- Update: Use new addon supplied CEndTime class based on chrono
+- Update: Add autoreconf step to lib zvbi
+
+v1.15.4
+- Update: Remove p8-platforms and add local StringUtils for cpp17
+- Update: Nettle patch for xcode 12
+
+v1.15.3
+- Update: gnutls 3.6.15 and nettle 3.6 bump
+
+v1.15.2
+- Update: bump to fix version number
+
+v1.15.1
+- Fixed: Use correct index for streams using a program number, fixes EIT data embedded in streams
+- Update: FFmpeg to 4.3.1
+
+v1.15.0
+- Added: Add fast open for manifest stream and test setting for realtime off
+- Fixed: Honour realtime stream property
+- Fixed: Fix using prev button to seek back to start of stream
+- Fixed: Ensure no slash at end of timeshift buffer path
+- Fixed: Make sure write segment file is closed when buffer is destroyed
+- Fixed: Use overwrite when opening files for write for compatibility with SMB on Android
+- Fixed: Don't start timeshift and exit if index file cannot be created
+- Update: If any timeshift file cannot be created log free disk space
+- Fixed: Avoid crash for zero byte or partial timeshift segment files
+- Fixed: Only read ffmpeg logging setting on stream start
+- Update: Redact username and password for urls in log statements
+- Fixed: Only create timeshift directory if it does not exist
+
+v1.14.5
+- Fixed: Fix lintian spellings and mimetype log statement
+- Update: Readme
+
+v1.14.4
+- Fixed: Use kodi's own FFmpeg for ubuntu packaging
+
+v1.14.3
+- Update: Use FFmpeg 4.3
+
+v1.14.2
+- Fixed: Debian packaging
+
+v1.14.1
+- Update: Kodi API Bump
+
+v1.14.0
+- Added: Add HLS bandwidth limit and teletext/fps advanced settings
+- Fixed: Add missing ATTRIBUTE_HIDDEN qualifer to InputSteamFFmpegDirect class
+- Fixed: Fix memory leak for DemuxStreams
+- Update: README
+
+v1.13.0
+- Added: Add setting for user to limit the length of the timeshift buffer
+
+v1.12.0
+- Added: Support seeking for VOD streams or regular file playback
+- Fixed: Update HLS iformat name and remove hls workaround which is fixed in current FFmpeg
+- Added: Timeshift for live streams (experimental)
+- Added: Add support for Kodi user-agent and cookies when calling FFmpeg directly
+- Added: Support multiple occurrences of year, month and day in catchup format specifiers
+- Added: Add option to turn FFmpeg logging on/off
+
+v1.11.0
+- Update: inputstream API 2.3.1
+- Update: Global API 1.2.0
+
+v1.10.0
+- Added: Continued playback of catchtup streams which don't support delayed live streams
+- Added: Skip unsupported seeks like ones too close to live or those less one minute for streams that only allow a 1 minute granulaity
+- Added: Limit seeking for terminating 1 second streams to within 1 minute of live and for 60 streams 2 minutes
+- Update: Debian control file
+- Update: gas-preprocessor to latest version and remove patch that is no longer required
+- Update: .gitignore
+- Fixed: Fix arch typo ffmpeg darwin_embedded
+- Fixed: Cleanup apple frameworks usage in cmakelists
+- Added: Change logging implementation and deprecate use of NOTICE level
+- Added: Allow streams to be opened using cURL in addition to FFmpeg
+- Update: Fix TS Streams by disallowing streaminfo for realtime streams
+- Update: MKV Attachment and IsTransportStreamReady() updates from kodi
+
+v1.9.2
+- Update: Use generic mimetype from stream and remove old mime_type property
+
+v1.9.1
+- Update: Inpustream API 2.3.0
+
+v1.9.0
+- Added: HTTP Proxy support
+- Update: Remove PauseStream for Inputstream API 2.2.0
+- Fixed: fix changelog.in for debian packaging
+
+v1.8.2
+- Fixed: Ubuntu packaging
+- Added: Updated RTP patch
+
+v1.8.1
+- Fixed: Suppress verbose logging on libxml2 on osx that causes travis builds to fail
+
+v1.8.0
+- Added: Support live URL in addition to catchup URL
+- Added: Support resuming from pause and to catchup stream
+- Update: Remove CanSeekStream and CanPauseStream for Inputstream API v2.1.0
+- Update: .gitignore
+
+v1.7.3
+- Update: Remove pthreads library as now w32pthreads is used instead
+- Update: libxml2 disable unused components for common depends and remove unrequired patch
+- Update: Update libxml2 to 2.9.10 for windows, disable html module and remove unrequired patches
+- Update: Enable asm for gnutls and nettle for darwin_embedded
+
+v1.7.2
+- Update: w32pthreads
+- Fixed: gnutls disable tools for OSX 10.15.4 compatibility
+- Fixed: libxml2 patch for OSX 10.15.4/Xcode 11.4 compatibility
+- Update: SPDX, headers and badges
+- Update: gnutls to 3.6.13
+- Update: gmp on android to 6.2.0
+
+v1.7.1
+- Fixed: tvOS build
+
+v1.7.0
+- Update: remove unrequired gnutls patch
+- Fixed: Replace ;'s workaround for cmake bug for ffmpeg LDFLAGS
+- Added: Patch for ffmpeg using rtp protocol where sources option is not retained
+- Update: Document programme_catchup_id stream property in README
+- Added: Support for timestamp catchup format specifier
+- Added: Support duration units format specifer to convert duration to mins or hours
+- Update: Update darwin deprecated thread call
+- Fixed: validate duration format specifier and cap to time now
+- Added: Add optional stream property for live catchup url
+- Added: Support for offset catchup format specifier
+- Fixed: Disable Neon for arm for iOS/tvOS
+- Fixed: Raspberry Pi build
+
+v1.6.0
+- Added: Support catchup-id stream property
+- Added: Enable pthreads for FFmpeg on Windows to allow circular buffer for UDP streams
+- Added: Fanart and icon
+- Added: Move from appveyor to Azure DevOps to windows CI
+- Added: Source and license to addon.xml
+- Added: p8-platform to addon depends
+- Fixed: Remove kodi protocol options before opening URL
+- Fixed: Wrong mms/rtp/udp url being used
+- Fixed: Android linkage for ffmpeg broken
+- Fixed: Travis status image
+- Update: To gnutls-3.6.12
+
+v1.5.0
+- Update: FFmpeg-n4.2.2, patches refreshed
+
+v1.4.1
+- Update: Cleanup logging
+
+v1.4.0
+- Added: gnutls patch to add libdl to support newer OSes
+- Added: Add support for mms and rtp/udp streams with sources
+- Fixed: Add workaround for CMake and Frameworks on Darwin
+
+v1.3.0
+- Added: Support for Windows and iOS
+- Update: To gmp-6.2.0
+- Update: To nettle-3.5.1
+- Update: To gnutls-3.6.11.1
+
+v1.2.1
+- Fixed: Support for XCode build with GCC via travis
+
+v1.2.0
+- Added: Jenkinsfile and .travel.yml
+- Added: Support for Android and linux
+- Fixed: Some depnds errors for iOS, still more to fix
+- Added: Clang and g++ build supported from Travis, osx travis not working
+
+v1.1.0
+- Added: Support for chapters
+
+v1.0.0
+- Added: Initial version working for both normal streams and those supporting catchup
+
+Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/inputstream.ffmpegdirect/changelog.txt
+    </news>
     <summary lang="ca_ES">Client InputStream per a fluxos FFmpeg (libavformat)</summary>
+    <summary lang="cs_CZ">Klient toků FFmpeg (libavformat) protokolu InputStream</summary>
     <summary lang="da_DK">InputStream-klient til FFmpeg-streams (libavformat)</summary>
     <summary lang="de_DE">InputStream-Client für FFmpeg-Streams (libavformat)</summary>
     <summary lang="en_GB">InputStream Client for FFmpeg streams (libavformat)</summary>
+    <summary lang="es_ES">Cliente de InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="es_MX">Cliente InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="fi_FI">InputStream asiakasohjelma FFmpeg suoratoistoille (libavformat)</summary>
+    <summary lang="fr_FR">Client InputStream pour les flux FFmpeg (format libav)</summary>
+    <summary lang="hr_HR">InputStream klijent za FFmpeg strujanja (libavformat)</summary>
     <summary lang="ko_KR">FFmpeg 스트림용 InputStream 클라이언트(libavformat)</summary>
     <summary lang="pl_PL">Klient InputStream dla strumieni FFmpeg (libavformat)</summary>
     <summary lang="ru_RU">InputStream клиент для FFmpeg потоков (libavformat)</summary>
     <summary lang="zh_CN">FFmpeg 流的 InputStream 客户端（libavformat）</summary>
     <description lang="ca_ES">Client InputStream per a fluxos que es poden obrir mitjançant el libavformat de FFmpeg o el cURL de Kodi. S’admeten formats de flux comuns, com ara TS simple, HLS i DASH (sense DRM), així com molts altres.[CR][CR]El complement també és compatible amb els serveis Archive/Catchup , on hi ha una finestra de reproducció (normalment en dies) i pot canviar de temps en aquest interval.[CR][CR]Per a la documentació, visiteu: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="cs_CZ">Klient protokolu InputStream pro toky, které mohou být otevřeny pomocí FFmpeg libavformat nebo Kodi cURL.Běžné formáty toků jako prosté TS, HLS, DASH (bez DRM) a mnoho dalších jsou podporovány.[CR][CR]Doplněk má též podporu pro služby Archive/Catchup, které mají dobu pro opětovné přehrání (obvykle ve dnech) a mohou mít v tomto období časový posun.[CR][CR]Pro dokumentaci navštivte: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="da_DK">InputStream-klient til streams, der kan åbnes af enten FFmpeg&apos;s libavformat eller Kodi&apos;s cURL. Almindelige streamformater som f.eks. almindelig TS, HLS og DASH (uden DRM) understøttes såvel som mange andre.[CR][CR]Add-on&apos;et har også understøttelse af Arkiv-/Catchup-tjenester, hvor der er et afspilningsvindue (normalt i dage) og kan tidsforskyde på tværs af dette spænd.[CR][CR]For dokumentation besøg: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="de_DE">InputStream-Client für Streams, die entweder mit dem libav-Format von FFmpeg oder mit cURL von Kodi geöffnet werden können. Gängige Stream-Formate wie TS, HLS und DASH (ohne DRM) werden ebenso unterstützt wie viele andere.[CR][CR]Das Addon unterstützt auch Archiv-/Aufholdienste, bei denen Wiedergabefenster vorhanden sind (normalerweise in Tagen), und kann über diesen Zeitraum hinweg eine Zeitverschiebung bewirken.[CR][CR]Dokumentation unter: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="en_GB">InputStream Client for streams that can be opened by either FFmpeg&apos;s libavformat or Kodi&apos;s cURL. Common stream formats such as plain TS, HLS and DASH (without DRM) are supported as well as many others.[CR][CR]The addon also has support for Archive/Catchup services where there is a replay windows (usually in days) and can timeshift across that span.[CR][CR]For documenation visit: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="es_ES">Un cliente de InputStream que puede abrir flujos con libavformat de FFmpeg o cURL de Kodi. Los formatos flujos comunes como son TS puro, HLS y DASH (sin DRM) se soportan bien, así como muchos otros.[CR][CR]El addon también tiene soporte para los servicios de Archivado/Rebobinado si hay ventanas de reproducción (normalmente días) en las que se pueda volver a ver.[CR][CR]La documentación está en: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="es_MX">Cliente InputStream para flujos de datos que pueden abrirse con libavformat de FFmpeg o cURL integrado en Kodi. Formatos de flujo comunes tales como TS simple, HLS y DASH (sin DRM) también están soportados, al igual que muchos otros.[CR][CR]El complemento también soporta servicios Archive/Catchup donde hay un espacio de repetición (usualmente en días) y se puede mover a través del tiempo de dicho espacio.[CR][CR]Para documentación visita: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="fi_FI">InputStream asiakasohjelma suoratoistoille, jotka voidaan avata joko FFmpegin libavformaatilla tai Kodin cURL:llä. Yleisiä suoratoistomuotoja, kuten tavallinen TS, HLS ja DASH (ilman DRM:ää), tuetaan sekä monia muita.[CR][CR]Lisäosa tukee myös Arkisto-/Catchup-palveluita, joissa on uusintaikkunoita (yleensä päivissä) ja voi siirtyä aikavälillä.[CR][CR]Dokumentaatiot löytyvät osoitteesta: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="fr_FR">InputStream Client pour les flux pouvant être ouverts soit par le libavformat de FFmpeg, soit par le cURL de Kodi. Les formats de flux courants tels que TS, HLS et DASH (sans DRM) sont pris en charge ainsi que bien d&apos;autres. et peut être décalé dans le temps dans la période.[CR][CR]Pour la documentation, visitez : https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="hr_HR">InputStream klijent za strujanja koja se mogu otvoriti ili FFmpeg libavformatom ili Kodijevim cURL-om. Uobičajeni formati strujanja poput običnog TS, HLS i DASH (bez DRM zaštite sadržaja) formata su podržani kao i mnogi drugi.[CR][CR]Dodatak ima još podršku za Arhive/Hvatanje usluga gdje postoji prozor ponovne raprodukcije (uobičajeno u danima) i može se vremenski premotavati u zadanom vremenskom razdoblju.[CR][CR]Za dokumentaciju posjetite: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ko_KR">FFmpeg의 libavformat 또는 Kodi의 cURL로 열 수 있는 스트림용 InputStream 클라이언트. 일반 TS, HLS 및 DASH(DRM 제외)와 같은 일반적인 스트림 형식은 물론 다른 많은 형식도 지원됩니다.[CR][CR]이 애드온은 재생 창(보통 며칠)이 있는 아카이브/따라잡기 서비스도 지원합니다. 해당 범위에서 타임시프트할 수 있습니다.[CR][CR]문서를 보려면 https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md를 방문하세요</description>
     <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
-    <path>inputstream.ffmpegdirect+android-aarch64/inputstream.ffmpegdirect-20.5.0.zip</path>
   </extension>
 </addon>
 
 <addon
   id="inputstream.ffmpegdirect"
-  version="20.5.0"
+  version="19.0.3"
   name="Inputstream FFmpeg Direct"
   provider-name="Ross Nicholson">
   <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
+<import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.global.filesystem" minversion="1.1.7" version="1.1.7"/>
+<import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6"/>
 <import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4"/>
 <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
+<import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1"/></requires>
   <extension
     point="kodi.inputstream"
     name="ffmpegdirect"
@@ -408,223 +984,355 @@
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
     </assets>
+    <news>
+v19.0.3
+- Revert: Update source URL to kodi mirror
+
+v19.0.2
+- Update source URL to kodi mirror
+
+v19.0.1
+- Translations updates from Weblate
+
+v19.0.0
+- Changed test builds to released 'Kodi 19 Matrix'
+- Increased version to 19.0.0
+  - With start of Kodi 20 Nexus, takes addon as major the same version number as Kodi.
+    This done to know easier to which Kodi the addon works.
+
+v1.21.8
+Translations updates from Weblate
+  - am_et, bs_ba, cy_gb, es_ar, eu_es, fa_ir, ml_in, mn_mn, mt_mt, my_mm, ro_md, si_lk, ta_in, tg_tj, uk_ua, uz_uz
+
+v1.21.7
+- Translations updates from Weblate
+  - de_de, pl_pl
+
+v1.21.6
+- Translations updates from Weblate
+  - da_dk
+
+v1.21.5
+Translations updates from Weblate
+  - he_il, zh_cn
+
+v1.21.4
+- Workaround/hack for incorrect program change detection for catchup streams
+- Simplify program number property logic
+- Language update from Weblate
+
+v1.21.3
+- Fixed: fix hls bitrate selection
+
+v1.21.2
+- Fixed: Allow timezone shift when live URLs have placeholders
+
+v1.21.1
+- Fixed: remove workaround for ffmpeg deprecated function on windowsstore
+- Fixed: Replace deprecated av_init_packet() from ffmpeg
+
+v1.21.0
+- Update: FFmpeg to 4.4
+- Update: Update gas preprocessor for ffmpeg4.4
+- Fixed: Ignore deprecation warning as errors for ffmpegs av_init_packet() for windowsstore
+
+v1.20.1
+- Fixed: release version fix
+
+v1.20.0
+- Update: FFmpeg to 4.3.2
+- Added: If open_mode is default make sure the right protocols default to open with ffmpeg
+
+v1.19.4
+- Fixed: Fix locking on EOF detection of terminating catchup stream by using std:recursive_mutex
+
+v1.19.3
+- Update: move verbose playback timeshift logging to debug level
+- Update: Update cmakelists to reference FFMPEGDIRECT at build time
+
+v1.19.2
+- Update: Demuxer additions from kodi
+
+v1.19.1
+- Fixed: Ensure all values in GetTimes() default to zero
+
+v1.19.0
+- Added: FFmpeg patch for satip improvements
+- Added: SafeLocaltime and custom catchup timestamp formats
+- Added: Now timestamp and custom timestamp format for live catchup URL
+- Added: Use curl for mingw package downloads
+
+v1.18.2
+- Update: Redact inputstream property URLs when logged
+
+v1.18.1
+- Update: Add temporary ffmpeg patch for embedded EIT (EPG) data in mepgts streams
+
+v1.18.0
+- Update: inputstream API 3.0.1
+  - Fix wrong flags bit shift
+
+v1.17.0
+- Update: inputstream API 3.0.0
+
+v1.16.0
+- Update: Inputstream API 2.3.4
+- Added: German translation
+- Added: Debian build test to Travis CI
+
+v1.15.5
+- Update: Use add-on supplied StringUtils and remove local version
+- Update: Remove local threading code and use addon supplied instead
+- Update: Use new addon supplied CEndTime class based on chrono
+- Update: Add autoreconf step to lib zvbi
+
+v1.15.4
+- Update: Remove p8-platforms and add local StringUtils for cpp17
+- Update: Nettle patch for xcode 12
+
+v1.15.3
+- Update: gnutls 3.6.15 and nettle 3.6 bump
+
+v1.15.2
+- Update: bump to fix version number
+
+v1.15.1
+- Fixed: Use correct index for streams using a program number, fixes EIT data embedded in streams
+- Update: FFmpeg to 4.3.1
+
+v1.15.0
+- Added: Add fast open for manifest stream and test setting for realtime off
+- Fixed: Honour realtime stream property
+- Fixed: Fix using prev button to seek back to start of stream
+- Fixed: Ensure no slash at end of timeshift buffer path
+- Fixed: Make sure write segment file is closed when buffer is destroyed
+- Fixed: Use overwrite when opening files for write for compatibility with SMB on Android
+- Fixed: Don't start timeshift and exit if index file cannot be created
+- Update: If any timeshift file cannot be created log free disk space
+- Fixed: Avoid crash for zero byte or partial timeshift segment files
+- Fixed: Only read ffmpeg logging setting on stream start
+- Update: Redact username and password for urls in log statements
+- Fixed: Only create timeshift directory if it does not exist
+
+v1.14.5
+- Fixed: Fix lintian spellings and mimetype log statement
+- Update: Readme
+
+v1.14.4
+- Fixed: Use kodi's own FFmpeg for ubuntu packaging
+
+v1.14.3
+- Update: Use FFmpeg 4.3
+
+v1.14.2
+- Fixed: Debian packaging
+
+v1.14.1
+- Update: Kodi API Bump
+
+v1.14.0
+- Added: Add HLS bandwidth limit and teletext/fps advanced settings
+- Fixed: Add missing ATTRIBUTE_HIDDEN qualifer to InputSteamFFmpegDirect class
+- Fixed: Fix memory leak for DemuxStreams
+- Update: README
+
+v1.13.0
+- Added: Add setting for user to limit the length of the timeshift buffer
+
+v1.12.0
+- Added: Support seeking for VOD streams or regular file playback
+- Fixed: Update HLS iformat name and remove hls workaround which is fixed in current FFmpeg
+- Added: Timeshift for live streams (experimental)
+- Added: Add support for Kodi user-agent and cookies when calling FFmpeg directly
+- Added: Support multiple occurrences of year, month and day in catchup format specifiers
+- Added: Add option to turn FFmpeg logging on/off
+
+v1.11.0
+- Update: inputstream API 2.3.1
+- Update: Global API 1.2.0
+
+v1.10.0
+- Added: Continued playback of catchtup streams which don't support delayed live streams
+- Added: Skip unsupported seeks like ones too close to live or those less one minute for streams that only allow a 1 minute granulaity
+- Added: Limit seeking for terminating 1 second streams to within 1 minute of live and for 60 streams 2 minutes
+- Update: Debian control file
+- Update: gas-preprocessor to latest version and remove patch that is no longer required
+- Update: .gitignore
+- Fixed: Fix arch typo ffmpeg darwin_embedded
+- Fixed: Cleanup apple frameworks usage in cmakelists
+- Added: Change logging implementation and deprecate use of NOTICE level
+- Added: Allow streams to be opened using cURL in addition to FFmpeg
+- Update: Fix TS Streams by disallowing streaminfo for realtime streams
+- Update: MKV Attachment and IsTransportStreamReady() updates from kodi
+
+v1.9.2
+- Update: Use generic mimetype from stream and remove old mime_type property
+
+v1.9.1
+- Update: Inpustream API 2.3.0
+
+v1.9.0
+- Added: HTTP Proxy support
+- Update: Remove PauseStream for Inputstream API 2.2.0
+- Fixed: fix changelog.in for debian packaging
+
+v1.8.2
+- Fixed: Ubuntu packaging
+- Added: Updated RTP patch
+
+v1.8.1
+- Fixed: Suppress verbose logging on libxml2 on osx that causes travis builds to fail
+
+v1.8.0
+- Added: Support live URL in addition to catchup URL
+- Added: Support resuming from pause and to catchup stream
+- Update: Remove CanSeekStream and CanPauseStream for Inputstream API v2.1.0
+- Update: .gitignore
+
+v1.7.3
+- Update: Remove pthreads library as now w32pthreads is used instead
+- Update: libxml2 disable unused components for common depends and remove unrequired patch
+- Update: Update libxml2 to 2.9.10 for windows, disable html module and remove unrequired patches
+- Update: Enable asm for gnutls and nettle for darwin_embedded
+
+v1.7.2
+- Update: w32pthreads
+- Fixed: gnutls disable tools for OSX 10.15.4 compatibility
+- Fixed: libxml2 patch for OSX 10.15.4/Xcode 11.4 compatibility
+- Update: SPDX, headers and badges
+- Update: gnutls to 3.6.13
+- Update: gmp on android to 6.2.0
+
+v1.7.1
+- Fixed: tvOS build
+
+v1.7.0
+- Update: remove unrequired gnutls patch
+- Fixed: Replace ;'s workaround for cmake bug for ffmpeg LDFLAGS
+- Added: Patch for ffmpeg using rtp protocol where sources option is not retained
+- Update: Document programme_catchup_id stream property in README
+- Added: Support for timestamp catchup format specifier
+- Added: Support duration units format specifer to convert duration to mins or hours
+- Update: Update darwin deprecated thread call
+- Fixed: validate duration format specifier and cap to time now
+- Added: Add optional stream property for live catchup url
+- Added: Support for offset catchup format specifier
+- Fixed: Disable Neon for arm for iOS/tvOS
+- Fixed: Raspberry Pi build
+
+v1.6.0
+- Added: Support catchup-id stream property
+- Added: Enable pthreads for FFmpeg on Windows to allow circular buffer for UDP streams
+- Added: Fanart and icon
+- Added: Move from appveyor to Azure DevOps to windows CI
+- Added: Source and license to addon.xml
+- Added: p8-platform to addon depends
+- Fixed: Remove kodi protocol options before opening URL
+- Fixed: Wrong mms/rtp/udp url being used
+- Fixed: Android linkage for ffmpeg broken
+- Fixed: Travis status image
+- Update: To gnutls-3.6.12
+
+v1.5.0
+- Update: FFmpeg-n4.2.2, patches refreshed
+
+v1.4.1
+- Update: Cleanup logging
+
+v1.4.0
+- Added: gnutls patch to add libdl to support newer OSes
+- Added: Add support for mms and rtp/udp streams with sources
+- Fixed: Add workaround for CMake and Frameworks on Darwin
+
+v1.3.0
+- Added: Support for Windows and iOS
+- Update: To gmp-6.2.0
+- Update: To nettle-3.5.1
+- Update: To gnutls-3.6.11.1
+
+v1.2.1
+- Fixed: Support for XCode build with GCC via travis
+
+v1.2.0
+- Added: Jenkinsfile and .travel.yml
+- Added: Support for Android and linux
+- Fixed: Some depnds errors for iOS, still more to fix
+- Added: Clang and g++ build supported from Travis, osx travis not working
+
+v1.1.0
+- Added: Support for chapters
+
+v1.0.0
+- Added: Initial version working for both normal streams and those supporting catchup
+
+Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/inputstream.ffmpegdirect/changelog.txt
+    </news>
     <summary lang="ca_ES">Client InputStream per a fluxos FFmpeg (libavformat)</summary>
+    <summary lang="cs_CZ">Klient toků FFmpeg (libavformat) protokolu InputStream</summary>
     <summary lang="da_DK">InputStream-klient til FFmpeg-streams (libavformat)</summary>
     <summary lang="de_DE">InputStream-Client für FFmpeg-Streams (libavformat)</summary>
     <summary lang="en_GB">InputStream Client for FFmpeg streams (libavformat)</summary>
+    <summary lang="es_ES">Cliente de InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="es_MX">Cliente InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="fi_FI">InputStream asiakasohjelma FFmpeg suoratoistoille (libavformat)</summary>
+    <summary lang="fr_FR">Client InputStream pour les flux FFmpeg (format libav)</summary>
+    <summary lang="hr_HR">InputStream klijent za FFmpeg strujanja (libavformat)</summary>
     <summary lang="ko_KR">FFmpeg 스트림용 InputStream 클라이언트(libavformat)</summary>
     <summary lang="pl_PL">Klient InputStream dla strumieni FFmpeg (libavformat)</summary>
     <summary lang="ru_RU">InputStream клиент для FFmpeg потоков (libavformat)</summary>
     <summary lang="zh_CN">FFmpeg 流的 InputStream 客户端（libavformat）</summary>
     <description lang="ca_ES">Client InputStream per a fluxos que es poden obrir mitjançant el libavformat de FFmpeg o el cURL de Kodi. S’admeten formats de flux comuns, com ara TS simple, HLS i DASH (sense DRM), així com molts altres.[CR][CR]El complement també és compatible amb els serveis Archive/Catchup , on hi ha una finestra de reproducció (normalment en dies) i pot canviar de temps en aquest interval.[CR][CR]Per a la documentació, visiteu: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="cs_CZ">Klient protokolu InputStream pro toky, které mohou být otevřeny pomocí FFmpeg libavformat nebo Kodi cURL.Běžné formáty toků jako prosté TS, HLS, DASH (bez DRM) a mnoho dalších jsou podporovány.[CR][CR]Doplněk má též podporu pro služby Archive/Catchup, které mají dobu pro opětovné přehrání (obvykle ve dnech) a mohou mít v tomto období časový posun.[CR][CR]Pro dokumentaci navštivte: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="da_DK">InputStream-klient til streams, der kan åbnes af enten FFmpeg&apos;s libavformat eller Kodi&apos;s cURL. Almindelige streamformater som f.eks. almindelig TS, HLS og DASH (uden DRM) understøttes såvel som mange andre.[CR][CR]Add-on&apos;et har også understøttelse af Arkiv-/Catchup-tjenester, hvor der er et afspilningsvindue (normalt i dage) og kan tidsforskyde på tværs af dette spænd.[CR][CR]For dokumentation besøg: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="de_DE">InputStream-Client für Streams, die entweder mit dem libav-Format von FFmpeg oder mit cURL von Kodi geöffnet werden können. Gängige Stream-Formate wie TS, HLS und DASH (ohne DRM) werden ebenso unterstützt wie viele andere.[CR][CR]Das Addon unterstützt auch Archiv-/Aufholdienste, bei denen Wiedergabefenster vorhanden sind (normalerweise in Tagen), und kann über diesen Zeitraum hinweg eine Zeitverschiebung bewirken.[CR][CR]Dokumentation unter: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="en_GB">InputStream Client for streams that can be opened by either FFmpeg&apos;s libavformat or Kodi&apos;s cURL. Common stream formats such as plain TS, HLS and DASH (without DRM) are supported as well as many others.[CR][CR]The addon also has support for Archive/Catchup services where there is a replay windows (usually in days) and can timeshift across that span.[CR][CR]For documenation visit: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="es_ES">Un cliente de InputStream que puede abrir flujos con libavformat de FFmpeg o cURL de Kodi. Los formatos flujos comunes como son TS puro, HLS y DASH (sin DRM) se soportan bien, así como muchos otros.[CR][CR]El addon también tiene soporte para los servicios de Archivado/Rebobinado si hay ventanas de reproducción (normalmente días) en las que se pueda volver a ver.[CR][CR]La documentación está en: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="es_MX">Cliente InputStream para flujos de datos que pueden abrirse con libavformat de FFmpeg o cURL integrado en Kodi. Formatos de flujo comunes tales como TS simple, HLS y DASH (sin DRM) también están soportados, al igual que muchos otros.[CR][CR]El complemento también soporta servicios Archive/Catchup donde hay un espacio de repetición (usualmente en días) y se puede mover a través del tiempo de dicho espacio.[CR][CR]Para documentación visita: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="fi_FI">InputStream asiakasohjelma suoratoistoille, jotka voidaan avata joko FFmpegin libavformaatilla tai Kodin cURL:llä. Yleisiä suoratoistomuotoja, kuten tavallinen TS, HLS ja DASH (ilman DRM:ää), tuetaan sekä monia muita.[CR][CR]Lisäosa tukee myös Arkisto-/Catchup-palveluita, joissa on uusintaikkunoita (yleensä päivissä) ja voi siirtyä aikavälillä.[CR][CR]Dokumentaatiot löytyvät osoitteesta: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="fr_FR">InputStream Client pour les flux pouvant être ouverts soit par le libavformat de FFmpeg, soit par le cURL de Kodi. Les formats de flux courants tels que TS, HLS et DASH (sans DRM) sont pris en charge ainsi que bien d&apos;autres. et peut être décalé dans le temps dans la période.[CR][CR]Pour la documentation, visitez : https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="hr_HR">InputStream klijent za strujanja koja se mogu otvoriti ili FFmpeg libavformatom ili Kodijevim cURL-om. Uobičajeni formati strujanja poput običnog TS, HLS i DASH (bez DRM zaštite sadržaja) formata su podržani kao i mnogi drugi.[CR][CR]Dodatak ima još podršku za Arhive/Hvatanje usluga gdje postoji prozor ponovne raprodukcije (uobičajeno u danima) i može se vremenski premotavati u zadanom vremenskom razdoblju.[CR][CR]Za dokumentaciju posjetite: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ko_KR">FFmpeg의 libavformat 또는 Kodi의 cURL로 열 수 있는 스트림용 InputStream 클라이언트. 일반 TS, HLS 및 DASH(DRM 제외)와 같은 일반적인 스트림 형식은 물론 다른 많은 형식도 지원됩니다.[CR][CR]이 애드온은 재생 창(보통 며칠)이 있는 아카이브/따라잡기 서비스도 지원합니다. 해당 범위에서 타임시프트할 수 있습니다.[CR][CR]문서를 보려면 https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md를 방문하세요</description>
     <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
-    <path>inputstream.ffmpegdirect+windows-x86_64/inputstream.ffmpegdirect-20.5.0.zip</path>
   </extension>
 </addon>
 
 <addon
-  id="inputstream.rtmp"
-  version="20.3.0"
-  name="RTMP Input"
-  provider-name="spiff">
-  <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
-<import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
-  <extension
-    point="kodi.inputstream"
-    name="rtmp"
-    protocols="rtmp|rtmpt|rtmpe|rtmpte|rtmps"
-    listitemprops="SWFPlayer|swfurl|PageURL|PlayPath|TcUrl|IsLive|swfvfy"
-    library_android="libinputstream.rtmp.so" />
-  <extension point="xbmc.addon.metadata">
-    <platform>android-aarch64</platform>
-    <license>GPL-2.0-or-later</license>
-    <source>https://github.com/xbmc/inputstream.rtmp</source>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-    <summary lang="ca_ES">Client per a transmissió RTMP</summary>
-    <summary lang="cs_CZ">Klient přenosů RTMP</summary>
-    <summary lang="da_DK">Klient til RTMP-streams</summary>
-    <summary lang="de_DE">Client für RTMP-Streams</summary>
-    <summary lang="en_GB">Client for RTMP streams</summary>
-    <summary lang="es_ES">Cliente para flujos RTMP</summary>
-    <summary lang="es_MX">Cliente para flujos RTMP</summary>
-    <summary lang="fi_FI">Asiakaspääte RTMP-mediavirroille</summary>
-    <summary lang="hr_HR">Klijent za RTMP strujanja</summary>
-    <summary lang="it_IT">Client per flussi RTMP</summary>
-    <summary lang="ko_KR">RTMP 스트림용 클라이언트</summary>
-    <summary lang="pl_PL">Klient strumieni RTMP</summary>
-    <summary lang="ru_RU">Клиент для трансляции потоков RTMP</summary>
-    <summary lang="zh_CN">RTMP 流的客户端</summary>
-    <description lang="ca_ES">El protocol de missatgeria en temps real (RTMP) és un protocol de xarxa propietari desenvolupat per Adobe Inc. per transmetre àudio, vídeo i altres dades a través d&apos;Internet des d&apos;un servidor multimèdia a un reproductor flash.[CR][CR]Aquest complement implementa el suport de transmissió RTMP per a Kodi i per als complements instal·lats.</description>
-    <description lang="cs_CZ">Real Time Messaging Protocol (RTMP) je patentovaný síťový protokol vyvinutý společností Adobe Inc. pro přenos zvuku, videa a dalších dat přes internet z multimediálního serveru do přehrávače.[CR][CR]Tento doplněk implementuje podporu proudů RTMP pro Kodi a instalované doplňky.</description>
-    <description lang="da_DK">Real Time Messaging Protocol (RTMP) er en proprietær netværksprotokol udviklet af Adobe Inc. til at overføre lyd, video og andre data via internettet fra en medieserver til en flashafspiller.[CR][CR]Dette add-on implementerer RTMP-understøttelse af streaming til Kodi og installerede add-ons.</description>
-    <description lang="de_DE">Das Real Time Messaging Protocol (RTMP) ist ein proprietäres Netzwerkprotokoll, das von Adobe Inc. entwickelt wurde, um Audio-, Video- und andere Daten über das Internet von einem Medienserver zu einem Flash Player zu übertragen.[CR][CR]Dieses Addon implementiert die RTMP-Streaming-Unterstützung für Kodi und installierte Add-Ons.</description>
-    <description lang="en_GB">The Real Time Messaging Protocol (RTMP) is a proprietary network protocol developed by Adobe Inc. to transmit audio, video and other data over the Internet from a media server to a flash player.[CR][CR]This addon implements RTMP streaming support for Kodi and installed add-ons.</description>
-    <description lang="es_ES">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, vídeo y otros datos por Internet desde un servidor de contenido a un reproductor flash.[CR][CR]Este addon implementa el soporte para RTMP en Kodi y para el resto de addons instalados.</description>
-    <description lang="es_MX">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, video y otros datos por internet desde un servidor de medios a un reproductor flash.[CR][CR]Este complemento implementa el soporte de reproducción RTMP para Kodi y para cualquier complemento instalado.</description>
-    <description lang="fi_FI">Real Time Messaging Protocol (RTMP) on Adoben kehittämä verkkoprotokolla äänen, videon ja muun tiedon siirtoon madiapalvelimen ja Flash-soittimen välillä Internetin välityksellä.[CR][CR]Tämä lisäosa mahdollistaa RTMP-suoratoiston Kodille ja asennetuille lisäosille.</description>
-    <description lang="hr_HR">Protokol slanja poruka u stvarnom vremenu (RTMP) je vlasnički mrežni protokol razvijen od strane Adobe Inc. za odašiljanje zvuka, videa i drugih podataka putem interneta s medijskog poslužitelja prema Flash reproduktoru.[CR][CR]Ovaj dodatak implementira podršku RTMP strujanja za Kodi i instalirane dodatke.</description>
-    <description lang="it_IT">Il Real Time Messaging Protocol (RTMP) è un protocollo di rete proprietario sviluppato da Adobe Inc. per trasmettere audio, video e altri dati su Internet da un server multimediale a un lettore flash.[CR][CR]Questo componente aggiuntivo implementa il supporto dello streaming RTMP per Kodi e per gli add-on.</description>
-    <description lang="ko_KR">실시간 메시징 프로토콜(RTMP)은 인터넷을 통해 미디어 서버에서 플래시 플레이어로 오디오, 비디오 및 기타 데이터를 전송하기 위해 Adobe Inc.에서 개발한 독점 네트워크 프로토콜입니다.[CR][CR]이 애드온은 Kodi와 설치된 애드온을 위한 RTMP 스트리밍 지원을 구현합니다.</description>
-    <description lang="pl_PL">Protokół RTMP (Real Time Messaging Protocol) to własnościowy protokół sieciowy opracowany przez firmę Adobe Inc. do przesyłania dźwięku, obrazu i innych danych przez Internet z serwera multimediów do odtwarzacza Flash.[CR][CR]Ten dodatek implementuje obsługę przesyłania strumieniowego RTMP dla Kodi i zainstalowanych dodatków.</description>
-    <description lang="ru_RU">Протокол обмена сообщениями в реальном времени (The Real Time Messaging Protocol - RTMP) - это запатентованный сетевой протокол, разработанный компанией Adobe Inc. для передачи аудио, видео и других данных через Интернет с медиа-сервера на флеш-плеер.[CR][CR]Это приложение реализует поддержку потоковой передачи RTMP для Kodi и установленных дополнений.</description>
-    <description lang="zh_CN">实时消息协议（RTMP）是 Adobe Inc. 开发的一种专有网络协议，用于通过互联网将音频、视频和其他数据从媒体服务器传输到 flash 播放器。[CR][CR]此插件实现对 Kodi 和已安装插件的 RTMP 流支持。</description>
-    <path>inputstream.rtmp+android-aarch64/inputstream.rtmp-20.3.0.zip</path>
-  </extension>
-</addon>
-
-<addon
-  id="inputstream.rtmp"
-  version="20.3.0"
-  name="RTMP Input"
-  provider-name="spiff">
-  <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
-<import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
-  <extension
-    point="kodi.inputstream"
-    name="rtmp"
-    protocols="rtmp|rtmpt|rtmpe|rtmpte|rtmps"
-    listitemprops="SWFPlayer|swfurl|PageURL|PlayPath|TcUrl|IsLive|swfvfy"
-    library_android="libinputstream.rtmp.so" />
-  <extension point="xbmc.addon.metadata">
-    <platform>android-armv7</platform>
-    <license>GPL-2.0-or-later</license>
-    <source>https://github.com/xbmc/inputstream.rtmp</source>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-    <summary lang="ca_ES">Client per a transmissió RTMP</summary>
-    <summary lang="cs_CZ">Klient přenosů RTMP</summary>
-    <summary lang="da_DK">Klient til RTMP-streams</summary>
-    <summary lang="de_DE">Client für RTMP-Streams</summary>
-    <summary lang="en_GB">Client for RTMP streams</summary>
-    <summary lang="es_ES">Cliente para flujos RTMP</summary>
-    <summary lang="es_MX">Cliente para flujos RTMP</summary>
-    <summary lang="fi_FI">Asiakaspääte RTMP-mediavirroille</summary>
-    <summary lang="hr_HR">Klijent za RTMP strujanja</summary>
-    <summary lang="it_IT">Client per flussi RTMP</summary>
-    <summary lang="ko_KR">RTMP 스트림용 클라이언트</summary>
-    <summary lang="pl_PL">Klient strumieni RTMP</summary>
-    <summary lang="ru_RU">Клиент для трансляции потоков RTMP</summary>
-    <summary lang="zh_CN">RTMP 流的客户端</summary>
-    <description lang="ca_ES">El protocol de missatgeria en temps real (RTMP) és un protocol de xarxa propietari desenvolupat per Adobe Inc. per transmetre àudio, vídeo i altres dades a través d&apos;Internet des d&apos;un servidor multimèdia a un reproductor flash.[CR][CR]Aquest complement implementa el suport de transmissió RTMP per a Kodi i per als complements instal·lats.</description>
-    <description lang="cs_CZ">Real Time Messaging Protocol (RTMP) je patentovaný síťový protokol vyvinutý společností Adobe Inc. pro přenos zvuku, videa a dalších dat přes internet z multimediálního serveru do přehrávače.[CR][CR]Tento doplněk implementuje podporu proudů RTMP pro Kodi a instalované doplňky.</description>
-    <description lang="da_DK">Real Time Messaging Protocol (RTMP) er en proprietær netværksprotokol udviklet af Adobe Inc. til at overføre lyd, video og andre data via internettet fra en medieserver til en flashafspiller.[CR][CR]Dette add-on implementerer RTMP-understøttelse af streaming til Kodi og installerede add-ons.</description>
-    <description lang="de_DE">Das Real Time Messaging Protocol (RTMP) ist ein proprietäres Netzwerkprotokoll, das von Adobe Inc. entwickelt wurde, um Audio-, Video- und andere Daten über das Internet von einem Medienserver zu einem Flash Player zu übertragen.[CR][CR]Dieses Addon implementiert die RTMP-Streaming-Unterstützung für Kodi und installierte Add-Ons.</description>
-    <description lang="en_GB">The Real Time Messaging Protocol (RTMP) is a proprietary network protocol developed by Adobe Inc. to transmit audio, video and other data over the Internet from a media server to a flash player.[CR][CR]This addon implements RTMP streaming support for Kodi and installed add-ons.</description>
-    <description lang="es_ES">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, vídeo y otros datos por Internet desde un servidor de contenido a un reproductor flash.[CR][CR]Este addon implementa el soporte para RTMP en Kodi y para el resto de addons instalados.</description>
-    <description lang="es_MX">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, video y otros datos por internet desde un servidor de medios a un reproductor flash.[CR][CR]Este complemento implementa el soporte de reproducción RTMP para Kodi y para cualquier complemento instalado.</description>
-    <description lang="fi_FI">Real Time Messaging Protocol (RTMP) on Adoben kehittämä verkkoprotokolla äänen, videon ja muun tiedon siirtoon madiapalvelimen ja Flash-soittimen välillä Internetin välityksellä.[CR][CR]Tämä lisäosa mahdollistaa RTMP-suoratoiston Kodille ja asennetuille lisäosille.</description>
-    <description lang="hr_HR">Protokol slanja poruka u stvarnom vremenu (RTMP) je vlasnički mrežni protokol razvijen od strane Adobe Inc. za odašiljanje zvuka, videa i drugih podataka putem interneta s medijskog poslužitelja prema Flash reproduktoru.[CR][CR]Ovaj dodatak implementira podršku RTMP strujanja za Kodi i instalirane dodatke.</description>
-    <description lang="it_IT">Il Real Time Messaging Protocol (RTMP) è un protocollo di rete proprietario sviluppato da Adobe Inc. per trasmettere audio, video e altri dati su Internet da un server multimediale a un lettore flash.[CR][CR]Questo componente aggiuntivo implementa il supporto dello streaming RTMP per Kodi e per gli add-on.</description>
-    <description lang="ko_KR">실시간 메시징 프로토콜(RTMP)은 인터넷을 통해 미디어 서버에서 플래시 플레이어로 오디오, 비디오 및 기타 데이터를 전송하기 위해 Adobe Inc.에서 개발한 독점 네트워크 프로토콜입니다.[CR][CR]이 애드온은 Kodi와 설치된 애드온을 위한 RTMP 스트리밍 지원을 구현합니다.</description>
-    <description lang="pl_PL">Protokół RTMP (Real Time Messaging Protocol) to własnościowy protokół sieciowy opracowany przez firmę Adobe Inc. do przesyłania dźwięku, obrazu i innych danych przez Internet z serwera multimediów do odtwarzacza Flash.[CR][CR]Ten dodatek implementuje obsługę przesyłania strumieniowego RTMP dla Kodi i zainstalowanych dodatków.</description>
-    <description lang="ru_RU">Протокол обмена сообщениями в реальном времени (The Real Time Messaging Protocol - RTMP) - это запатентованный сетевой протокол, разработанный компанией Adobe Inc. для передачи аудио, видео и других данных через Интернет с медиа-сервера на флеш-плеер.[CR][CR]Это приложение реализует поддержку потоковой передачи RTMP для Kodi и установленных дополнений.</description>
-    <description lang="zh_CN">实时消息协议（RTMP）是 Adobe Inc. 开发的一种专有网络协议，用于通过互联网将音频、视频和其他数据从媒体服务器传输到 flash 播放器。[CR][CR]此插件实现对 Kodi 和已安装插件的 RTMP 流支持。</description>
-    <path>inputstream.rtmp+android-armv7/inputstream.rtmp-20.3.0.zip</path>
-  </extension>
-</addon>
-
-<addon
-  id="inputstream.rtmp"
-  version="20.3.0"
-  name="RTMP Input"
-  provider-name="spiff">
-  <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
-<import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
-  <extension
-    point="kodi.inputstream"
-    name="rtmp"
-    protocols="rtmp|rtmpt|rtmpe|rtmpte|rtmps"
-    listitemprops="SWFPlayer|swfurl|PageURL|PlayPath|TcUrl|IsLive|swfvfy"
-    library_windows="inputstream.rtmp.dll" />
-  <extension point="xbmc.addon.metadata">
-    <platform>windows-x86_64</platform>
-    <license>GPL-2.0-or-later</license>
-    <source>https://github.com/xbmc/inputstream.rtmp</source>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-    <summary lang="ca_ES">Client per a transmissió RTMP</summary>
-    <summary lang="cs_CZ">Klient přenosů RTMP</summary>
-    <summary lang="da_DK">Klient til RTMP-streams</summary>
-    <summary lang="de_DE">Client für RTMP-Streams</summary>
-    <summary lang="en_GB">Client for RTMP streams</summary>
-    <summary lang="es_ES">Cliente para flujos RTMP</summary>
-    <summary lang="es_MX">Cliente para flujos RTMP</summary>
-    <summary lang="fi_FI">Asiakaspääte RTMP-mediavirroille</summary>
-    <summary lang="hr_HR">Klijent za RTMP strujanja</summary>
-    <summary lang="it_IT">Client per flussi RTMP</summary>
-    <summary lang="ko_KR">RTMP 스트림용 클라이언트</summary>
-    <summary lang="pl_PL">Klient strumieni RTMP</summary>
-    <summary lang="ru_RU">Клиент для трансляции потоков RTMP</summary>
-    <summary lang="zh_CN">RTMP 流的客户端</summary>
-    <description lang="ca_ES">El protocol de missatgeria en temps real (RTMP) és un protocol de xarxa propietari desenvolupat per Adobe Inc. per transmetre àudio, vídeo i altres dades a través d&apos;Internet des d&apos;un servidor multimèdia a un reproductor flash.[CR][CR]Aquest complement implementa el suport de transmissió RTMP per a Kodi i per als complements instal·lats.</description>
-    <description lang="cs_CZ">Real Time Messaging Protocol (RTMP) je patentovaný síťový protokol vyvinutý společností Adobe Inc. pro přenos zvuku, videa a dalších dat přes internet z multimediálního serveru do přehrávače.[CR][CR]Tento doplněk implementuje podporu proudů RTMP pro Kodi a instalované doplňky.</description>
-    <description lang="da_DK">Real Time Messaging Protocol (RTMP) er en proprietær netværksprotokol udviklet af Adobe Inc. til at overføre lyd, video og andre data via internettet fra en medieserver til en flashafspiller.[CR][CR]Dette add-on implementerer RTMP-understøttelse af streaming til Kodi og installerede add-ons.</description>
-    <description lang="de_DE">Das Real Time Messaging Protocol (RTMP) ist ein proprietäres Netzwerkprotokoll, das von Adobe Inc. entwickelt wurde, um Audio-, Video- und andere Daten über das Internet von einem Medienserver zu einem Flash Player zu übertragen.[CR][CR]Dieses Addon implementiert die RTMP-Streaming-Unterstützung für Kodi und installierte Add-Ons.</description>
-    <description lang="en_GB">The Real Time Messaging Protocol (RTMP) is a proprietary network protocol developed by Adobe Inc. to transmit audio, video and other data over the Internet from a media server to a flash player.[CR][CR]This addon implements RTMP streaming support for Kodi and installed add-ons.</description>
-    <description lang="es_ES">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, vídeo y otros datos por Internet desde un servidor de contenido a un reproductor flash.[CR][CR]Este addon implementa el soporte para RTMP en Kodi y para el resto de addons instalados.</description>
-    <description lang="es_MX">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, video y otros datos por internet desde un servidor de medios a un reproductor flash.[CR][CR]Este complemento implementa el soporte de reproducción RTMP para Kodi y para cualquier complemento instalado.</description>
-    <description lang="fi_FI">Real Time Messaging Protocol (RTMP) on Adoben kehittämä verkkoprotokolla äänen, videon ja muun tiedon siirtoon madiapalvelimen ja Flash-soittimen välillä Internetin välityksellä.[CR][CR]Tämä lisäosa mahdollistaa RTMP-suoratoiston Kodille ja asennetuille lisäosille.</description>
-    <description lang="hr_HR">Protokol slanja poruka u stvarnom vremenu (RTMP) je vlasnički mrežni protokol razvijen od strane Adobe Inc. za odašiljanje zvuka, videa i drugih podataka putem interneta s medijskog poslužitelja prema Flash reproduktoru.[CR][CR]Ovaj dodatak implementira podršku RTMP strujanja za Kodi i instalirane dodatke.</description>
-    <description lang="it_IT">Il Real Time Messaging Protocol (RTMP) è un protocollo di rete proprietario sviluppato da Adobe Inc. per trasmettere audio, video e altri dati su Internet da un server multimediale a un lettore flash.[CR][CR]Questo componente aggiuntivo implementa il supporto dello streaming RTMP per Kodi e per gli add-on.</description>
-    <description lang="ko_KR">실시간 메시징 프로토콜(RTMP)은 인터넷을 통해 미디어 서버에서 플래시 플레이어로 오디오, 비디오 및 기타 데이터를 전송하기 위해 Adobe Inc.에서 개발한 독점 네트워크 프로토콜입니다.[CR][CR]이 애드온은 Kodi와 설치된 애드온을 위한 RTMP 스트리밍 지원을 구현합니다.</description>
-    <description lang="pl_PL">Protokół RTMP (Real Time Messaging Protocol) to własnościowy protokół sieciowy opracowany przez firmę Adobe Inc. do przesyłania dźwięku, obrazu i innych danych przez Internet z serwera multimediów do odtwarzacza Flash.[CR][CR]Ten dodatek implementuje obsługę przesyłania strumieniowego RTMP dla Kodi i zainstalowanych dodatków.</description>
-    <description lang="ru_RU">Протокол обмена сообщениями в реальном времени (The Real Time Messaging Protocol - RTMP) - это запатентованный сетевой протокол, разработанный компанией Adobe Inc. для передачи аудио, видео и других данных через Интернет с медиа-сервера на флеш-плеер.[CR][CR]Это приложение реализует поддержку потоковой передачи RTMP для Kodi и установленных дополнений.</description>
-    <description lang="zh_CN">实时消息协议（RTMP）是 Adobe Inc. 开发的一种专有网络协议，用于通过互联网将音频、视频和其他数据从媒体服务器传输到 flash 播放器。[CR][CR]此插件实现对 Kodi 和已安装插件的 RTMP 流支持。</description>
-    <path>inputstream.rtmp+windows-x86_64/inputstream.rtmp-20.3.0.zip</path>
-  </extension>
-</addon>
-
-<addon id="plugin.audio.aguiafm"name="[COLOR gold]Águia[/COLOR] [COLOR cyan]FM[/COLOR]"version="1.2.6" provider-name="FlechaNegra">
+    id="plugin.audio.aguiafm"
+    name="[COLOR gold]Águia[/COLOR] [COLOR cyan]FM[/COLOR]"
+    version="1.2.6"
+    provider-name="@by_black_eagle">
     <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>audio</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <summary>[COLOR gold]Águia[/COLOR] [COLOR cyan]FM[/COLOR] [COLORorange]é um addon da família ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</summary>
-    <description>Online RadioStreams</description>
-    <license></license>
-    <language>pt</language>
-    <source></source>
-    <email></email>
-  <assets>
-    <icon>icon.png</icon>
-    <fanart>fanart.jpg</fanart>
-    <banner></banner>
-    <clearlogo></clearlogo>
-    <screenshot></screenshot>
-  </assets>
-  </extension>
+		<import addon="xbmc.python" version="3.0.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>audio</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary>[COLOR gold]Águia[/COLOR] [COLOR cyan]FM[/COLOR]</summary>
+		<description>Online RadioStreams</description>
+		<license></license>
+		<language>pt</language>
+		<source></source>
+		<email></email>
+	<assets>
+		<icon>icon.png</icon>
+		<fanart>fanart.jpg</fanart>
+		<banner></banner>
+		<clearlogo></clearlogo>
+		<screenshot></screenshot>
+	</assets>
+	</extension>
 </addon>
 
-<addon id="plugin.program.arrownegra.wizard" name="[COLOR chocolate]ARROW[/COLOR][COLORgold]NEGRA[/COLOR] [COLORgrey]WIZARD[/COLOR]" version="2.0.1" provider-name="[COLORchocolate][COLORgold]Arrow Negra[/COLOR]">
+<addon id="plugin.program.arrownegra.wizard" name="[COLOR chocolate]ARROW[/COLOR][COLORgold]NEGRA[/COLOR] [COLORgrey]WIZARD[/COLOR]" version="2.0.1" provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     <import addon="script.module.six" />
     <import addon="script.module.kodi-six" />
-    <import addon="script.module.requests"/>
+  	<import addon="script.module.requests"/>
     <import addon="script.kodi.android.update" optional="true" version="1.3.2" />
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
@@ -645,14 +1353,14 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.aguia.hentai.18" name="[COLORlime]AGUIA[/COLOR] [COLORyellow]HENTAI+18[/COLOR]" version="0.0.1" provider-name="@By_Flecha_Negra"> 
+<addon id="plugin.video.aguia.hentai.18" name="[COLORlime]AGUIA[/COLOR] [COLORyellow]HENTAI+18[/COLOR]" version="0.0.1" provider-name="@By_Flecha_Negra">
     <requires>
         <import addon="script.module.simplejson" />
         <import addon="script.module.six" />
         <import addon="script.module.kodi-six" />
 		<import addon="script.module.requests"/>
 		<import addon="script.module.beautifulsoup4"/>
-    </requires>  
+    </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
@@ -666,367 +1374,9 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon>    
-
-<addon id="plugin.video.eagle.latinos" name="[COLORred] Eagle.[COLORgold]Latinos[/COLOR]" version="1.3" provider-name="by_flecha_negra">
-    <requires>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary>Canais de Televisão, desportos e mais...</summary>
-		<description lang="en">[COLOR red]Eagle [/COLOR] [COLORorange]Latinos[/COLOR] [COLORorange]é um addon da familia Arrow Negra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-		<platform>all</platform>
-		<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-</extension>
 </addon>
 
-<addon id="plugin.video.eagle.uk" name="[COLORred] Eagle.[COLORgold]UK[/COLOR]" version="1.4" provider-name="by_flecha_negra">
-    <requires>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary>Canais de Televisão, desportos e mais...</summary>
-		<description lang="en">[COLOR red]Eagle [/COLOR] [COLORorange]UK[/COLOR] [COLORorange]é um addon da familia Arrow Negra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-		<platform>all</platform>
-		<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-</extension>
-</addon>
-
-<addon id="plugin.video.eagle.africa" name="[COLORred] Eagle.[COLORgold]Africa[/COLOR]" version="1.3" provider-name="by_flecha_negra">
-    <requires>
-        <import addon="script.module.simplejson" />
-        <import addon="script.module.six" />
-        <import addon="script.module.kodi-six" />
-    </requires>  
-       <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-	</extension>  
-<extension point="xbmc.addon.metadata">
-		<summary>Canais de Televisão, desportos e mais...</summary>
-		<description lang="en">[COLOR red]Eagle [/COLOR] [COLORorange]Africa[/COLOR] [COLORorange]é um addon da familia Arrow Negra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-	<platform>all</platform>
-		<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-    </extension>
-</addon>   
-
-<addon id="plugin.video.aguia.animes" version="0.0.4" name="[B]ÁGUIA ANIMES[/B]" provider-name="@By_Flecha_Negra">
-    <requires>
-        <import addon="script.module.simplejson" />
-        <import addon="script.module.six" />
-        <import addon="script.module.kodi-six" />
-        <import addon="script.module.beautifulsoup4"/>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>  
-    <extension point="xbmc.addon.metadata">
-    <summary>Águia Animes é um addon que reproduz animes</summary>
-    <description>Todos os videos são de sites terceiros, não hospedamos conteudo</description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="plugin.video.aguia-branca" name="[COLOR maroon]ÁGUIA[/COLOR] [COLOR gold]BRANCA[/COLOR]" version="21.39" provider-name="[COLOR yellow]by_flecha_negra[/COLOR]">
-    <requires>
-		<import addon="xbmc.python" version="3.0.0"/>
-		<import addon="script.module.requests" version="2.25.1+matrix.1"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="addon.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<summary lang="en">[COLORred] LIVE-TV, VOD, SÉRIES[/COLOR] KODi Matrix KODi Nexus</summary>
-		<description lang="en">[COLOR red]Águia[/COLOR] [COLORorange]Branca[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-		<platform>all</platform>
-		<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-	</extension>
-</addon>
-
-<addon id="plugin.video.aguiagold" name="[COLORred]Aguia[COLORgold]Gold[/COLOR]" version="3.2.2" provider-name="FlechaNegra">
-  <extension point="xbmc.python.pluginsource"
-			library="default.py">
-		<provides>video</provides>
-  </extension>
-	<extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">[COLORred]Aguia[COLORgold]Gold[/COLOR]</summary>
-    <description lang="en_GB">[COLOR red]Aguia[/COLOR] [COLOR gold]Gold[/COLOR] [COLORorange]is an add-on from the  Flechanegra family. ALL LINKS ARE AVAILABLE ON THE INTERNET![/COLOR]</description>
-    <language>en</language>
-    <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-	<fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="plugin.video.aguia_de_ouro" version="1.1.7" name="[COLOR red]Águia [COLOR black]de [COLOR gold]Ouro[/COLOR]" provider-name="@Flecha_Negra">
-    <requires>
-        <import addon="script.module.simplejson" />
-        <import addon="script.module.six" />
-        <import addon="script.module.kodi-six" />
-        <import addon="script.module.beautifulsoup4"/>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>	
-    <extension point="xbmc.addon.metadata">
-		<summary lang="pt">Águia de Ouro é um addon de desporto da team ArrowNegra</summary>
-		<description lang="pt">Todos os videos são de sites terceiros, não hospedamos conteudo</description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
-        <assets>
-       <icon>icon.png</icon>
-	   <fanart>fanart.jpg</fanart>
-	   <media>resources/medias/home.jpg</media>
-	   <media>resources/medias/movies.jpg</media>
-	   <media>resources/medias/series.jpg</media>
-    </assets>
-    </extension>
-</addon>
-
-<addon id="plugin.video.adler.deutschland" name="[COLOR grey]Adler[COLORblack]Deu[COLORred]tsch[COLORyellow]land[/COLOR]" version="1.6" provider-name="[COLOR orange]@by_flechanegra[/COLOR]">
-  <extension point="xbmc.python.pluginsource"
-			library="default.py">
-		<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-	<summary lang="en">[COLOR lime]adler.deutschland[/COLOR][COLORorange]is an add-on from the  Flechanegra family. ALL LINKS ARE AVAILABLE ON THE INTERNET![/COLOR]</summary>
-	<description lang="pt">[COLOR lime]adler.deutschland[/COLOR][COLORorange]é um addon da familia  Flechanegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-        <platform>all</platform>
-	<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-	    <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-	</assets>
-  </extension>
-</addon>
-
-<addon id="plugin.video.aguianegra" name="[COLOR red]Águia[/COLOR] [COLOR yellow]Negra[/COLOR]" version="3.3.7" provider-name="[COLOR yellow]by_flecha_negra[/COLOR]">
-	<requires>
-		<import addon="script.module.six" />
-		<import addon="script.module.kodi-six" />
-		<import addon="script.module.requests" optional="true"/>
-		<import addon="script.module.websocket" version="0.50.0"  optional="true"/>
-		<import addon="script.module.youtube.dl" optional="true"/>
-		<import addon="plugin.video.youtube" optional="true" />
-		<import addon="script.module.dateutil" optional="true" />
-		<import addon="script.module.resolveurl" optional="true"/>
-		<import addon="script.module.urlresolver" optional="true"/>
-		<import addon="script.module.cloudscraper" optional="true"/>
-		<import addon="script.module.inputstreamhelper" optional="true"/>
-		<import addon="script.module.slproxy" optional="true"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-    </extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Canais de Televisão, desportos e mais...</summary>
-		<description>
-AVISO LEGAL:
-Este addon não aloja nenhum conteudo mostrado.
-Todo o conteudo encuentra-se livremente na internet.
-Não se aceita nenhuma responsabilidade pelo uso deste addon.
-¡Enjoyyyy!
-		</description>
-		<platform>all</platform>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-			<screenshot>resources/screenshots/1.jpg</screenshot>
-			<screenshot>resources/screenshots/2.jpg</screenshot>
-			<screenshot>resources/screenshots/3.jpg</screenshot>
-		</assets>
-		<news></news>
-	</extension>
-</addon>
-
-<addon id="plugin.video.eagle.usa" name="[COLORred] Eagle.[COLORgold]Usa[/COLOR]" version="1.3" provider-name="by_flecha_negra">
-    <requires>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary>Canais de Televisão, desportos e mais...</summary>
-		<description lang="en">[COLOR red]Eagle [/COLOR] [COLORorange]Usa[/COLOR] [COLORorange]é um addon da familia Arrow Negra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-		<platform>all</platform>
-		<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-</extension>
-</addon>
-
-<addon id="plugin.video.aguia.lobo" name="[COLORlime]Aguia[/COLOR] [COLORyellow]Lobo[/COLOR]" version="1.4.2" provider-name="@by_arrow_negra"> 
-    <requires>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>  
-<extension point="xbmc.addon.metadata">
-		<summary>Canais de Televisão, desportos e mais...</summary>
-		<description lang="en">[COLOR red]Aguia[/COLOR] [COLORorange]Lobo[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-		<platform>all</platform>
-		<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-    </extension>
-</addon>  
-
-<addon id="plugin.video.eagle.franca" name="[COLORred] Eagle.[COLORgold]Franca[/COLOR]" version="1.2" provider-name="by_flecha_negra">
-    <requires>
-        <import addon="script.module.simplejson" />
-        <import addon="script.module.six" />
-        <import addon="script.module.kodi-six" />
-    </requires>  
-       <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-	</extension>  
-<extension point="xbmc.addon.metadata">
-		<summary>Canais de Televisão, desportos e mais...</summary>
-		<description lang="en">[COLOR red]Eagle [/COLOR] [COLORorange]Franca[/COLOR] [COLORorange]é um addon da familia Arrow Negra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-		<platform>all</platform>
-		<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-    </extension>
-</addon>
-
-<addon id="plugin.video.aguiavavoo"
-version="20.6.6"
-name="[COLORred]Águia [COLORwhite]Vavoo[/COLOR]"
-provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
-<requires>
-  <import addon="xbmc.python" version="3.0.0"/>
-  <import addon="script.module.requests" version="2.22.0"/>
-</requires>
-<extension point="xbmc.python.pluginsource" library="service.py">
-  <provides>video</provides>
-</extension>
-<extension point="xbmc.addon.metadata">
-  <summary lang="en">Aguiavavoo Live TV</summary>
- <description lang="en">[COLOR silver]Águia[COLOR dimgrey] Vavoo[/COLOR] [COLORorange]é um addon da familia  ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-    <disclaimer lang="en_GB">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content.</disclaimer>
-  <assets>
-  <icon>icon.png</icon>
-  <fanart>fanart.jpg</fanart>
-  </assets>
-</extension>
-</addon>
-
-<addon id="plugin.video.aguillas.douradas.portal" name="[COLOR red]Aguillas Douradas [COLORorange]Portal TV[/COLOR]" version="2.7" provider-name="by_flecha_negra">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-  <import addon="script.module.requests" />
-  <import addon="script.module.simplejson" />
-    <import addon="script.module.six" />
-    <import addon="script.module.kodi-six" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>  
-<extension point="xbmc.addon.metadata">
-    <summary>Canais de Televisão, desportos e mais...</summary>
-    <description lang="en">[COLOR red]Aguillas Douradas[/COLOR] [COLORorange]portal TV[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-    <platform>all</platform>
-    <assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-</extension>
-</addon>
-
-<addon id="plugin.video.arrow.lsp" name="ArrowLSP" version="3.0.0" provider-name="arrownegra">
-  <requires>
-    <import addon="script.module.six" />
-    <import addon="script.module.kodi-six" />
-    <import addon="script.module.requests" optional="true"/>
-    <import addon="script.module.websocket" version="0.50.0"  optional="true"/>
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" optional="true" />
-    <import addon="script.module.dateutil" optional="true" />
-    <import addon="script.module.resolveurl" optional="true"/>
-    <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.cloudscraper" optional="true"/>
-    <import addon="script.module.inputstreamhelper" optional="true"/>
-    <import addon="script.module.slproxy" optional="true"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-
-  <extension point="xbmc.addon.metadata">
-    <summary></summary>
-    <description>
-
-    </description>
-    <platform>all</platform>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="plugin.video.arrownegra.play.tv" name="[COLORgrey]ArrowNegra[/COLOR] [COLORred]Play[/COLOR] [COLORcyan]Tv[/COLOR]" version="1.9.1.6" provider-name="[COLOR orange]@by_flechanegra[/COLOR]">
+<addon id="plugin.video.arrownegra.play.tv" name="[COLORgrey]ArrowNegra[/COLOR] [COLORred]Play[/COLOR] [COLORcyan]Tv[/COLOR]" version="1.9.1.6" provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 		<import addon="script.module.requests"/>
@@ -1035,13 +1385,13 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="pt">[COLOR lime]arrownegra.play.tv[/COLOR][COLORorange]é um addon da familia Flechanegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</summary>
+		<summary lang="pt">[COLOR lime]arrownegra.play.tv[/COLOR][COLORorange]é um addon da familia blackeagle.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</summary>
 		<disclaimer lang="pt">O autor não é de forma alguma afiliado ao Kodi, Team Kodi ou a XBMC Foundation. Este é um recurso sem fins lucrativos.</disclaimer>
 		<platform>all</platform>
 		<language>en</language>
 		<license>GPL-2.0-or-later</license>
 		<forum></forum>
-		<website></website> 
+		<website></website>
 		<email></email>
 		<source></source>
 		<news></news>
@@ -1056,7 +1406,7 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
 	</extension>
 </addon>
 
-<addon id="plugin.video.blackarrow18" name="[COLORlime]black[/COLOR] [COLORmaroon]arrow18[/COLOR]" version="1.1.5" provider-name="@by_arrow_negra">
+<addon id="plugin.video.blackarrow18" name="[COLORlime]black[/COLOR] [COLORmaroon]arrow18[/COLOR]" version="1.1.5" provider-name="@by_black_eagle">
     <requires>
         <import addon="script.module.simplejson" />
         <import addon="script.module.six" />
@@ -1064,12 +1414,12 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
     </requires>
        <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
-  </extension>
+	</extension>
 <extension point="xbmc.addon.metadata">
-    <summary>Canais de adultos</summary>
-    <description lang="en">[COLOR red]black[/COLOR] [COLORorange]arrow18[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-    <platform>all</platform>
-    <assets>
+		<summary>Canais de adultos</summary>
+		<description lang="en">[COLOR red]black[/COLOR] [COLORorange]arrow18[/COLOR] [COLORorange]é um addon da familia blackeagle team.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
+		<platform>all</platform>
+		<assets>
        <icon>icon.png</icon>
        <fanart>fanart.jpg</fanart>
        <screenshot>resources/screenshots/1.jpg</screenshot>
@@ -1079,27 +1429,7 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
     </extension>
 </addon>
 
-<addon id="plugin.video.blackarrow1click" name="[COLOR red]Blackarrow[/COLOR][COLORblack] 1Click[/COLOR]" version="1.2.9" provider-name="Flechanegra">
-  <extension point="xbmc.python.pluginsource"
-			library="default.py">
-		<provides>video</provides>
-   <provides>video</provides>
-    </extension>  
-<extension point="xbmc.addon.metadata">
-        <summary>Canais de Filmes, Series e mais...</summary>
-        <description lang="en">[COLOR silver]blackarrow [COLORred]1click [COLORgold]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-        <platform>all</platform>
-        <assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-    </extension>
-</addon>    
-
-<addon id="plugin.video.blackarrowplaylist" name="[COLOR red]Blackarrow[/COLOR][COLOR black]Playlist[/COLOR] [COLORcyan]Matrix[/COLOR]" version="1.0.3+matrix" provider-name="Flechanegra">
+<addon id="plugin.video.blackarrowplaylist" name="[COLOR red]Blackarrow[/COLOR][COLOR black]Playlist[/COLOR] [COLORcyan]Matrix[/COLOR]" version="1.0.3" provider-name="@by_black_eagle">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     <import addon="script.module.requests" version="2.22.0"/>
@@ -1109,8 +1439,8 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">blackarrowplaylist</summary>
-    <summary lang="en">[COLOR red][B]Blackarrow[/B][/COLOR] [COLOR black][B]playlist[/B][/COLOR] [COLORorange][B]é um addon da familia Flecha Negra Team.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/B][/COLOR]</summary>
-    <description lang="en">[COLOR red][B]Blackarrow[/B][/COLOR] [COLOR black][B]playlist[/B][/COLOR] [COLORorange][B]é um addon da familia Flecha Negra Team.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/B][/COLOR]</description>
+    <summary lang="en">[COLOR red][B]Blackarrow[/B][/COLOR] [COLOR black][B]playlist[/B][/COLOR] [COLORorange][B]é um addon da familia black_eagle Team.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/B][/COLOR]</summary>
+    <description lang="en">[COLOR red][B]Blackarrow[/B][/COLOR] [COLOR black][B]playlist[/B][/COLOR] [COLORorange][B]é um addon da familia blackeagle Team.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/B][/COLOR]</description>
     <language>en de</language>
     <platform>all</platform>
       <assets>
@@ -1120,17 +1450,17 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
   </extension>
 </addon>
 
-<addon id="plugin.video.duffyou" name="Duff You" version="0.2.1" provider-name="La Taberna">
+<addon id="plugin.video.duffyou" name="Duff You" version="0.1.3" provider-name="La Taberna">
     <requires>
         <import addon="script.module.six" version="1.11.0" />
         <import addon="script.module.simplecache" />
         <import addon="script.module.inputstreamhelper" version="0.5.0" />
     </requires>
-    
+
     <extension point="xbmc.python.pluginsource" library="libs/plugin.py">
         <provides>video</provides>
     </extension>
-  <extension point="xbmc.python.module" library="libs" />
+	<extension point="xbmc.python.module" library="libs" />
     <extension point="xbmc.addon.metadata">
         <description>Hasta las narices de las apikeys de YouTube? Y de ver como calidad máxima los videos de la plataforma solo hasta 720p?[CR]Pues se acabó! Desde nuestra taberna os presentamos un nuevo addon de YouTube, donde no hace falta APIKEY alguna, ni tampoco hay ningún tipo de restricción para ver los videos a la máxima calidad ofrecida, 720p, 1080p, 2K y 4K![CR]Todo esto y mucho mas...</description>
         <disclaimer>Este es un software [COLOR red][B]gratuito[/B][/COLOR][CR][COLOR red][B]Pero no se permite[/B][/COLOR] su distribuición preinstalada en ningún tipo de dispositivo ni tampoco su inclusión total o parcial en cualquier paquete de software y/o hardware por el que el usuario final deba [COLOR red][B]pagar o hacer una donación[/B][/COLOR], por su adquisición, por su uso o por recibir asistencia.[CR]Si cree que alguna de estas normas no se está cumpliendo póngase en contacto con nosotros.</disclaimer>
@@ -1145,34 +1475,33 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
     </extension>
 </addon>
 
-
 <addon
-  id="plugin.video.eagleteam.mac" version="1.3" name="[COLOR silver]Eagle[COLOR dimgrey] Team [/COLOR][COLOR white] MAC [/COLOR]" provider-name="by_flecha_negra">
-<requires>        
-      <import addon="script.module.resolveurl"/>
-      <import addon="script.module.requests"/>  
-    <import addon="script.module.six"/>
-    <import addon="script.module.kodi-six" />   
-    <import addon="script.module.web-pdb" />
+	id="plugin.video.eagleteam.mac" version="1.3" name="[COLOR silver]Eagle[COLOR dimgrey] Team [/COLOR][COLOR white] MAC [/COLOR]" provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
+<requires>
+    	<import addon="script.module.resolveurl"/>
+	    <import addon="script.module.requests"/>
+		<import addon="script.module.six"/>
+		<import addon="script.module.kodi-six" />
+		<import addon="script.module.web-pdb" />
   </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  
-  <extension point="xbmc.addon.metadata">
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+
+	<extension point="xbmc.addon.metadata">
         <platform>all</platform>
-    <summary>Canais de Televisão, desportos e mais...</summary>
-    <description lang="en">[COLOR red]Eagle [/COLOR] [COLORorange]Team Mac[/COLOR] [COLORorange]é um addon da familia Flechanegra .TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-    <license>GPL 3.0</license>
-    <platform>all</platform>
-    <disclaimer lang="es">The author of this addon makes not responsible for the use of it</disclaimer>
-  <assets>
-        <icon>icon.png</icon>  
+		<summary>Canais de Televisão, desportos e mais...</summary>
+		<description lang="en">[COLOR red]Eagle [/COLOR] [COLORorange]Team Mac[/COLOR] [COLORorange]é um addon da familia Blackeagle team .TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
+		<license>GPL 3.0</license>
+		<platform>all</platform>
+		<disclaimer lang="es">The author of this addon makes not responsible for the use of it</disclaimer>
+	<assets>
+        <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-    </assets>        
-    <language>es</language>
-  </extension>  
-  
+    </assets>
+		<language>es</language>
+	</extension>
+
 </addon>
 
 <addon id="plugin.video.elementum" name="Elementum" version="0.1.98" provider-name="elgatito">
@@ -1220,7 +1549,7 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
     </extension>
 </addon>
 
-<addon id="plugin.video.EspadaNegra" name="[COLOR silver]Espada[COLOR dimgrey] Negra [/COLOR]" version="1.2.1" provider-name="By_Flecha_Negra">
+<addon id="plugin.video.EspadaNegra" name="[COLOR silver]Espada[COLOR dimgrey] Negra [/COLOR]" version="1.2.1" provider-name="By_Black_Eagle">
   <requires>
     <import addon="script.module.pycryptodome" />
     <import addon="script.module.dateutil" />
@@ -1235,11 +1564,11 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
   </extension>
   <extension point="xbmc.addon.metadata">
   <summary lang="en">Espanda Negra</summary>
-  <description lang="en">[COLOR silver]Espada[COLOR dimgrey] Negra [/COLOR] [COLORorange]é um addon da familia K-PT Flechanegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
+  <description lang="en">[COLOR silver]Espada[COLOR dimgrey] Negra [/COLOR] [COLORorange]é um addon da familia Blackeagle team.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
     <disclaimer lang="en_GB">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content.</disclaimer>
   <assets>
-  <icon>icon.png</icon>
-  <fanart>fanart.jpg</fanart>
+	<icon>icon.png</icon>
+	<fanart>fanart.jpg</fanart>
   </assets>
 </extension>
 </addon>
@@ -1250,12 +1579,12 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
         <import addon="script.module.six" />
         <import addon="script.module.kodi-six" />
         <import addon="script.module.requests"/>
-        <import addon="script.video.F4mProxy" version="4.0.9"/>     
-        <import addon="inputstream.ffmpegdirect"/>        
+        <import addon="script.video.F4mProxy" version="4.0.9"/>
+        <import addon="inputstream.ffmpegdirect"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
-    </extension>  
+    </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="en">f4mTester</summary>
         <description></description>
@@ -1266,20 +1595,20 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
     </extension>
 </addon>
 
-<addon id="plugin.video.fenix-mac" name="[COLORcyan]fenix[COLORgrey]Mac[/COLOR]" version="1.7.3" provider-name="by_flecha_negra">
-<requires>    		
+<addon id="plugin.video.fenix-mac" name="[COLORcyan]fenix[COLORgrey]Mac[/COLOR]" version="1.7.3" provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
+<requires>
     	<import addon="script.module.resolveurl"/>
-	    <import addon="script.module.requests"/>	
-		<import addon="script.module.six"/>	
-		<import addon="script.module.kodi-six" />		
+	    <import addon="script.module.requests"/>
+		<import addon="script.module.six"/>
+		<import addon="script.module.kodi-six" />
 		<import addon="script.module.web-pdb" />
   </requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
-	</extension>  
+	</extension>
 <extension point="xbmc.addon.metadata">
 		<summary>Canais de Televisão, desportos e mais...</summary>
-		<description lang="en">[COLOR red]fenix[/COLOR] [COLORorange]mac[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
+		<description lang="en">[COLOR red]fenix[/COLOR] [COLORorange]mac[/COLOR] [COLORorange]é um addon da familia blackeagle team.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
 		<platform>all</platform>
 		<assets>
        <icon>icon.png</icon>
@@ -1289,101 +1618,11 @@ provider-name="Thks 2 stube Frkd by L.M. @ArrowNegra">
        <screenshot>resources/screenshots/3.jpg</screenshot>
     </assets>
 		<language>pt</language>
-	</extension>	
-</addon>
-
-<addon id="plugin.video.fenix.portal" name="[COLOR red]fenix [COLORorange]portal[/COLOR]" version="3.3.9" provider-name="by_flecha_negra">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-  <import addon="script.module.requests" />
-  <import addon="script.module.simplejson" />
-    <import addon="script.module.six" />
-    <import addon="script.module.kodi-six" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-<extension point="xbmc.addon.metadata">
-    <summary>Canais de Televisão, desportos e mais...</summary>
-    <description lang="en">[COLOR red]fenix[/COLOR] [COLORorange]portal[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-    <platform>all</platform>
-    <assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-</extension>
-</addon>
-
-<addon id="plugin.video.flash.brasil" name="[COLOR orange]Flash[/COLOR][COLORlime]Brasil[/COLOR]" version="3.4.9" provider-name="[COLOR orange]@by_flechanegra[/COLOR]">
-  <extension point="xbmc.python.pluginsource"
-      library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">[COLORred]Flash[COLORgold]Brasil[/COLOR]</summary>
-    <language>en</language>
-    <description lang="en_GB">[COLOR gold]Flash[/COLOR] [COLOR lime]Brasil[/COLOR] [COLORorange]is an add-on from the  Flechanegra family. ALL LINKS ARE AVAILABLE ON THE INTERNET![/COLOR]</description>
-    <platform>all</platform>
-    <assets>
-    <icon>icon.png</icon>
-    <fanart>fanart.jpg</fanart>
-  </assets>
-  </extension>
-</addon>
-<addon id="plugin.video.flechanegra" name="[COLOR red]Flecha[/COLOR] [COLOR black]Negra[/COLOR]" version="1.1.7+matrix.1" provider-name="Flechanegra">
-<requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    <import addon="script.module.requests"/>
-    <import addon="script.module.simplejson"/>
-  <import addon="script.module.kodi-six" />
-</requires>
-<extension point="xbmc.python.pluginsource" library="default.py">
-  <provides>video</provides>
-</extension>
-<extension point="xbmc.addon.metadata">
-  <summary lang="en">[COLOR red]Flecha[/COLOR] [COLOR black]Negra[/COLOR] [COLORorange]is an add-on from the K-PT Flechanegra family. ALL LINKS ARE AVAILABLE ON THE INTERNET![/COLOR]</summary>
-  <summary lang="pt">[COLOR red]Flecha[/COLOR] [COLOR black]Negra[/COLOR] [COLORorange]é um addon da familia K-PT Flechanegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</summary>
-  <description lang="en">[COLOR red]Flecha[/COLOR] [COLOR black]Negra[/COLOR] [COLORorange]is an add-on from the K-PT Flechanegra family. ALL LINKS ARE AVAILABLE ON THE INTERNET![/COLOR]</description>
-  <description lang="pt">[COLOR red]Flecha[/COLOR] [COLOR black]Negra[/COLOR] [COLORorange]é um addon da familia K-PT Flechanegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-    <disclaimer lang="en">The author is in no way affiliated with Kodi, Team Kodi or the XBMC Foundation. This is a non-profit resource.</disclaimer>
-  <disclaimer lang="pt">O autor não é de forma alguma afiliado ao Kodi, Team Kodi ou a XBMC Foundation. Este é um recurso sem fins lucrativos.</disclaimer>
-    <platform>all</platform>
-  <assets>
-       <icon>icon.png</icon>
-     <fanart>fanart.jpg</fanart>
-     <media>resources/medias/home.jpg</media>
-     <media>resources/medias/movies.jpg</media>
-     <media>resources/medias/series.jpg</media>
-    </assets>
-  <news>
-v1.0.0.matrix.1
-- Inauguração Flechanegra em Python 3
-  </news>
-</extension>
-</addon>
-
-<addon id="plugin.video.flechanegra.vip" name="[COLORred]Flecha[COLORgrey]Negra [COLORgold]Vip[/COLOR]" version="2.2.3" provider-name="[COLOR orange]@by_flechanegra[/COLOR]">
-  <extension point="xbmc.python.pluginsource"
-      library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-  <summary lang="en">[COLOR maroon] Only for the best!!![/COLOR] </summary>
-  <language>en</language>
-  <description lang="en">[COLOR orange]This addon does not supply nor provide any illegal content[/COLOR]</description>
-  <platform>all</platform>
-  <assets>
-    <icon>icon.png</icon>
-    <fanart>fanart.jpg</fanart>
-  </assets>
-  </extension>
+	</extension>
 </addon>
 
 <addon id="plugin.video.freshstart" name="Fresh Start"
-  version="1.0.5" provider-name="tvaddons.ag">
+	version="1.0.5" provider-name="tvaddons.ag">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -1404,46 +1643,23 @@ v1.0.0.matrix.1
 </addon>
 
 <addon id="plugin.video.gdrive" version="0.8.66" name="gDrive" provider-name="ddurdle">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video programs</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>Watch videos from your Google Drive account</summary>
-    <description>Plays videos from your Google Drive account. Not affiliated with Google.</description>
-    <platform>all</platform>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-  <extension point="xbmc.service" library="service.py" start="login">
-  </extension>
-</addon>
-
-<addon id="plugin.video.infinity" name="[COLORorange]Infinity[/COLOR]" version="1.0.4" provider-name="[COLOR orange]@by_flechanegra[/COLOR]">
-  <extension point="xbmc.python.pluginsource"
-			library="default.py">
-		<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-	<summary lang="en">[COLORorange]Infinity[/COLOR][COLORorange]is an add-on from the  Flechanegra family. ALL LINKS ARE AVAILABLE ON THE INTERNET![/COLOR]</summary>
-	<summary lang="pt">[COLORorange]Infinity[/COLOR] [COLORorange]é um addon da familia  Flechanegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</summary>
-	<description lang="en">[COLOR red]Flecha[/COLOR] [COLOR black]Negra[/COLOR] [COLORorange]is an add-on from the  Flechanegra family. ALL LINKS ARE AVAILABLE ON THE INTERNET![/COLOR]</description>
-	<description lang="pt">[COLOR red]Flecha[/COLOR] [COLOR black]Negra[/COLOR] [COLORorange]é um addon da familia  Flechanegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-    <disclaimer lang="en">The author is in no way affiliated with Kodi, Team Kodi or the XBMC Foundation. This is a non-profit resource.</disclaimer>
-	<disclaimer lang="pt">O autor não é de forma alguma afiliado ao Kodi, Team Kodi ou a XBMC Foundation. Este é um recurso sem fins lucrativos.</disclaimer>
-    <platform>all</platform>
-	<assets>
-		<icon>icon.png</icon>
-		<fanart>fanart.jpg</fanart>
-		 <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-	</assets>
-  </extension>
+	<requires>
+		<import addon="xbmc.python" version="3.0.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video programs</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Watch videos from your Google Drive account</summary>
+		<description>Plays videos from your Google Drive account. Not affiliated with Google.</description>
+		<platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="login">
+	</extension>
 </addon>
 
 <addon id="plugin.video.jetproxy" version="1.0.3.1" name="JetProxy" provider-name="t4ils">
@@ -1461,50 +1677,9 @@ v1.0.0.matrix.1
   <description lang="en_GB">JetProxy</description>
   <assets>
     <icon>icon.png</icon>
-    <fanart>fanart.jpg</fanart>  
+    <fanart>fanart.jpg</fanart>
   </assets>
 </extension>
-</addon>
-
-<addon id="plugin.video.Dwight_Farrokh_Lista" name="[COLORred] Dwight_[COLORgold]Farrokh_Lista[/COLOR]" version="2.1" provider-name="[COLORred] Dwight_[COLORgold]Farrokh_Lista[/COLOR]">
-    <requires>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-         <summary>Canais de Televisão, desportos e mais...</summary>
-		<description lang="en">[COLOR red]Dwight_[/COLOR] [COLORorange]Farrokh_Lista[/COLOR] [COLORorange]é um addon homenagem Dwight_Farrokh_Lista .TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-		<platform>all</platform>
-		<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-</extension>
-
-</addon>
-<addon id="plugin.video.K-PT" name="[COLOR blue]K[COLORwhite]-[COLORgreen]P[COLORred]T[/COLOR]" version="2.2.1" provider-name="[COLOR orange]@By_flecha_negra[/COLOR]">
-  <extension point="xbmc.python.pluginsource"
-			library="default.py">
-		<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-	<summary lang="en">[COLOR maroon] Only for the best!!![/COLOR] </summary>
-	<language>en</language>
-	<description lang="pt">[COLOR lime]K-PT[/COLOR][COLORorange]é um addon da familia  Flechanegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
- 	<platform>all</platform>
-	<assets>
-		 <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-	    <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-	</assets>
-  </extension>
 </addon>
 
 <addon id="plugin.video.netflix" name="Netflix" version="1.22.3+matrix.1" provider-name="libdev, jojo, asciidisco, caphm, castagnait">
@@ -1612,7 +1787,7 @@ v1.0.0.matrix.1
         <import addon="script.module.six" />
         <import addon="script.module.kodi-six" />
         <import addon="script.module.simplejson" />
-    <import addon="plugin.video.youtube" optional="true" />
+		<import addon="plugin.video.youtube" optional="true" />
     </requires>
     <extension library="quicksilver.py" point="xbmc.python.pluginsource">
         <provides>video</provides>
@@ -1643,19 +1818,19 @@ v1.0.0.matrix.1
         <import addon="script.module.simplejson" />
         <import addon="script.module.six" />
         <import addon="script.module.kodi-six" />
-    <import addon="script.module.requests"/>
-    <import addon="script.module.beautifulsoup4"/>
+		<import addon="script.module.requests"/>
+		<import addon="script.module.beautifulsoup4"/>
         <import addon="plugin.video.youtube" optional="true" />
         <import addon="script.module.python.twitch" optional="true" />
-        <import addon="plugin.googledrive" optional="true" />        
+        <import addon="plugin.googledrive" optional="true" />
     </requires>
     <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
-    </extension>  
+    </extension>
     <extension point="xbmc.addon.metadata">
-    <summary>Resolver player é um addon de reprodução de link</summary>
-    <description>Todos os videos são de sites de terceiros, não hospedamos conteudo</description>
+		<summary>Resolver player é um addon de reprodução de link</summary>
+		<description>Todos os videos são de sites de terceiros, não hospedamos conteudo</description>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
         <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
@@ -1664,27 +1839,6 @@ v1.0.0.matrix.1
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon>
-
-<addon id="plugin.video.germany" name="[COLORred] Germany.[COLORgold]TV[/COLOR]" version="2.4" provider-name="by_flecha_negra">
-    <requires>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary>Canais de Televisão, desportos e mais...</summary>
-		<description lang="en">[COLOR red]germany[/COLOR] [COLORorange]TV[/COLOR] [COLORorange]é um addon da familia Arrow Negra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-		<platform>all</platform>
-		<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-       <screenshot>resources/screenshots/1.jpg</screenshot>
-       <screenshot>resources/screenshots/2.jpg</screenshot>
-       <screenshot>resources/screenshots/3.jpg</screenshot>
-    </assets>
-</extension>
 </addon>
 
 <addon id="plugin.video.scrubsv2" version="5.1.15" name="[COLOR orange]Scrubs v2[/COLOR]" provider-name="JewBMX">
@@ -1734,9 +1888,9 @@ v1.0.0.matrix.1
     <summary lang="en_gb">SwiftStreams</summary>
     <description lang="en_gb">SwiftStreams</description>
     <disclaimer lang="en_gb"/>
-  <assets>
-    <icon>icon.png</icon>
-  </assets> 
+	<assets>
+		<icon>icon.png</icon>
+	</assets>
     <platform>all</platform>
     <license>GPL-3.0</license>
   </extension>
@@ -1771,7 +1925,7 @@ v1.0.0.matrix.1
     </extension>
 </addon>
 
-<addon id="plugin.video.x-codes" name="[COLOR chocolate]X[/COLOR][COLORwhite]-[/COLOR][COLORgold]Codes[/COLOR]" version="2.0.7" provider-name="[COLOR red]Arrow[/COLOR][COLORdarkgrey]Negra[/COLOR]">	<requires>
+<addon id="plugin.video.x-codes" name="[COLOR chocolate]X[/COLOR][COLORwhite]-[/COLOR][COLORgold]Codes[/COLOR]" version="2.0.7" provider-name="[COLOR red]@by_black[/COLOR][COLORdarkgrey]eagle[/COLOR]">	<requires>
 		<import addon="script.module.requests" version="2.27.1"/>
 	</requires>
   <extension point="xbmc.python.pluginsource"
@@ -1780,7 +1934,7 @@ v1.0.0.matrix.1
   </extension>
   <extension point="xbmc.addon.metadata">
 		<summary>Canais de Televisão, desportos e mais...</summary>
-		<description lang="en">[COLOR red]X[/COLOR] [COLORorange]Codes[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
+		<description lang="en">[COLOR red]X[/COLOR] [COLORorange]Codes[/COLOR] [COLORorange]é um addon da familia Blackeagle team.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
 		<platform>all</platform>
 		<assets>
        <icon>icon.png</icon>
@@ -1792,13 +1946,12 @@ v1.0.0.matrix.1
   </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="7.0.2" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.26" provider-name="anxdpanic, bromix">
     <requires>
-        <import addon="xbmc.python" version="3.0.1"/>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.six" version="1.11.0"/>
         <import addon="script.module.requests" version="2.12.4"/>
-        <import addon="inputstream.adaptive" version="20.3.1"/>
         <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true"/>
-        <import addon="script.module.infotagger" version="0.0.5"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/default.py">
         <provides>video</provides>
@@ -1807,13 +1960,12 @@ v1.0.0.matrix.1
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fix] error when filtering short videos
-[fix] fix playback |contrib: MoojMidge|
+[fix] playback
 [upd] Translations updated from Kodi Weblate
         </news>
         <assets>
-            <icon>resources/media/icon.png</icon>
-            <fanart>resources/media/fanart.jpg</fanart>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
         </assets>
         <platform>all</platform>
         <license>GPL-2.0-only</license>
@@ -1899,7 +2051,7 @@ v1.0.0.matrix.1
   id="pvr.aguia.de.fogo"
   version="0.1.9"
   name="[COLORorange]ÁGUIA DE [COLORred]FOGO[/COLOR]"
-  provider-name="Flechanegra">
+  provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
   <requires>
 <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
@@ -2060,12 +2212,18 @@ v1.0.0.matrix.1
     <disclaimer lang="vi_VN">Đây là phần mềm không ổn định! Các tác giả không chịu trách nhiệm đối với bản ghi chương trình thất bại, hẹn giờ không chính xác, giờ lãng phí, hoặc bất kỳ tác dụng không mong muốn khác..</disclaimer>
     <disclaimer lang="zh_CN">这是不稳定版的软件！作者不对录像失败、错误定时造成时间浪费或其它不良影响负责。</disclaimer>
     <disclaimer lang="zh_TW">這是測試版軟體！其原創作者並無法對於以下情況負責，包含：錄影失敗，不正確的定時設定，多餘時數，或任何產生的其它不良影響...</disclaimer>
-    <path>pvr.aguia.de.fogo+android-aarch64/pvr.aguia.de.fogo-0.1.9.zip</path>
+    <platform>android-aarch64</platform>
+
+
+    <assets>
+    	<fanart>fanart.jpg</fanart>
+      <icon>icon.png</icon>
+    </assets>
   </extension>
 </addon>
 
 <addon id="pvr.aguia.de.fogo" version="0.1.9" name="[COLORorange]ÁGUIA DE [COLORred]FOGO[/COLOR]"
-  provider-name="Flechanegra">
+  provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
   <requires>
 <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
@@ -2226,12 +2384,18 @@ v1.0.0.matrix.1
     <disclaimer lang="vi_VN">Đây là phần mềm không ổn định! Các tác giả không chịu trách nhiệm đối với bản ghi chương trình thất bại, hẹn giờ không chính xác, giờ lãng phí, hoặc bất kỳ tác dụng không mong muốn khác..</disclaimer>
     <disclaimer lang="zh_CN">这是不稳定版的软件！作者不对录像失败、错误定时造成时间浪费或其它不良影响负责。</disclaimer>
     <disclaimer lang="zh_TW">這是測試版軟體！其原創作者並無法對於以下情況負責，包含：錄影失敗，不正確的定時設定，多餘時數，或任何產生的其它不良影響...</disclaimer>
+    <platform>android-armv7</platform>
+
+    <assets>
+      <fanart>fanart.jpg</fanart>
+      <icon>icon.png</icon>
+    </assets>
     <path>pvr.aguia.de.fogo+android-armv7/pvr.aguia.de.fogo-0.1.9.zip</path>
   </extension>
 </addon>
 
 <addon id="pvr.aguia.de.fogo" version="0.1.9" name="[COLORorange]ÁGUIA DE [COLORred]FOGO[/COLOR]"
-  provider-name="Flechanegra">
+  provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
   <requires>
 <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
@@ -2392,7 +2556,12 @@ v1.0.0.matrix.1
     <disclaimer lang="vi_VN">Đây là phần mềm không ổn định! Các tác giả không chịu trách nhiệm đối với bản ghi chương trình thất bại, hẹn giờ không chính xác, giờ lãng phí, hoặc bất kỳ tác dụng không mong muốn khác..</disclaimer>
     <disclaimer lang="zh_CN">这是不稳定版的软件！作者不对录像失败、错误定时造成时间浪费或其它不良影响负责。</disclaimer>
     <disclaimer lang="zh_TW">這是測試版軟體！其原創作者並無法對於以下情況負責，包含：錄影失敗，不正確的定時設定，多餘時數，或任何產生的其它不良影響...</disclaimer>
-    <path>pvr.aguia.de.fogo+windows-x86_64/pvr.aguia.de.fogo-0.1.9.zip</path>
+    <platform>windows-x86_64</platform>
+
+    <assets>
+    	<fanart>fanart.jpg</fanart>
+      <icon>icon.png</icon>
+    </assets>
   </extension>
 </addon>
 
@@ -2400,7 +2569,8 @@ v1.0.0.matrix.1
   id="pvr.aguia.de.fogosimple"
   version="19.0.3"
   name="[COLORorange]ÁGUIA DE [COLORred]FOGO[/COLOR] SIMPLE"
-  provider-name="ArrowNegra">
+  provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
+<requires>
   <requires>
 <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
@@ -2450,19 +2620,19 @@ v7.6.10
 - Fixed: Fix episode number when there is no season
 - Fixed: Return server error if channels or groups could not be loaded due to missing file so they are not cleared in Kodi
 - Translations updates from Weblate
-  - id_id, ko_kr, pl_pl
+	- id_id, ko_kr, pl_pl
 
 v7.6.9
 - Translations updates from Weblate
-  - pl_pl
+	- pl_pl
 
 v7.6.8
 - Translations updates from Weblate
-  - zh_cn
+	- zh_cn
 
 v7.6.7
 - Translations updates from Weblate
-  - id_id, lt_lt
+	- id_id, lt_lt
 
 v7.6.6
 - Language update from Weblate
@@ -2938,7 +3108,6 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
     <disclaimer lang="tr_TR">Bu kararsız bir yazılımdır! Yazanlar oynatma hatası, yanlış EPG zamanları, harcanmış saatler ya da diğer etkilerden sorumlu değildir.</disclaimer>
     <disclaimer lang="zh_CN">这是不稳定版的软件！作者不对录像失败、错误定时造成时间浪费或其它不良影响负责。</disclaimer>
     <disclaimer lang="zh_TW">這是測試中的軟體！原創作者無法針對以下情況負責：包括播放失敗，不正確的電子節目表，多餘的時數，或任何不可預期的不良影響。</disclaimer>
-    <path>pvr.aguia.de.fogosimple+android-aarch64/pvr.aguia.de.fogosimple-19.0.3.zip</path>
   </extension>
 </addon>
 
@@ -2946,7 +3115,7 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
   id="pvr.aguia.de.fogosimple"
   version="19.0.3"
   name="[COLORorange]ÁGUIA DE [COLORred]FOGO[/COLOR] SIMPLE"
-  provider-name="ArrowNegra">
+  provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
   <requires>
 <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
@@ -2996,19 +3165,19 @@ v7.6.10
 - Fixed: Fix episode number when there is no season
 - Fixed: Return server error if channels or groups could not be loaded due to missing file so they are not cleared in Kodi
 - Translations updates from Weblate
-  - id_id, ko_kr, pl_pl
+	- id_id, ko_kr, pl_pl
 
 v7.6.9
 - Translations updates from Weblate
-  - pl_pl
+	- pl_pl
 
 v7.6.8
 - Translations updates from Weblate
-  - zh_cn
+	- zh_cn
 
 v7.6.7
 - Translations updates from Weblate
-  - id_id, lt_lt
+	- id_id, lt_lt
 
 v7.6.6
 - Language update from Weblate
@@ -3484,15 +3653,14 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
     <disclaimer lang="tr_TR">Bu kararsız bir yazılımdır! Yazanlar oynatma hatası, yanlış EPG zamanları, harcanmış saatler ya da diğer etkilerden sorumlu değildir.</disclaimer>
     <disclaimer lang="zh_CN">这是不稳定版的软件！作者不对录像失败、错误定时造成时间浪费或其它不良影响负责。</disclaimer>
     <disclaimer lang="zh_TW">這是測試中的軟體！原創作者無法針對以下情況負責：包括播放失敗，不正確的電子節目表，多餘的時數，或任何不可預期的不良影響。</disclaimer>
-    <path>pvr.aguia.de.fogosimple+android-armv7/pvr.aguia.de.fogosimple-19.0.3.zip</path>
-    </extension>
+  </extension>
 </addon>
 
 <addon
   id="pvr.aguia.de.fogosimple"
   version="19.0.3"
   name="[COLORorange]ÁGUIA DE [COLORred]FOGO[/COLOR] SIMPLE"
-  provider-name="ArrowNegra">
+  provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
   <requires>
 <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
@@ -3542,19 +3710,19 @@ v7.6.10
 - Fixed: Fix episode number when there is no season
 - Fixed: Return server error if channels or groups could not be loaded due to missing file so they are not cleared in Kodi
 - Translations updates from Weblate
-  - id_id, ko_kr, pl_pl
+	- id_id, ko_kr, pl_pl
 
 v7.6.9
 - Translations updates from Weblate
-  - pl_pl
+	- pl_pl
 
 v7.6.8
 - Translations updates from Weblate
-  - zh_cn
+	- zh_cn
 
 v7.6.7
 - Translations updates from Weblate
-  - id_id, lt_lt
+	- id_id, lt_lt
 
 v7.6.6
 - Language update from Weblate
@@ -4030,47 +4198,48 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
     <disclaimer lang="tr_TR">Bu kararsız bir yazılımdır! Yazanlar oynatma hatası, yanlış EPG zamanları, harcanmış saatler ya da diğer etkilerden sorumlu değildir.</disclaimer>
     <disclaimer lang="zh_CN">这是不稳定版的软件！作者不对录像失败、错误定时造成时间浪费或其它不良影响负责。</disclaimer>
     <disclaimer lang="zh_TW">這是測試中的軟體！原創作者無法針對以下情況負責：包括播放失敗，不正確的電子節目表，多餘的時數，或任何不可預期的不良影響。</disclaimer>
-    <path>pvr.aguia.de.fogosimple+windows-x86_64/pvr.aguia.de.fogosimple-19.0.3.zip</path>
   </extension>
 </addon>
 
-  <addon 
-  id="repository.arrownegra" 
-  name="[COLOR red]Arrow[/COLOR] [COLOR black]Negra[/COLOR] [COLORcyan]Repository[/COLOR]" 
-  version="2.09" 
-  provider-name="Flecha Negra">
+<addon id="repository.dregs" name="[COLOR red]Dr[/COLOR]e[COLOR black]Gs[/COLOR] [COLORcyan]Repository[/COLOR]" version="1.21" provider-name="Black Eagle">
   <requires>
-    <import addon="xbmc.addon" version="12.0.0"/>  
+    <import addon="xbmc.addon" version="12.0.0"/>
   </requires>
-  <extension point="xbmc.addon.repository" name="[COLOR red]Arrow Negra [COLOR red]Repositorio[/COLOR]">
+  <extension point="xbmc.addon.repository" name="[COLOR red]Dregs [COLOR cyan]Repositorio[/COLOR]">
+    <dir>
+    <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/addons.xml</info>
+    <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/addons.xml.md5</checksum>
+    <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master</datadir>
+    <hashes>false</hashes>
+</dir>
   <dir minversion="19.9.9">
-      <info compressed="true">https://raw.github.com/arrownegra/arrownegra.github.io/master/nexus/addons.xml</info>
-      <checksum>https://raw.github.com/arrownegra/arrownegra.github.io/master/nexus/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.github.com/arrownegra/arrownegra.github.io/master/nexus</datadir>
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/nexus/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/nexus/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/nexus</datadir>
       <hashes>false</hashes>
-  </dir>   
+  </dir>
   <dir minversion="19.0.0">
-      <info compressed="true">https://raw.github.com/arrownegra/arrownegra.github.io/master/matrix/addons.xml</info>
-      <checksum>https://raw.github.com/arrownegra/arrownegra.github.io/master/matrix/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.github.com/arrownegra/arrownegra.github.io/master/matrix</datadir>
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix</datadir>
       <hashes>false</hashes>
-  </dir>    
+  </dir>
   <dir minversion="17.0.0" maxversion="18.9.0">
-      <info compressed="true">https://raw.github.com/arrownegra/arrownegra.github.io/master/leia/addons.xml</info>
-      <checksum>https://raw.github.com/arrownegra/arrownegra.github.io/master/leia/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.github.com/arrownegra/arrownegra.github.io/master/leia</datadir>
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/leia</datadir>
       <hashes>false</hashes>
   </dir>
   <dir minversion="16.0.0" maxversion="17.0.0">
-      <info compressed="true">https://raw.github.com/arrownegra/arrownegra.github.io/master/krypton/addons.xml</info>
-      <checksum>https://raw.github.com/arrownegra/arrownegra.github.io/master/krypton/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.github.com/arrownegra/arrownegra.github.io/master/krypton</datadir>
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/krypton/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/krypton/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/krypton</datadir>
       <hashes>false</hashes>
   </dir>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary>repositorio Arrow Negra</summary>
-    <description>repositorio oficial Arrow Negra - Proibido reproducao sem autorização prévia</description>
+    <summary>repositorio Dregs</summary>
+    <description>repositorio oficial Dregs- Proibido reproducao sem autorização prévia</description>
     <disclaimer></disclaimer>
     <platform>all</platform>
     <assets>
@@ -4150,7 +4319,63 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
   </extension>
 </addon>
 
-<addon id="script.aguia.auto.player" name="[COLORblue]ÁGUIA [COLORwhite]AUTO [COLORgold]PLAYER[/COLOR]" version="1.2.3" provider-name="FlechaNegra">
+<addon
+  id="resource.language.pt_br"
+  version="9.0.47"
+  name="Portuguese (Brazil)"
+  provider-name="Team Kodi">
+  <requires>
+    <import addon="kodi.resource" version="1.0.0"/>
+  </requires>
+  <extension
+    point="kodi.resource.language"
+    locale="pt_BR">
+    <charsets>
+      <gui unicodefont="true">CP1252</gui>
+      <subtitle>CP1252</subtitle>
+    </charsets>
+  </extension>
+  <extension point="kodi.addon.metadata">
+    <summary lang="en_GB">Portuguese (Brazil) language pack</summary>
+    <description lang="en_GB">Portuguese (Brazil) version of all texts used in Kodi.</description>
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+
+<addon
+  id="resource.language.pt_pt"
+  version="3.0.10"
+  name="Portuguese"
+  provider-name="Team Kodi">
+  <requires>
+    <import addon="kodi.resource" version="1.0.0"/>
+  </requires>
+  <extension
+    point="kodi.resource.language"
+    locale="pt_PT">
+    <charsets>
+      <gui unicodefont="true">CP1252</gui>
+      <subtitle>CP1252</subtitle>
+    </charsets>
+    <sorttokens>
+      <token>The</token>
+      <token>O</token>
+      <token>A</token>
+      <token>Os</token>
+      <token>As</token>
+    </sorttokens>
+  </extension>
+  <extension point="kodi.addon.metadata">
+    <summary lang="en">Portuguese language pack</summary>
+    <description lang="en">Portuguese version of all texts used in Kodi.</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="script.aguia.auto.player" name="[COLORblue]ÁGUIA [COLORwhite]AUTO [COLORgold]PLAYER[/COLOR]" version="1.2.3" provider-name="by_black_eagle">
     <requires>
         <import addon="script.module.six"/>
         <import addon="script.module.kodi-six"/>
@@ -4159,8 +4384,8 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
     <extension point="xbmc.addon.metadata">
         <summary lang="en">addon, to modify kodi player</summary>
         <summary lang="pt">addon, para modificar player do kodi</summary>
-        <description lang="en">arrownegra group addon</description>
-        <description lang="pt">addon do grupo arrownegra</description>
+        <description lang="en">eagle team group addon</description>
+        <description lang="pt">addon do grupo eagle team</description>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 1, 12 June 2022</license>
         <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
@@ -4169,6 +4394,28 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
+</addon>
+
+<addon id="script.blackarrow.kodilimpo" name="[COLORred]Blackarrow[/COLOR] [COLORcyan]kodi[/COLOR]limpo" provider-name="Flechanegra" version="1.9.0">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension library="default.py" point="xbmc.python.pluginsource">
+        <provides>executable</provides>
+  </extension>
+  <extension library="service.py" point="xbmc.service" start="startup">
+        <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en_GB">Clean up temporary files in Kodi.</summary>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <description lang="en_GB">Clean up temporary files in Kodi.</description>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
 </addon>
 
 <addon id="script.elementum.burst" name="Elementum [COLOR FFFF6B00]Burst[/COLOR]" version="0.0.73" provider-name="elgatito">
@@ -4209,26 +4456,67 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
     </extension>
 </addon>
 
-<addon id="script.module.requests" name="requests" version="2.25.1+matrix.1" provider-name="Python Software Foundation">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    <import addon="script.module.certifi" version="2020.12.05+matrix.1"/>
-    <import addon="script.module.chardet" version="4.0.0+matrix.1"/>
-    <import addon="script.module.idna" version="2.10.0+matrix.1"/>
-    <import addon="script.module.urllib3" version="1.26.4+matrix.1"/>
-  </requires>
-  <extension point="xbmc.python.module" library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</summary>
-    <description lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</description>
-    <license>Apache-2.0</license>
-    <platform>all</platform>
-    <website>https://requests.readthedocs.io/</website>
-    <source>https://github.com/psf/requests</source>
-    <assets>
-      <icon>resources/icon.png</icon>
-    </assets>
-  </extension>
+<addon id="script.logviewer" name="Log Viewer for Kodi" provider-name="i96751414" version="2.1.5+matrix.1">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py"/>
+    <extension point="xbmc.python.module" library="resources/lib/"/>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <license>GPL-2.0-or-later</license>
+        <forum>https://forum.kodi.tv/showthread.php?tid=223490</forum>
+        <source>https://github.com/i96751414/script.logviewer</source>
+        <summary lang="en_GB">View Kodi logfile directly on Kodi</summary>
+        <summary lang="pt_PT">Veja o log do Kodi directamente no Kodi</summary>
+        <description lang="en_GB">Tools to easily check and analyse Kodi log file.</description>
+        <description lang="pt_PT">Ferramenta para verificar e ler facilmente o log do Kodi.</description>
+        <platform>all</platform>
+        <news>
+            - Move xbmc.translatePath to xbmcvfs.translatePath (removed in v20)
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+            <screenshot>resources/images/screenshot-1.jpg</screenshot>
+            <screenshot>resources/images/screenshot-2.jpg</screenshot>
+            <screenshot>resources/images/screenshot-3.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="script.module.horus" name="Horus" version="1.1.7" provider-name="Caperucitaferoz">
+    <requires>
+        <import addon="script.module.six" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <description>Horus:
+"Señor de sus ojos"
+"Unificador de las dos tierras"
+"Señor de las estrellas circumpolares"
+"El de los dos ojos"
+        </description>
+        <disclaimer>En Horus no vais a encontrar ningún tipo de contenido: ni películas, ni series ni eventos deportivos.</disclaimer>
+        <platform>all</platform>
+        <assets>
+              <icon>icon.png</icon>
+              <fanart>fanart.jpg</fanart>
+              <screenshot>resources/media/Captura1.png</screenshot>
+              <screenshot>resources/media/Captura2.png</screenshot>
+              <screenshot>resources/media/Captura3.png</screenshot>
+              <screenshot>resources/media/Captura4.png</screenshot>
+        </assets>
+        <news>
+            - Añadido soporte para enlaces magnet-torrent
+        </news>
+        <forum>https://t.me/KodiManiac
+        https://t.me/acestream_spanish</forum>
+    </extension>
 </addon>
 
 <addon id="script.module.quicksilverscrapers" name="[COLORsilver]Quicksilver Scrapers[/COLOR]" version="0.0.3" provider-name="Quicksilver">
@@ -4257,6 +4545,28 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
     </assets>
     <news></news>
     </extension>
+</addon>
+
+<addon id="script.module.requests" name="requests" version="2.25.1+matrix.1" provider-name="Python Software Foundation">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.certifi" version="2020.12.05+matrix.1"/>
+    <import addon="script.module.chardet" version="4.0.0+matrix.1"/>
+    <import addon="script.module.idna" version="2.10.0+matrix.1"/>
+    <import addon="script.module.urllib3" version="1.26.4+matrix.1"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</summary>
+    <description lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</description>
+    <license>Apache-2.0</license>
+    <platform>all</platform>
+    <website>https://requests.readthedocs.io/</website>
+    <source>https://github.com/psf/requests</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
 </addon>
 
 <addon id="script.module.resolveurl" name="ResolveURL" version="5.1.72" provider-name="gujal">
@@ -4309,28 +4619,6 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
   </extension>
 </addon>
 
-<addon id="script.pvr.aguia.de.fogo.api" name="[COLORorange]Pach API pvr.Aguia.de.Fogo[/COLOR]" version="0.4.5" provider-name="[COLORorange]@By_Flecha_negra[/COLOR]">
-   <requires>
-  <import addon="script.module.six" />
-  <import addon="pvr.aguia.de.fogo" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="main.py">
-    <provides>executable</provides>
-  </extension>  
-  <extension point="xbmc.addon.metadata">
-     <disclaimer lang="en"></disclaimer>
-   <disclaimer lang="pt"></disclaimer>
-    <platform>all</platform>
-    <summary>Pach API pvr Águia de Fogo</summary>
-    <description lang="en">[COLOR red]pvr.aguia.de.fogo[/COLOR] [COLORorange]stalker[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-  
-  <assets>
-     <icon>icon.png</icon>
-     <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
-
 <addon id="script.quicksilver.artwork" version="0.0.3" name="[COLORsilver]Quicksilver Artwork[/COLOR]" provider-name="Quicksilver">
     <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -4360,81 +4648,61 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
     </extension>
 </addon>
 
-<addon id="script.video.F4mProxy" 
-       name="F4mProxy" 
-       version="4.0.9" 
-       provider-name="Joel e Tiago">
+<addon id="script.speedtester" name="Speed Tester" version="1.1.2+matrix.1" provider-name="Dr0idGuy, dagwieers">
   <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-    <import addon="script.module.requests" />
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="resources/lib/addon_entry.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en_GB">Test your Internet bandwidth</summary>
+    <description lang="en_GB">This add-on tests your Internet bandwith and reports both download and upload speeds and latency from within Kodi.
+
+Use this if you are experiencing streaming issues and you suspect your network to be the cause.</description>
+    <disclaimer lang="en_GB">Speed Tester is powered by speedtest.net</disclaimer>
+    <language>en</language>
+    <license>Apache-2.0</license>
+    <email>dag@wieers.com</email>
+    <website>https://kodi.wiki/view/Add-on:Speed_Tester</website>
+    <source>https://github.com/flechanegra/script.speedtester</source>
+    <news>
+    </news>
+    <assets>
+      <icon>resources/media/icon.png</icon>
+      <fanart>resources/media/fanart.jpg</fanart>
+      <screenshot>resources/media/screenshot01.jpg</screenshot>
+      <screenshot>resources/media/screenshot02.jpg</screenshot>
+      <screenshot>resources/media/screenshot03.jpg</screenshot>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="script.video.F4mProxy"
+	     name="F4mProxy"
+	     version="4.0.9"
+	     provider-name="Joel e Tiago">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.requests" />
         <import addon="inputstream.ffmpegdirect" />
-  </requires>
-  <extension point="xbmc.python.module" library="lib" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>executable</provides>
-  </extension>
-    
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <summary lang="en">Proxy for f4m</summary>
-    <description lang="en">Use this addon to play F4m v1 and v2 streams</description>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-  </extension>
+		<provides>executable</provides>
+	</extension>
+
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Proxy for f4m</summary>
+		<description lang="en">Use this addon to play F4m v1 and v2 streams</description>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
 </addon>
 
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.blackarrow.kodilimpo" name="[COLORred]Blackarrow[/COLOR] [COLORcyan]kodi[/COLOR]limpo" provider-name="@BY_Flechanegra" version="1.9.1"> 
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" /> 
-  </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
-        <provides>executable</provides>
-  </extension>
-  <extension library="service.py" point="xbmc.service" start="startup"> 
-        <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata"> 
-    <platform>all</platform>
-    <summary lang="en_GB">Clean up temporary files in Kodi.</summary>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-    <description lang="en_GB">Clean up temporary files in Kodi.</description>
-    <news>v4.0 [CR]- Python 3 version [CR](Forked and fixed for kodi v20 use.)</news>
-    <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshot-01.jpg</screenshot>
-        <screenshot>resources/screenshot-02.jpg</screenshot>
-        <screenshot>resources/screenshot-03.jpg</screenshot>
-        <banner>resources/banner.jpg</banner>
-        <logo>resources/logo.png</logo>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="script.x-codes.api" name="[COLORorange]Pach API X-Codes[/COLOR]" version="1.4.9" provider-name="[COLORorange]@By_Flech_anegra[/COLOR]">
-   <requires>
-	<import addon="script.module.six"/>
-        <import addon="script.module.kodi-six"/>
-	<import addon="plugin.video.x-codes" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="main.py">
-    <provides>executable</provides>
-  </extension>  
-  <extension point="xbmc.addon.metadata">
-     <disclaimer lang="en"></disclaimer>
-	 <disclaimer lang="pt"></disclaimer>
-    <platform>all</platform>
-    <summary>pach API X-Codes</summary>
-		<description lang="en">[COLOR red]plugin.video.x-[/COLOR] [COLORorange]codes[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-	
-	<assets>
-     <icon>icon.png</icon>
-     <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon>
 <addon id="service.script.update" name="Update Service disney" version="2.2" provider-name="flechanegra">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
@@ -4460,141 +4728,104 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
        name="OpenSubtitles.org"
        version="5.1.2"
        provider-name="amet, opensubtitles, juokelis">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-  </requires>
-  <extension point="xbmc.subtitle.module"
+	<requires>
+		<import addon="xbmc.python" version="3.0.0"/>
+	</requires>
+	<extension point="xbmc.subtitle.module"
              library="service.py" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">OpenSubtitles</summary>
-    <description lang="en_GB">Search and download subtitles for movies and TV-Series from OpenSubtitles.org. Search in 75 languages, 4.000.000+ subtitles, daily updates.</description>
-    <description lang="ast_ES">Pelis and Subtítulos TV en munches llingües, milenta de subtítulos traducíos y xubíos caldía. Descarga llibre dende la fonte, sofitu API, millones d'usuarios.</description>
-    <description lang="br_FR">Istitloù Filmoù ha TV e meur a yezh, miliadoù a istitloù troet hag uskarget bemdez. Pellgargadenn digoust diouzh ar vammenn, skoazell an API, millionoù a implijerien.</description>
-    <description lang="ca_ES">Subtítols de films i televisió en múltiples idiomes, milers de subtítols traduïts carregats diàriament. Descàrrega gratuïta des de la font, suport de l'API, amb milions d'usuaris.</description>
-    <description lang="cs_CZ">Titulky k filmům a seriálům v mnoha jazycích, denně tisíce nahraných přeložených titulků. Stažení zadarmo přímo od zdroje, podpora API, milióny uživatelů.</description>
-    <description lang="de_DE">Film- und TV-Untertitel in vielen Sprachen, täglicher Upload von tausenden übersetzten Untertiteln. Freier Download von der Quelle, API-Unterstützung, Millionen Nutzer</description>
-    <description lang="el_GR">Ταινίες και Σειρές σε όλες τις γλώσσες, χιλιάδες μεταφρασμένοι υπότιτλοι ανεβαίνουν καθημερινά, κατεβάστε δωρεάν , υποστήριξη API από εκατομμύρια χρήστες</description>
-    <description lang="eo_EO">Filmaj kaj Televidaj subtekstoj en multaj lingvoj, miloj da tradukitaj subtekstoj ĉiutage alŝutataj. Senpaga elŝuto de fonto, API-subteno, miloj da uzantoj.</description>
-    <description lang="es_ES">Películas y Subtítulos en diversos idiomas, miles de subtítulos traducidos subidos diariamente. Descarge gratis, soporte API, millones de usuarios.</description>
-    <description lang="et_EE">Sadu Filmi ja TV Serjaalide subtiitrid erinevates keeltes laetakse üles igapäev. tasuta allalaadimine ja abi, rohkem kui miljon kasutajat.</description>
-    <description lang="eu_ES">Film eta Telebista azpitituluak hizkuntza anitzetan, milaka azpititulu itzuliak igotzen dira egunero. Doan jaitsi iturburutik, API sostengua, milioika erabiltzaile.</description>
-    <description lang="fi_FI">Tekstityksiä useilla kielillä elokuviin ja TV-Sarjoihin, tuhansia uusia tekstityksiä päivittäin, ilmainen lataus, API tuki, miljoonia käyttäjiä.</description>
-    <description lang="fr_FR">Les sous-titres de film et téléfilm en plusieurs langues, des milliers de sous-titres traduits tous les jours. Bénéficiez de téléchargements gratuits depuis la source, du support API, une d'une communauté de millions d'utilisateurs.</description>
-    <description lang="hi_IN">मूवी और टीवी उपशीर्षक कई भाषाओं में अनुवाद उपशीर्षक के हजारों दैनिक अपलोड की गई। मुफ्त डाउनलोड स्रोत से , एपीआई समर्थन, उपयोगकर्ताओं के लाखों लोगों की ।</description>
-    <description lang="hr_HR">Titlovi za filmove i TV na mnogim jezicima, tisuće prijevoda postavljenih svaki dan. Besplatno preuzimanje s izvora, podrška za API, milijuni korisnika.</description>
-    <description lang="hu_HU">Film és TV feliratok több nyelven, naponta több ezer lefordított felirat feltöltés. Ingyenes letöltés a forrástól, API támogatás, több millió felhasználó.</description>
-    <description lang="id_ID">Subjudul film dan serial TV dalam multibahasa, ribuan subjudul diterjemah dan diunggah setiap harinya. Pengunduhan gratis dari sumber, didukung fitur antarmuka pemrograman aplikasi, dan jutaan pengguna.</description>
-    <description lang="is_IS">Textar fyrir myndir og sjónvarpsþ. á mörgum tungumálum, þúsundir af þýddum textum upphlaðið daglega. Frítt niðurhal frá síðu, API stuðningur, milljónir notenda.</description>
-    <description lang="it_IT">Sottotitoli di Film e TV in più lingue,migliaia di sottotitoli tradotti caricati ogni giorno.Download gratuito,supporto API, milioni di utenti.</description>
-    <description lang="ja_JP">映画やテレビの字幕をさまざまな言語で。毎日数多くの翻訳字幕がアップロードされています。ソースを無料ダウンロード、API 対応、数百万を超えるユーザー。</description>
-    <description lang="ka_GR">სუბტიტრები ფილმებისა და ტვ-სთვის მრავალ ენაზე. ათასობიტ თარგმნილი სუბტიტრის ატვირთვა ყოველდღიურად. უდასო ჩამოტვირტვა წყაროდან, API მხარდაჭერა, მილიონობით მომხმარებელი</description>
-    <description lang="km_KH">អត្ថបទរឿងសម្រាប់ ខ្សែភាពយន្ត និងកម្មវិធីទូរទស្សន៍​ ជាភាសាជាច្រើន រួមនឹងអត្ថបទរឿងបកប្រែរាប់ពាន់​រឿង​ដែល​ត្រូវបាន​អ័ពឡូដជារៀងរាល់ថ្ងៃ។ ទាញយកដោយឥតគិតថ្លៃពីប្រភពដើម គាំទ្រ API និងមានអ្នកប្រើប្រាស់រាប់លាននាក់។ </description>
-    <description lang="ko_KR">Movie and TV Subtitles in multiple languages, thousands of translated subtitles uploaded daily. Free download from source, API support, millions of users.</description>
-    <description lang="ms_MY">Sarikata TV dan Movie dalam pelbagai bahasa, ribuan terjemahan sarikata dimuat-naik setiap hari.Muat-turun percuma dari sumber utama, sokongan API, jutaan pengguna.</description>
-    <description lang="nl_NL">Ondertitels voor films en tv-series in meerdere talen, dagelijks upload van duizenden vertaalde ondertitels. Gratis downloaden van de bron, API ondersteuning, miljoenen gebruikers.</description>
-    <description lang="no_NO">Undertekster for film og TV på mange språk, med tusener av nye oversettelser hver dag. Vi har gratis nedlasting av undertekster, API-support, og mange millioner brukere.</description>
-    <description lang="pl_PL">Napisy do filmów i seriali w wielu językach. Tysiące napisów dodawanych codziennie. Darmowe pobranie, miliony użytkowników.</description>
-    <description lang="pt_BR">Milhares de legendas para filmes e seriados de TV, em vários idiomas, são traduzidas e enviadas diariamente. Download grátis, suporte API e milhões de usuários.</description>
-    <description lang="pt_PT">Legendas de filmes e séries de TV em vários idiomas, milhares de legendas traduzidas e enviadas diariamente. Download grátis a partir da fonte, suporte API, milhões de utilizadores.</description>
-    <description lang="ro_RO">Subtitrari pentru filme in multe limbi, mii de subtitrari traduse si încărcate in fiecare zi. Descărca gratuit de la sursă, suport API, milioane de utilizatori.</description>
-    <description lang="ru_RU">Кино и ТВ субтитры на нескольких языках, тысячи переведенными субтитрами загружены ежедневно. Бесплатно скачать из исходных текстов, поддержка API, миллионы пользователей.</description>
-    <description lang="sk_SK">Titulky pre filmy a TV seriály, denne nahratých tisíce titulkov preložených vo viacerých jazykoch. Sťahuj zadarmo zo zdroja, podpora API, milióny používateľov.</description>
-    <description lang="sl_SI">Filmski in televizijski podnapisi v mnogo jezikih, na tisoče prevedenih podnapisov dnevno. Brezplačen prenos iz vira, podpora API, miljoni uporabnikov.</description>
-    <description lang="sq_AL">Titra filmash dhe serialesh në shumë gjuhë, mijëra titra të përkthyera që vendosen çdo ditë. Shkarko nga burimi, apo nga mbështetja e API-së, miliona përdorues.</description>
-    <description lang="sr_CS">Titlovi za filmove i TV na mnogim jezicima, hiljade prevoda okačenih svakodnevno. Besplatno skidanje sa izvora, podrška za API, milioni korisnika.</description>
-    <description lang="sv_SE">Filmer och Tv-undertexter med olika språk, tusentals översatta undertexter uppladdade dagligen. Gratis nerladdning från källor, API support, miljoner av användare.</description>
-    <description lang="tr_TR">Her gün eklenen, pek çok dildeki binlerce film ve dizi altyazısı. Kaynağından ücretsiz indirme, API desteği ve milyonlarca kullanıcı.</description>
-    <description lang="uz_UZ">Film va TV Taglavhalari ko'p tillarda, minglab tarjima qilingan taglavhalar har kuni tizimga yuklanadi. Bepul resursdan yuklab oling, API qo'llaydi, millionlab foydalanuvchilar.</description>
-    <description lang="zh_CN">多语种的电影及剧集字幕，每日更新千余条翻译好的字幕。免费下载，提供API接口，已拥有上百万的用户。</description>
-    <disclaimer lang="en_GB">Users need to provide OpenSubtitles.org username and password in add-on configuration</disclaimer>
-    <news>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">OpenSubtitles</summary>
+		<description lang="en_GB">Search and download subtitles for movies and TV-Series from OpenSubtitles.org. Search in 75 languages, 4.000.000+ subtitles, daily updates.</description>
+		<description lang="ast_ES">Pelis and Subtítulos TV en munches llingües, milenta de subtítulos traducíos y xubíos caldía. Descarga llibre dende la fonte, sofitu API, millones d'usuarios.</description>
+		<description lang="br_FR">Istitloù Filmoù ha TV e meur a yezh, miliadoù a istitloù troet hag uskarget bemdez. Pellgargadenn digoust diouzh ar vammenn, skoazell an API, millionoù a implijerien.</description>
+		<description lang="ca_ES">Subtítols de films i televisió en múltiples idiomes, milers de subtítols traduïts carregats diàriament. Descàrrega gratuïta des de la font, suport de l'API, amb milions d'usuaris.</description>
+		<description lang="cs_CZ">Titulky k filmům a seriálům v mnoha jazycích, denně tisíce nahraných přeložených titulků. Stažení zadarmo přímo od zdroje, podpora API, milióny uživatelů.</description>
+		<description lang="de_DE">Film- und TV-Untertitel in vielen Sprachen, täglicher Upload von tausenden übersetzten Untertiteln. Freier Download von der Quelle, API-Unterstützung, Millionen Nutzer</description>
+		<description lang="el_GR">Ταινίες και Σειρές σε όλες τις γλώσσες, χιλιάδες μεταφρασμένοι υπότιτλοι ανεβαίνουν καθημερινά, κατεβάστε δωρεάν , υποστήριξη API από εκατομμύρια χρήστες</description>
+		<description lang="eo_EO">Filmaj kaj Televidaj subtekstoj en multaj lingvoj, miloj da tradukitaj subtekstoj ĉiutage alŝutataj. Senpaga elŝuto de fonto, API-subteno, miloj da uzantoj.</description>
+		<description lang="es_ES">Películas y Subtítulos en diversos idiomas, miles de subtítulos traducidos subidos diariamente. Descarge gratis, soporte API, millones de usuarios.</description>
+		<description lang="et_EE">Sadu Filmi ja TV Serjaalide subtiitrid erinevates keeltes laetakse üles igapäev. tasuta allalaadimine ja abi, rohkem kui miljon kasutajat.</description>
+		<description lang="eu_ES">Film eta Telebista azpitituluak hizkuntza anitzetan, milaka azpititulu itzuliak igotzen dira egunero. Doan jaitsi iturburutik, API sostengua, milioika erabiltzaile.</description>
+		<description lang="fi_FI">Tekstityksiä useilla kielillä elokuviin ja TV-Sarjoihin, tuhansia uusia tekstityksiä päivittäin, ilmainen lataus, API tuki, miljoonia käyttäjiä.</description>
+		<description lang="fr_FR">Les sous-titres de film et téléfilm en plusieurs langues, des milliers de sous-titres traduits tous les jours. Bénéficiez de téléchargements gratuits depuis la source, du support API, une d'une communauté de millions d'utilisateurs.</description>
+		<description lang="hi_IN">मूवी और टीवी उपशीर्षक कई भाषाओं में अनुवाद उपशीर्षक के हजारों दैनिक अपलोड की गई। मुफ्त डाउनलोड स्रोत से , एपीआई समर्थन, उपयोगकर्ताओं के लाखों लोगों की ।</description>
+		<description lang="hr_HR">Titlovi za filmove i TV na mnogim jezicima, tisuće prijevoda postavljenih svaki dan. Besplatno preuzimanje s izvora, podrška za API, milijuni korisnika.</description>
+		<description lang="hu_HU">Film és TV feliratok több nyelven, naponta több ezer lefordított felirat feltöltés. Ingyenes letöltés a forrástól, API támogatás, több millió felhasználó.</description>
+		<description lang="id_ID">Subjudul film dan serial TV dalam multibahasa, ribuan subjudul diterjemah dan diunggah setiap harinya. Pengunduhan gratis dari sumber, didukung fitur antarmuka pemrograman aplikasi, dan jutaan pengguna.</description>
+		<description lang="is_IS">Textar fyrir myndir og sjónvarpsþ. á mörgum tungumálum, þúsundir af þýddum textum upphlaðið daglega. Frítt niðurhal frá síðu, API stuðningur, milljónir notenda.</description>
+		<description lang="it_IT">Sottotitoli di Film e TV in più lingue,migliaia di sottotitoli tradotti caricati ogni giorno.Download gratuito,supporto API, milioni di utenti.</description>
+		<description lang="ja_JP">映画やテレビの字幕をさまざまな言語で。毎日数多くの翻訳字幕がアップロードされています。ソースを無料ダウンロード、API 対応、数百万を超えるユーザー。</description>
+		<description lang="ka_GR">სუბტიტრები ფილმებისა და ტვ-სთვის მრავალ ენაზე. ათასობიტ თარგმნილი სუბტიტრის ატვირთვა ყოველდღიურად. უდასო ჩამოტვირტვა წყაროდან, API მხარდაჭერა, მილიონობით მომხმარებელი</description>
+		<description lang="km_KH">អត្ថបទរឿងសម្រាប់ ខ្សែភាពយន្ត និងកម្មវិធីទូរទស្សន៍​ ជាភាសាជាច្រើន រួមនឹងអត្ថបទរឿងបកប្រែរាប់ពាន់​រឿង​ដែល​ត្រូវបាន​អ័ពឡូដជារៀងរាល់ថ្ងៃ។ ទាញយកដោយឥតគិតថ្លៃពីប្រភពដើម គាំទ្រ API និងមានអ្នកប្រើប្រាស់រាប់លាននាក់។ </description>
+		<description lang="ko_KR">Movie and TV Subtitles in multiple languages, thousands of translated subtitles uploaded daily. Free download from source, API support, millions of users.</description>
+		<description lang="ms_MY">Sarikata TV dan Movie dalam pelbagai bahasa, ribuan terjemahan sarikata dimuat-naik setiap hari.Muat-turun percuma dari sumber utama, sokongan API, jutaan pengguna.</description>
+		<description lang="nl_NL">Ondertitels voor films en tv-series in meerdere talen, dagelijks upload van duizenden vertaalde ondertitels. Gratis downloaden van de bron, API ondersteuning, miljoenen gebruikers.</description>
+		<description lang="no_NO">Undertekster for film og TV på mange språk, med tusener av nye oversettelser hver dag. Vi har gratis nedlasting av undertekster, API-support, og mange millioner brukere.</description>
+		<description lang="pl_PL">Napisy do filmów i seriali w wielu językach. Tysiące napisów dodawanych codziennie. Darmowe pobranie, miliony użytkowników.</description>
+		<description lang="pt_BR">Milhares de legendas para filmes e seriados de TV, em vários idiomas, são traduzidas e enviadas diariamente. Download grátis, suporte API e milhões de usuários.</description>
+		<description lang="pt_PT">Legendas de filmes e séries de TV em vários idiomas, milhares de legendas traduzidas e enviadas diariamente. Download grátis a partir da fonte, suporte API, milhões de utilizadores.</description>
+		<description lang="ro_RO">Subtitrari pentru filme in multe limbi, mii de subtitrari traduse si încărcate in fiecare zi. Descărca gratuit de la sursă, suport API, milioane de utilizatori.</description>
+		<description lang="ru_RU">Кино и ТВ субтитры на нескольких языках, тысячи переведенными субтитрами загружены ежедневно. Бесплатно скачать из исходных текстов, поддержка API, миллионы пользователей.</description>
+		<description lang="sk_SK">Titulky pre filmy a TV seriály, denne nahratých tisíce titulkov preložených vo viacerých jazykoch. Sťahuj zadarmo zo zdroja, podpora API, milióny používateľov.</description>
+		<description lang="sl_SI">Filmski in televizijski podnapisi v mnogo jezikih, na tisoče prevedenih podnapisov dnevno. Brezplačen prenos iz vira, podpora API, miljoni uporabnikov.</description>
+		<description lang="sq_AL">Titra filmash dhe serialesh në shumë gjuhë, mijëra titra të përkthyera që vendosen çdo ditë. Shkarko nga burimi, apo nga mbështetja e API-së, miliona përdorues.</description>
+		<description lang="sr_CS">Titlovi za filmove i TV na mnogim jezicima, hiljade prevoda okačenih svakodnevno. Besplatno skidanje sa izvora, podrška za API, milioni korisnika.</description>
+		<description lang="sv_SE">Filmer och Tv-undertexter med olika språk, tusentals översatta undertexter uppladdade dagligen. Gratis nerladdning från källor, API support, miljoner av användare.</description>
+		<description lang="tr_TR">Her gün eklenen, pek çok dildeki binlerce film ve dizi altyazısı. Kaynağından ücretsiz indirme, API desteği ve milyonlarca kullanıcı.</description>
+		<description lang="uz_UZ">Film va TV Taglavhalari ko'p tillarda, minglab tarjima qilingan taglavhalar har kuni tizimga yuklanadi. Bepul resursdan yuklab oling, API qo'llaydi, millionlab foydalanuvchilar.</description>
+		<description lang="zh_CN">多语种的电影及剧集字幕，每日更新千余条翻译好的字幕。免费下载，提供API接口，已拥有上百万的用户。</description>
+		<disclaimer lang="en_GB">Users need to provide OpenSubtitles.org username and password in add-on configuration</disclaimer>
+		<news>
 v5.1.2 (2020-03-21) by enen92
 - Fixes for python3/matrix. Remove sys.path.append.
-    </news>
-    <platform>all</platform>
-    <license>GPL-2.0-only</license>
-    <forum>https://forum.opensubtitles.org/viewtopic.php?f=8&amp;t=15847</forum>
-    <website>http://www.opensubtitles.org</website>
-    <email>admin [at] opensubtitles {dot} org</email>
-    <assets>
-      <icon>resources/media/os_logo_512x512.png</icon>
-      <fanart>resources/media/os_fanart.jpg</fanart>
-      <screenshot>resources/media/screenshot_1.jpg</screenshot>
-      <screenshot>resources/media/screenshot_2.jpg</screenshot>
-      <screenshot>resources/media/screenshot_3.jpg</screenshot>
-    </assets>
-    <source>https://github.com/juokelis/service.subtitles.opensubtitles</source>
-  </extension>
+		</news>
+		<platform>all</platform>
+		<license>GPL-2.0-only</license>
+		<forum>https://forum.opensubtitles.org/viewtopic.php?f=8&amp;t=15847</forum>
+		<website>http://www.opensubtitles.org</website>
+		<email>admin [at] opensubtitles {dot} org</email>
+		<assets>
+			<icon>resources/media/os_logo_512x512.png</icon>
+			<fanart>resources/media/os_fanart.jpg</fanart>
+			<screenshot>resources/media/screenshot_1.jpg</screenshot>
+			<screenshot>resources/media/screenshot_2.jpg</screenshot>
+			<screenshot>resources/media/screenshot_3.jpg</screenshot>
+		</assets>
+		<source>https://github.com/juokelis/service.subtitles.opensubtitles</source>
+	</extension>
 </addon>
 
 <addon
-  id="skin.flechanegra.2.0"
-  version="2.0"
-  name="[COLOR maroon]Flecha [COLOR grey]Negra [COLORgold]2.0[/COLOR]"
-  provider-name="FlechaNegra">
-  <requires>
-    <import addon="xbmc.gui" version="5.15.0"/>
-    <import addon="script.skinshortcuts" version="1.1.4"/>
-  </requires>
-  <extension
-    point="xbmc.gui.skin"
-    debugging="false"
-    effectslowdown="1.0">
-    <res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
-    <res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
-    <res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
-    <res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
-    <res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
-    <res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
-    <res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
-    <res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-    <forum></forum>
-    <source></source>
-    <assets>
-      <icon>resources/icon.png</icon>
-      <fanart>resources/fanart.jpg</fanart>
-    </assets>
-    <summary lang="pt_PT">A skin Flecha Negra Geração 2.0 </summary>
-    <description lang="pt_PT">Unity é uma adaptação de Confluence baseada num design material.</description>
-    <disclaimer lang="pt_PT">Mais informações sobre esta skin podem ser encontradas nos forums do Kodi.</disclaimer>
-  </extension>
-</addon>
-
-<addon
-  id="skin.kus-mc-light" version="1.1.3" name="KUS Mediacenter" provider-name="SGK, Eddage, Bumpaneer">
-  <requires>
-    <import addon="xbmc.gui" version="5.15.0"/>
-    <import addon="script.skinshortcuts" version="1.1.4"/>
-  </requires>
-  <extension
-    point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
-    <res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="de">KUS Mediacenter Skin</summary>
-    <summary lang="en">KUS Mediacenter Skin</summary>
-    <description lang="de">Dies ist ein Skin Mod auf Basis des Unity Skins.[CR][CR]Support: [COLORdeepskyblue]https://www.facebook.com/groups/kodiunlimited[/COLOR][CR]Spende: [COLORdeepskyblue]https://www.paypal.me/KodiUnlimited[/COLOR]</description>
-    <description lang="en">This is a skin mod based on the Unity skin.[CR][CR]Support: [COLORdeepskyblue]https://www.facebook.com/groups/kodiunlimited[/COLOR][CR]Donation: [COLORdeepskyblue]https://www.paypal.me/KodiUnlimited[/COLOR]</description>
-    <disclaimer lang="de">Wenn Sie diesen Skin verwenden oder anpassen möchten, fragen sie vorher bitte den Ersteller.</disclaimer>
-    <disclaimer lang="en">If you want to use or adapt this skin, please ask the creator beforehand.</disclaimer>
-    <platform>all</platform>
-    <license></license>
-    <forum>https://www.facebook.com/groups/kodiunlimited</forum>
-    <source></source>
-    <assets>
-      <icon>resources/icon.png</icon>
-      <fanart>resources/fanart.jpg</fanart>
-    </assets>
-  </extension>
+	id="skin.kus-mc-light" version="1.1.3" name="KUS Mediacenter" provider-name="SGK, Eddage, Bumpaneer">
+	<requires>
+		<import addon="xbmc.gui" version="5.15.0"/>
+		<import addon="script.skinshortcuts" version="1.1.4"/>
+	</requires>
+	<extension
+		point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="de">KUS Mediacenter Skin</summary>
+		<summary lang="en">KUS Mediacenter Skin</summary>
+		<description lang="de">Dies ist ein Skin Mod auf Basis des Unity Skins.[CR][CR]Support: [COLORdeepskyblue]https://www.facebook.com/groups/kodiunlimited[/COLOR][CR]Spende: [COLORdeepskyblue]https://www.paypal.me/KodiUnlimited[/COLOR]</description>
+		<description lang="en">This is a skin mod based on the Unity skin.[CR][CR]Support: [COLORdeepskyblue]https://www.facebook.com/groups/kodiunlimited[/COLOR][CR]Donation: [COLORdeepskyblue]https://www.paypal.me/KodiUnlimited[/COLOR]</description>
+		<disclaimer lang="de">Wenn Sie diesen Skin verwenden oder anpassen möchten, fragen sie vorher bitte den Ersteller.</disclaimer>
+		<disclaimer lang="en">If you want to use or adapt this skin, please ask the creator beforehand.</disclaimer>
+		<platform>all</platform>
+		<license></license>
+		<forum>https://www.facebook.com/groups/kodiunlimited</forum>
+		<source></source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+		</assets>
+	</extension>
 </addon>
 
 <addon id="slyguy.disney.plus" name="Disney+" provider-name="Slyguy" version="0.14.0">
   <requires>
-    <import addon="script.module.slyguy"/>
+    <import addon="script.module.slyguy" version="0.63.1"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py" provides="video">
     <provides>video</provides>
@@ -4606,16 +4837,24 @@ Subscription required.</description>
     <description lang="it">Disney+ è la casa esclusiva per i tuoi film e programmi TV preferiti di Disney, Pixar, Marvel, Star Wars e National Geographic.
 
 Abbonamento richiesto.</description>
+    <description lang="fr">Disney+ est la destination exclusive de vos films et séries TV préférés des univers Disney, Pixar, Marvel, Star Wars et National Geographic.
+
+Abonnement requis.</description>
+    <description lang="cs">Disney+ je exkluzivní místo pro vaše oblíbené filmy a televizní pořady ze světa Disney, Pixar, Marvel, Star Wars a National Geographic.
+
+Je nutné předplatné.</description>
+      <description lang="pl">Disney+ to wyłączne miejsce dla twoich ulubionych filmów i programów telewizyjnych od Disneya, Pixara, Marvela, Gwiezdnych wojen i National Geographic.
+
+Wymagana subskrypcja.</description>
     <reuselanguageinvoker>true</reuselanguageinvoker>
     <license></license>
     <language></language>
     <website></website>
-    <news>Fix search</news>
+    <news>Updated pl translation. Thanks @norbiros</news>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
 </addon>
-
 </addons>
