@@ -1,4 +1,4 @@
-#DREGS REPOSITORY
+DREGS REPOSITORY
 # Versão Actual: 1.21
 
 Instruções para a adição deste repo:
