@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="repository.dregs" name="[COLOR red]Dr[/COLOR]e[COLOR black]Gs[/COLOR] [COLORcyan]Repository[/COLOR]" version="1.22" provider-name="Black Eagle">
+  <requires>
+    <import addon="xbmc.addon" version="12.0.0"/>
+  </requires>
+  <extension point="xbmc.addon.repository" name="[COLOR red]Dregs [COLOR cyan]Repositorio[/COLOR]">
+    <dir>
+    <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/addons.xml</info>
+    <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/addons.xml.md5</checksum>
+    <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master</datadir>
+    <hashes>false</hashes>
+</dir>
+  <dir minversion="19.9.9">
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/nexus/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/nexus/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/nexus</datadir>
+      <hashes>false</hashes>
+  </dir>
+  <dir minversion="19.0.0">
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix</datadir>
+      <hashes>false</hashes>
+  </dir>
+  <dir minversion="17.0.0" maxversion="18.9.0">
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/leia</datadir>
+      <hashes>false</hashes>
+  </dir>
+  <dir minversion="16.0.0" maxversion="17.0.0">
+      <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/krypton/addons.xml</info>
+      <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/krypton/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/krypton</datadir>
+      <hashes>false</hashes>
+  </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>repositorio Dregs</summary>
+    <description>repositorio oficial Dregs- Proibido reproducao sem autorização prévia</description>
+    <disclaimer></disclaimer>
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="slyguy.disney.plus" name="Disney+" provider-name="Slyguy" version="0.14.0">
+  <requires>
+    <import addon="script.module.slyguy" version="0.63.1"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py" provides="video">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <description lang="en">Disney+ is the exclusive home for your favorite movies and TV shows from Disney, Pixar, Marvel, Star Wars, and National Geographic.
+
+Subscription required.</description>
+    <description lang="it">Disney+ è la casa esclusiva per i tuoi film e programmi TV preferiti di Disney, Pixar, Marvel, Star Wars e National Geographic.
+
+Abbonamento richiesto.</description>
+    <description lang="fr">Disney+ est la destination exclusive de vos films et séries TV préférés des univers Disney, Pixar, Marvel, Star Wars et National Geographic.
+
+Abonnement requis.</description>
+    <description lang="cs">Disney+ je exkluzivní místo pro vaše oblíbené filmy a televizní pořady ze světa Disney, Pixar, Marvel, Star Wars a National Geographic.
+
+Je nutné předplatné.</description>
+      <description lang="pl">Disney+ to wyłączne miejsce dla twoich ulubionych filmów i programów telewizyjnych od Disneya, Pixara, Marvela, Gwiezdnych wojen i National Geographic.
+
+Wymagana subskrypcja.</description>
+    <reuselanguageinvoker>true</reuselanguageinvoker>
+    <license></license>
+    <language></language>
+    <website></website>
+    <news>Updated pl translation. Thanks @norbiros</news>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+</addons>
