@@ -58,6 +58,30 @@
 
 </addon>
 
+<addon id="plugin.video.EspadaNegra" name="[COLOR silver]Espada[COLOR dimgrey] Negra [/COLOR]" version="1.2.1" provider-name="By_Black_Eagle">
+  <requires>
+    <import addon="script.module.pycryptodome" />
+    <import addon="script.module.dateutil" />
+    <import addon="script.module.pyamf" />
+    <import addon="script.module.kodi-six" />
+    <import addon="script.module.future" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.routing" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+  <summary lang="en">Espanda Negra</summary>
+  <description lang="en">[COLOR silver]Espada[COLOR dimgrey] Negra [/COLOR] [COLORorange]é um addon da familia Blackeagle team.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
+    <disclaimer lang="en_GB">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content.</disclaimer>
+  <assets>
+	<icon>icon.png</icon>
+	<fanart>fanart.jpg</fanart>
+  </assets>
+</extension>
+</addon>
+
 <addon id="repository.dregs" name="[COLOR red]Dr[/COLOR]e[COLOR black]Gs[/COLOR] [COLORcyan]Repository[/COLOR]" version="1.22" provider-name="Black Eagle">
   <requires>
     <import addon="xbmc.addon" version="12.0.0"/>
