@@ -1,4 +1,4 @@
-       <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
 <addon
   id="inputstream.adaptive"
@@ -65,10 +65,9 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+android-aarch64/inputstream.adaptive-20.3.14.zip</path>	  
   </extension>
 </addon>
-	
+
 <addon
   id="inputstream.adaptive"
   version="20.3.14"
@@ -134,7 +133,6 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+android-armv7/inputstream.adaptive-20.3.14.zip</path>	  
   </extension>
 </addon>
 
@@ -203,7 +201,6 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+windows-i686/inputstream.adaptive-20.3.14.zip</path>	  
   </extension>
 </addon>
 
@@ -272,7 +269,6 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+windows-x86_64/inputstream.adaptive-20.3.14.zip</path>  
   </extension>
 </addon>
 
@@ -324,7 +320,6 @@
     <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
-    <path>inputstream.ffmpegdirect+android-aarch64/inputstream.ffmpegdirect-20.5.0.zip</path>
   </extension>
 </addon>
 
@@ -376,7 +371,6 @@
     <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
-    <path>inputstream.ffmpegdirect+android-aarch64/inputstream.ffmpegdirect-20.5.0.zip</path>
   </extension>
 </addon>
 
@@ -428,7 +422,6 @@
     <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
-    <path>inputstream.ffmpegdirect+windows-x86_64/inputstream.ffmpegdirect-20.5.0.zip</path>
   </extension>
 </addon>
 
@@ -482,7 +475,6 @@
     <description lang="pl_PL">Protokół RTMP (Real Time Messaging Protocol) to własnościowy protokół sieciowy opracowany przez firmę Adobe Inc. do przesyłania dźwięku, obrazu i innych danych przez Internet z serwera multimediów do odtwarzacza Flash.[CR][CR]Ten dodatek implementuje obsługę przesyłania strumieniowego RTMP dla Kodi i zainstalowanych dodatków.</description>
     <description lang="ru_RU">Протокол обмена сообщениями в реальном времени (The Real Time Messaging Protocol - RTMP) - это запатентованный сетевой протокол, разработанный компанией Adobe Inc. для передачи аудио, видео и других данных через Интернет с медиа-сервера на флеш-плеер.[CR][CR]Это приложение реализует поддержку потоковой передачи RTMP для Kodi и установленных дополнений.</description>
     <description lang="zh_CN">实时消息协议（RTMP）是 Adobe Inc. 开发的一种专有网络协议，用于通过互联网将音频、视频和其他数据从媒体服务器传输到 flash 播放器。[CR][CR]此插件实现对 Kodi 和已安装插件的 RTMP 流支持。</description>
-    <path>inputstream.rtmp+android-aarch64/inputstream.rtmp-20.3.0.zip</path>
   </extension>
 </addon>
 
@@ -536,7 +528,6 @@
     <description lang="pl_PL">Protokół RTMP (Real Time Messaging Protocol) to własnościowy protokół sieciowy opracowany przez firmę Adobe Inc. do przesyłania dźwięku, obrazu i innych danych przez Internet z serwera multimediów do odtwarzacza Flash.[CR][CR]Ten dodatek implementuje obsługę przesyłania strumieniowego RTMP dla Kodi i zainstalowanych dodatków.</description>
     <description lang="ru_RU">Протокол обмена сообщениями в реальном времени (The Real Time Messaging Protocol - RTMP) - это запатентованный сетевой протокол, разработанный компанией Adobe Inc. для передачи аудио, видео и других данных через Интернет с медиа-сервера на флеш-плеер.[CR][CR]Это приложение реализует поддержку потоковой передачи RTMP для Kodi и установленных дополнений.</description>
     <description lang="zh_CN">实时消息协议（RTMP）是 Adobe Inc. 开发的一种专有网络协议，用于通过互联网将音频、视频和其他数据从媒体服务器传输到 flash 播放器。[CR][CR]此插件实现对 Kodi 和已安装插件的 RTMP 流支持。</description>
-    <path>inputstream.rtmp+android-armv7/inputstream.rtmp-20.3.0.zip</path>
   </extension>
 </addon>
 
@@ -590,11 +581,10 @@
     <description lang="pl_PL">Protokół RTMP (Real Time Messaging Protocol) to własnościowy protokół sieciowy opracowany przez firmę Adobe Inc. do przesyłania dźwięku, obrazu i innych danych przez Internet z serwera multimediów do odtwarzacza Flash.[CR][CR]Ten dodatek implementuje obsługę przesyłania strumieniowego RTMP dla Kodi i zainstalowanych dodatków.</description>
     <description lang="ru_RU">Протокол обмена сообщениями в реальном времени (The Real Time Messaging Protocol - RTMP) - это запатентованный сетевой протокол, разработанный компанией Adobe Inc. для передачи аудио, видео и других данных через Интернет с медиа-сервера на флеш-плеер.[CR][CR]Это приложение реализует поддержку потоковой передачи RTMP для Kodi и установленных дополнений.</description>
     <description lang="zh_CN">实时消息协议（RTMP）是 Adobe Inc. 开发的一种专有网络协议，用于通过互联网将音频、视频和其他数据从媒体服务器传输到 flash 播放器。[CR][CR]此插件实现对 Kodi 和已安装插件的 RTMP 流支持。</description>
-    <path>inputstream.rtmp+windows-x86_64/inputstream.rtmp-20.3.0.zip</path>
   </extension>
 </addon>
 
-<addon id="plugin.video.arrownegra.play.tv" name="[COLORgrey]ArrowNegra[/COLOR] [COLORred]Play[/COLOR] [COLORcyan]Tv[/COLOR]" version="1.9.1.7" provider-name="[COLOR orange]Black eagle[/COLOR]">
+<addon id="plugin.video.arrownegra.play.tv" name="[COLORgrey]ArrowNegra[/COLOR] [COLORred]Play[/COLOR] [COLORcyan]Tv[/COLOR]" version="1.9.1.7" provider-name="[COLOR orange]Black Eagle[/COLOR]">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 		<import addon="script.module.requests"/>
@@ -609,7 +599,7 @@
 		<language>en</language>
 		<license>GPL-2.0-or-later</license>
 		<forum></forum>
-		<website></website> 
+		<website></website>
 		<email></email>
 		<source></source>
 		<news></news>
@@ -654,12 +644,12 @@
         <import addon="script.module.six" />
         <import addon="script.module.kodi-six" />
         <import addon="script.module.requests"/>
-        <import addon="script.video.F4mProxy" version="4.0.9"/>     
-        <import addon="inputstream.ffmpegdirect"/>        
+        <import addon="script.video.F4mProxy" version="4.0.9"/>
+        <import addon="inputstream.ffmpegdirect"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
-    </extension>  
+    </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="en">f4mTester</summary>
         <description></description>
@@ -1621,7 +1611,7 @@
     <description lang="en_GB">IPTV Simple PVR Client support m3u playlists, streaming of Live TV for multicast/unicast sources, listening to Radio channels and EPG.&amp;#10;    &amp;#10;For documentation visit: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md&amp;#10;    </description>
     <description lang="en_US">IPTV Simple PVR Client support m3u playlists, streaming of Live TV for multicast/unicast sources, listening to Radio channels and EPG.</description>
     <description lang="pt_BR">O cliente de PVR IPTV Simple Client oferece suporte para listas m3u, transmissão de TV ao vivo de fontes multicast/unicast, transmissão de rádios e, ainda, suporte a guia de programação eletrônico - EPG.</description>
-    <description lang="pt_PT">Cliente IPTV Simple PVR com suporte a listas de reprodução m3u, transmissão de TV em direto de fontes multidifusão/unidifusão, ouvir estações de rádio e EPG.</description> 
+    <description lang="pt_PT">Cliente IPTV Simple PVR com suporte a listas de reprodução m3u, transmissão de TV em direto de fontes multidifusão/unidifusão, ouvir estações de rádio e EPG.</description>
     <disclaimer lang="en_GB">The authors are in no way responsible for failed playings, incorrect EPG times, wasted hours, or any other undesirable effects.</disclaimer>
     <disclaimer lang="en_US">This is unstable software! The authors are in no way responsible for failed playings, incorrect EPG times, wasted hours, or any other undesirable effects.</disclaimer>
     <disclaimer lang="pt_BR">Este é um software instável! Os autores não são responsáveis por falhas nas reproduções, horários incorretos no EPG, horas perdidas ou quaisquer outros efeitos indesejáveis.</disclaimer>
@@ -1632,7 +1622,7 @@
 
 <addon id="repository.dregs" name="[COLOR red]Dr[/COLOR]e[COLOR black]Gs[/COLOR] [COLORcyan]Repository[/COLOR]" version="1.22" provider-name="Black Eagle">
   <requires>
-    <import addon="xbmc.addon" version="12.0.0"/>  
+    <import addon="xbmc.addon" version="12.0.0"/>
   </requires>
   <extension point="xbmc.addon.repository" name="[COLOR red]Dregs [COLOR cyan]Repositorio[/COLOR]">
     <dir>
@@ -1646,13 +1636,13 @@
       <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/nexus/addons.xml.md5</checksum>
       <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/nexus</datadir>
       <hashes>false</hashes>
-  </dir>   
+  </dir>
   <dir minversion="19.0.0">
       <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml</info>
       <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml.md5</checksum>
       <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix</datadir>
       <hashes>false</hashes>
-  </dir>    
+  </dir>
   <dir minversion="17.0.0" maxversion="18.9.0">
       <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml</info>
       <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml.md5</checksum>
@@ -1704,17 +1694,17 @@
     </extension>
 </addon>
 
-<addon id="script.blackarrow.kodilimpo" name="[COLORred]Blackarrow[/COLOR] [COLORcyan]kodi[/COLOR]limpo" provider-name="Black Eagle" version="1.9.1"> 
+<addon id="script.blackarrow.kodilimpo" name="[COLORred]Blackarrow[/COLOR] [COLORcyan]kodi[/COLOR]limpo" provider-name="Black Eagle" version="1.9.1">
   <requires>
-    <import addon="xbmc.python" version="3.0.0" /> 
+    <import addon="xbmc.python" version="3.0.0" />
   </requires>
   <extension library="default.py" point="xbmc.python.pluginsource">
         <provides>executable</provides>
   </extension>
-  <extension library="service.py" point="xbmc.service" start="startup"> 
+  <extension library="service.py" point="xbmc.service" start="startup">
         <provides>executable</provides>
   </extension>
-  <extension point="xbmc.addon.metadata"> 
+  <extension point="xbmc.addon.metadata">
     <platform>all</platform>
     <summary lang="en_GB">Clean up temporary files in Kodi.</summary>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
@@ -1777,28 +1767,27 @@
     </extension>
 </addon>
 
-<addon id="script.video.F4mProxy" 
-       name="F4mProxy" 
-       version="4.0.9" 
-       provider-name="Joel e Tiago">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-    <import addon="script.module.requests" />
+<addon id="script.video.F4mProxy"
+	     name="F4mProxy"
+	     version="4.0.9"
+	     provider-name="Joel e Tiago">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.requests" />
         <import addon="inputstream.ffmpegdirect" />
-  </requires>
-  <extension point="xbmc.python.module" library="lib" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>executable</provides>
-  </extension>
-    
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <summary lang="en">Proxy for f4m</summary>
-    <description lang="en">Use this addon to play F4m v1 and v2 streams</description>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-  </extension>
-</addon>
+		<provides>executable</provides>
+	</extension>
 
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Proxy for f4m</summary>
+		<description lang="en">Use this addon to play F4m v1 and v2 streams</description>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
+</addon>
 </addons>

@@ -65,10 +65,9 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+android-aarch64/inputstream.adaptive-20.3.14.zip</path>	  
   </extension>
 </addon>
-	
+
 <addon
   id="inputstream.adaptive"
   version="20.3.14"
@@ -134,7 +133,6 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+android-armv7/inputstream.adaptive-20.3.14.zip</path>	  
   </extension>
 </addon>
 
@@ -203,7 +201,6 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+windows-i686/inputstream.adaptive-20.3.14.zip</path>	  
   </extension>
 </addon>
 
@@ -272,22 +269,21 @@
     <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
     <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
     <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    <path>inputstream.adaptive+windows-x86_64/inputstream.adaptive-20.3.14.zip</path>  
   </extension>
 </addon>
 
 <addon
   id="inputstream.ffmpegdirect"
-  version="20.5.0"
+  version="19.0.3"
   name="Inputstream FFmpeg Direct"
   provider-name="Ross Nicholson">
   <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
+<import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.global.filesystem" minversion="1.1.7" version="1.1.7"/>
+<import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6"/>
 <import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4"/>
 <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
+<import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1"/></requires>
   <extension
     point="kodi.inputstream"
     name="ffmpegdirect"
@@ -304,42 +300,332 @@
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
     </assets>
+    <news>
+v19.0.3
+- Revert: Update source URL to kodi mirror
+
+v19.0.2
+- Update source URL to kodi mirror
+
+v19.0.1
+- Translations updates from Weblate
+
+v19.0.0
+- Changed test builds to released 'Kodi 19 Matrix'
+- Increased version to 19.0.0
+  - With start of Kodi 20 Nexus, takes addon as major the same version number as Kodi.
+    This done to know easier to which Kodi the addon works.
+
+v1.21.8
+Translations updates from Weblate
+  - am_et, bs_ba, cy_gb, es_ar, eu_es, fa_ir, ml_in, mn_mn, mt_mt, my_mm, ro_md, si_lk, ta_in, tg_tj, uk_ua, uz_uz
+
+v1.21.7
+- Translations updates from Weblate
+  - de_de, pl_pl
+
+v1.21.6
+- Translations updates from Weblate
+  - da_dk
+
+v1.21.5
+Translations updates from Weblate
+  - he_il, zh_cn
+
+v1.21.4
+- Workaround/hack for incorrect program change detection for catchup streams
+- Simplify program number property logic
+- Language update from Weblate
+
+v1.21.3
+- Fixed: fix hls bitrate selection
+
+v1.21.2
+- Fixed: Allow timezone shift when live URLs have placeholders
+
+v1.21.1
+- Fixed: remove workaround for ffmpeg deprecated function on windowsstore
+- Fixed: Replace deprecated av_init_packet() from ffmpeg
+
+v1.21.0
+- Update: FFmpeg to 4.4
+- Update: Update gas preprocessor for ffmpeg4.4
+- Fixed: Ignore deprecation warning as errors for ffmpegs av_init_packet() for windowsstore
+
+v1.20.1
+- Fixed: release version fix
+
+v1.20.0
+- Update: FFmpeg to 4.3.2
+- Added: If open_mode is default make sure the right protocols default to open with ffmpeg
+
+v1.19.4
+- Fixed: Fix locking on EOF detection of terminating catchup stream by using std:recursive_mutex
+
+v1.19.3
+- Update: move verbose playback timeshift logging to debug level
+- Update: Update cmakelists to reference FFMPEGDIRECT at build time
+
+v1.19.2
+- Update: Demuxer additions from kodi
+
+v1.19.1
+- Fixed: Ensure all values in GetTimes() default to zero
+
+v1.19.0
+- Added: FFmpeg patch for satip improvements
+- Added: SafeLocaltime and custom catchup timestamp formats
+- Added: Now timestamp and custom timestamp format for live catchup URL
+- Added: Use curl for mingw package downloads
+
+v1.18.2
+- Update: Redact inputstream property URLs when logged
+
+v1.18.1
+- Update: Add temporary ffmpeg patch for embedded EIT (EPG) data in mepgts streams
+
+v1.18.0
+- Update: inputstream API 3.0.1
+  - Fix wrong flags bit shift
+
+v1.17.0
+- Update: inputstream API 3.0.0
+
+v1.16.0
+- Update: Inputstream API 2.3.4
+- Added: German translation
+- Added: Debian build test to Travis CI
+
+v1.15.5
+- Update: Use add-on supplied StringUtils and remove local version
+- Update: Remove local threading code and use addon supplied instead
+- Update: Use new addon supplied CEndTime class based on chrono
+- Update: Add autoreconf step to lib zvbi
+
+v1.15.4
+- Update: Remove p8-platforms and add local StringUtils for cpp17
+- Update: Nettle patch for xcode 12
+
+v1.15.3
+- Update: gnutls 3.6.15 and nettle 3.6 bump
+
+v1.15.2
+- Update: bump to fix version number
+
+v1.15.1
+- Fixed: Use correct index for streams using a program number, fixes EIT data embedded in streams
+- Update: FFmpeg to 4.3.1
+
+v1.15.0
+- Added: Add fast open for manifest stream and test setting for realtime off
+- Fixed: Honour realtime stream property
+- Fixed: Fix using prev button to seek back to start of stream
+- Fixed: Ensure no slash at end of timeshift buffer path
+- Fixed: Make sure write segment file is closed when buffer is destroyed
+- Fixed: Use overwrite when opening files for write for compatibility with SMB on Android
+- Fixed: Don't start timeshift and exit if index file cannot be created
+- Update: If any timeshift file cannot be created log free disk space
+- Fixed: Avoid crash for zero byte or partial timeshift segment files
+- Fixed: Only read ffmpeg logging setting on stream start
+- Update: Redact username and password for urls in log statements
+- Fixed: Only create timeshift directory if it does not exist
+
+v1.14.5
+- Fixed: Fix lintian spellings and mimetype log statement
+- Update: Readme
+
+v1.14.4
+- Fixed: Use kodi's own FFmpeg for ubuntu packaging
+
+v1.14.3
+- Update: Use FFmpeg 4.3
+
+v1.14.2
+- Fixed: Debian packaging
+
+v1.14.1
+- Update: Kodi API Bump
+
+v1.14.0
+- Added: Add HLS bandwidth limit and teletext/fps advanced settings
+- Fixed: Add missing ATTRIBUTE_HIDDEN qualifer to InputSteamFFmpegDirect class
+- Fixed: Fix memory leak for DemuxStreams
+- Update: README
+
+v1.13.0
+- Added: Add setting for user to limit the length of the timeshift buffer
+
+v1.12.0
+- Added: Support seeking for VOD streams or regular file playback
+- Fixed: Update HLS iformat name and remove hls workaround which is fixed in current FFmpeg
+- Added: Timeshift for live streams (experimental)
+- Added: Add support for Kodi user-agent and cookies when calling FFmpeg directly
+- Added: Support multiple occurrences of year, month and day in catchup format specifiers
+- Added: Add option to turn FFmpeg logging on/off
+
+v1.11.0
+- Update: inputstream API 2.3.1
+- Update: Global API 1.2.0
+
+v1.10.0
+- Added: Continued playback of catchtup streams which don't support delayed live streams
+- Added: Skip unsupported seeks like ones too close to live or those less one minute for streams that only allow a 1 minute granulaity
+- Added: Limit seeking for terminating 1 second streams to within 1 minute of live and for 60 streams 2 minutes
+- Update: Debian control file
+- Update: gas-preprocessor to latest version and remove patch that is no longer required
+- Update: .gitignore
+- Fixed: Fix arch typo ffmpeg darwin_embedded
+- Fixed: Cleanup apple frameworks usage in cmakelists
+- Added: Change logging implementation and deprecate use of NOTICE level
+- Added: Allow streams to be opened using cURL in addition to FFmpeg
+- Update: Fix TS Streams by disallowing streaminfo for realtime streams
+- Update: MKV Attachment and IsTransportStreamReady() updates from kodi
+
+v1.9.2
+- Update: Use generic mimetype from stream and remove old mime_type property
+
+v1.9.1
+- Update: Inpustream API 2.3.0
+
+v1.9.0
+- Added: HTTP Proxy support
+- Update: Remove PauseStream for Inputstream API 2.2.0
+- Fixed: fix changelog.in for debian packaging
+
+v1.8.2
+- Fixed: Ubuntu packaging
+- Added: Updated RTP patch
+
+v1.8.1
+- Fixed: Suppress verbose logging on libxml2 on osx that causes travis builds to fail
+
+v1.8.0
+- Added: Support live URL in addition to catchup URL
+- Added: Support resuming from pause and to catchup stream
+- Update: Remove CanSeekStream and CanPauseStream for Inputstream API v2.1.0
+- Update: .gitignore
+
+v1.7.3
+- Update: Remove pthreads library as now w32pthreads is used instead
+- Update: libxml2 disable unused components for common depends and remove unrequired patch
+- Update: Update libxml2 to 2.9.10 for windows, disable html module and remove unrequired patches
+- Update: Enable asm for gnutls and nettle for darwin_embedded
+
+v1.7.2
+- Update: w32pthreads
+- Fixed: gnutls disable tools for OSX 10.15.4 compatibility
+- Fixed: libxml2 patch for OSX 10.15.4/Xcode 11.4 compatibility
+- Update: SPDX, headers and badges
+- Update: gnutls to 3.6.13
+- Update: gmp on android to 6.2.0
+
+v1.7.1
+- Fixed: tvOS build
+
+v1.7.0
+- Update: remove unrequired gnutls patch
+- Fixed: Replace ;'s workaround for cmake bug for ffmpeg LDFLAGS
+- Added: Patch for ffmpeg using rtp protocol where sources option is not retained
+- Update: Document programme_catchup_id stream property in README
+- Added: Support for timestamp catchup format specifier
+- Added: Support duration units format specifer to convert duration to mins or hours
+- Update: Update darwin deprecated thread call
+- Fixed: validate duration format specifier and cap to time now
+- Added: Add optional stream property for live catchup url
+- Added: Support for offset catchup format specifier
+- Fixed: Disable Neon for arm for iOS/tvOS
+- Fixed: Raspberry Pi build
+
+v1.6.0
+- Added: Support catchup-id stream property
+- Added: Enable pthreads for FFmpeg on Windows to allow circular buffer for UDP streams
+- Added: Fanart and icon
+- Added: Move from appveyor to Azure DevOps to windows CI
+- Added: Source and license to addon.xml
+- Added: p8-platform to addon depends
+- Fixed: Remove kodi protocol options before opening URL
+- Fixed: Wrong mms/rtp/udp url being used
+- Fixed: Android linkage for ffmpeg broken
+- Fixed: Travis status image
+- Update: To gnutls-3.6.12
+
+v1.5.0
+- Update: FFmpeg-n4.2.2, patches refreshed
+
+v1.4.1
+- Update: Cleanup logging
+
+v1.4.0
+- Added: gnutls patch to add libdl to support newer OSes
+- Added: Add support for mms and rtp/udp streams with sources
+- Fixed: Add workaround for CMake and Frameworks on Darwin
+
+v1.3.0
+- Added: Support for Windows and iOS
+- Update: To gmp-6.2.0
+- Update: To nettle-3.5.1
+- Update: To gnutls-3.6.11.1
+
+v1.2.1
+- Fixed: Support for XCode build with GCC via travis
+
+v1.2.0
+- Added: Jenkinsfile and .travel.yml
+- Added: Support for Android and linux
+- Fixed: Some depnds errors for iOS, still more to fix
+- Added: Clang and g++ build supported from Travis, osx travis not working
+
+v1.1.0
+- Added: Support for chapters
+
+v1.0.0
+- Added: Initial version working for both normal streams and those supporting catchup
+
+Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/inputstream.ffmpegdirect/changelog.txt
+    </news>
     <summary lang="ca_ES">Client InputStream per a fluxos FFmpeg (libavformat)</summary>
+    <summary lang="cs_CZ">Klient toků FFmpeg (libavformat) protokolu InputStream</summary>
     <summary lang="da_DK">InputStream-klient til FFmpeg-streams (libavformat)</summary>
     <summary lang="de_DE">InputStream-Client für FFmpeg-Streams (libavformat)</summary>
     <summary lang="en_GB">InputStream Client for FFmpeg streams (libavformat)</summary>
+    <summary lang="es_ES">Cliente de InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="es_MX">Cliente InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="fi_FI">InputStream asiakasohjelma FFmpeg suoratoistoille (libavformat)</summary>
+    <summary lang="fr_FR">Client InputStream pour les flux FFmpeg (format libav)</summary>
+    <summary lang="hr_HR">InputStream klijent za FFmpeg strujanja (libavformat)</summary>
     <summary lang="ko_KR">FFmpeg 스트림용 InputStream 클라이언트(libavformat)</summary>
     <summary lang="pl_PL">Klient InputStream dla strumieni FFmpeg (libavformat)</summary>
     <summary lang="ru_RU">InputStream клиент для FFmpeg потоков (libavformat)</summary>
     <summary lang="zh_CN">FFmpeg 流的 InputStream 客户端（libavformat）</summary>
     <description lang="ca_ES">Client InputStream per a fluxos que es poden obrir mitjançant el libavformat de FFmpeg o el cURL de Kodi. S’admeten formats de flux comuns, com ara TS simple, HLS i DASH (sense DRM), així com molts altres.[CR][CR]El complement també és compatible amb els serveis Archive/Catchup , on hi ha una finestra de reproducció (normalment en dies) i pot canviar de temps en aquest interval.[CR][CR]Per a la documentació, visiteu: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="cs_CZ">Klient protokolu InputStream pro toky, které mohou být otevřeny pomocí FFmpeg libavformat nebo Kodi cURL.Běžné formáty toků jako prosté TS, HLS, DASH (bez DRM) a mnoho dalších jsou podporovány.[CR][CR]Doplněk má též podporu pro služby Archive/Catchup, které mají dobu pro opětovné přehrání (obvykle ve dnech) a mohou mít v tomto období časový posun.[CR][CR]Pro dokumentaci navštivte: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="da_DK">InputStream-klient til streams, der kan åbnes af enten FFmpeg&apos;s libavformat eller Kodi&apos;s cURL. Almindelige streamformater som f.eks. almindelig TS, HLS og DASH (uden DRM) understøttes såvel som mange andre.[CR][CR]Add-on&apos;et har også understøttelse af Arkiv-/Catchup-tjenester, hvor der er et afspilningsvindue (normalt i dage) og kan tidsforskyde på tværs af dette spænd.[CR][CR]For dokumentation besøg: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="de_DE">InputStream-Client für Streams, die entweder mit dem libav-Format von FFmpeg oder mit cURL von Kodi geöffnet werden können. Gängige Stream-Formate wie TS, HLS und DASH (ohne DRM) werden ebenso unterstützt wie viele andere.[CR][CR]Das Addon unterstützt auch Archiv-/Aufholdienste, bei denen Wiedergabefenster vorhanden sind (normalerweise in Tagen), und kann über diesen Zeitraum hinweg eine Zeitverschiebung bewirken.[CR][CR]Dokumentation unter: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="en_GB">InputStream Client for streams that can be opened by either FFmpeg&apos;s libavformat or Kodi&apos;s cURL. Common stream formats such as plain TS, HLS and DASH (without DRM) are supported as well as many others.[CR][CR]The addon also has support for Archive/Catchup services where there is a replay windows (usually in days) and can timeshift across that span.[CR][CR]For documenation visit: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="es_ES">Un cliente de InputStream que puede abrir flujos con libavformat de FFmpeg o cURL de Kodi. Los formatos flujos comunes como son TS puro, HLS y DASH (sin DRM) se soportan bien, así como muchos otros.[CR][CR]El addon también tiene soporte para los servicios de Archivado/Rebobinado si hay ventanas de reproducción (normalmente días) en las que se pueda volver a ver.[CR][CR]La documentación está en: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="es_MX">Cliente InputStream para flujos de datos que pueden abrirse con libavformat de FFmpeg o cURL integrado en Kodi. Formatos de flujo comunes tales como TS simple, HLS y DASH (sin DRM) también están soportados, al igual que muchos otros.[CR][CR]El complemento también soporta servicios Archive/Catchup donde hay un espacio de repetición (usualmente en días) y se puede mover a través del tiempo de dicho espacio.[CR][CR]Para documentación visita: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="fi_FI">InputStream asiakasohjelma suoratoistoille, jotka voidaan avata joko FFmpegin libavformaatilla tai Kodin cURL:llä. Yleisiä suoratoistomuotoja, kuten tavallinen TS, HLS ja DASH (ilman DRM:ää), tuetaan sekä monia muita.[CR][CR]Lisäosa tukee myös Arkisto-/Catchup-palveluita, joissa on uusintaikkunoita (yleensä päivissä) ja voi siirtyä aikavälillä.[CR][CR]Dokumentaatiot löytyvät osoitteesta: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="fr_FR">InputStream Client pour les flux pouvant être ouverts soit par le libavformat de FFmpeg, soit par le cURL de Kodi. Les formats de flux courants tels que TS, HLS et DASH (sans DRM) sont pris en charge ainsi que bien d&apos;autres. et peut être décalé dans le temps dans la période.[CR][CR]Pour la documentation, visitez : https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="hr_HR">InputStream klijent za strujanja koja se mogu otvoriti ili FFmpeg libavformatom ili Kodijevim cURL-om. Uobičajeni formati strujanja poput običnog TS, HLS i DASH (bez DRM zaštite sadržaja) formata su podržani kao i mnogi drugi.[CR][CR]Dodatak ima još podršku za Arhive/Hvatanje usluga gdje postoji prozor ponovne raprodukcije (uobičajeno u danima) i može se vremenski premotavati u zadanom vremenskom razdoblju.[CR][CR]Za dokumentaciju posjetite: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ko_KR">FFmpeg의 libavformat 또는 Kodi의 cURL로 열 수 있는 스트림용 InputStream 클라이언트. 일반 TS, HLS 및 DASH(DRM 제외)와 같은 일반적인 스트림 형식은 물론 다른 많은 형식도 지원됩니다.[CR][CR]이 애드온은 재생 창(보통 며칠)이 있는 아카이브/따라잡기 서비스도 지원합니다. 해당 범위에서 타임시프트할 수 있습니다.[CR][CR]문서를 보려면 https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md를 방문하세요</description>
     <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
-    <path>inputstream.ffmpegdirect+android-aarch64/inputstream.ffmpegdirect-20.5.0.zip</path>
   </extension>
 </addon>
 
 <addon
   id="inputstream.ffmpegdirect"
-  version="20.5.0"
+  version="19.0.3"
   name="Inputstream FFmpeg Direct"
   provider-name="Ross Nicholson">
   <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
+<import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.global.filesystem" minversion="1.1.7" version="1.1.7"/>
+<import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6"/>
 <import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4"/>
 <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
+<import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1"/></requires>
   <extension
     point="kodi.inputstream"
     name="ffmpegdirect"
@@ -356,42 +642,332 @@
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
     </assets>
+    <news>
+v19.0.3
+- Revert: Update source URL to kodi mirror
+
+v19.0.2
+- Update source URL to kodi mirror
+
+v19.0.1
+- Translations updates from Weblate
+
+v19.0.0
+- Changed test builds to released 'Kodi 19 Matrix'
+- Increased version to 19.0.0
+  - With start of Kodi 20 Nexus, takes addon as major the same version number as Kodi.
+    This done to know easier to which Kodi the addon works.
+
+v1.21.8
+Translations updates from Weblate
+  - am_et, bs_ba, cy_gb, es_ar, eu_es, fa_ir, ml_in, mn_mn, mt_mt, my_mm, ro_md, si_lk, ta_in, tg_tj, uk_ua, uz_uz
+
+v1.21.7
+- Translations updates from Weblate
+  - de_de, pl_pl
+
+v1.21.6
+- Translations updates from Weblate
+  - da_dk
+
+v1.21.5
+Translations updates from Weblate
+  - he_il, zh_cn
+
+v1.21.4
+- Workaround/hack for incorrect program change detection for catchup streams
+- Simplify program number property logic
+- Language update from Weblate
+
+v1.21.3
+- Fixed: fix hls bitrate selection
+
+v1.21.2
+- Fixed: Allow timezone shift when live URLs have placeholders
+
+v1.21.1
+- Fixed: remove workaround for ffmpeg deprecated function on windowsstore
+- Fixed: Replace deprecated av_init_packet() from ffmpeg
+
+v1.21.0
+- Update: FFmpeg to 4.4
+- Update: Update gas preprocessor for ffmpeg4.4
+- Fixed: Ignore deprecation warning as errors for ffmpegs av_init_packet() for windowsstore
+
+v1.20.1
+- Fixed: release version fix
+
+v1.20.0
+- Update: FFmpeg to 4.3.2
+- Added: If open_mode is default make sure the right protocols default to open with ffmpeg
+
+v1.19.4
+- Fixed: Fix locking on EOF detection of terminating catchup stream by using std:recursive_mutex
+
+v1.19.3
+- Update: move verbose playback timeshift logging to debug level
+- Update: Update cmakelists to reference FFMPEGDIRECT at build time
+
+v1.19.2
+- Update: Demuxer additions from kodi
+
+v1.19.1
+- Fixed: Ensure all values in GetTimes() default to zero
+
+v1.19.0
+- Added: FFmpeg patch for satip improvements
+- Added: SafeLocaltime and custom catchup timestamp formats
+- Added: Now timestamp and custom timestamp format for live catchup URL
+- Added: Use curl for mingw package downloads
+
+v1.18.2
+- Update: Redact inputstream property URLs when logged
+
+v1.18.1
+- Update: Add temporary ffmpeg patch for embedded EIT (EPG) data in mepgts streams
+
+v1.18.0
+- Update: inputstream API 3.0.1
+  - Fix wrong flags bit shift
+
+v1.17.0
+- Update: inputstream API 3.0.0
+
+v1.16.0
+- Update: Inputstream API 2.3.4
+- Added: German translation
+- Added: Debian build test to Travis CI
+
+v1.15.5
+- Update: Use add-on supplied StringUtils and remove local version
+- Update: Remove local threading code and use addon supplied instead
+- Update: Use new addon supplied CEndTime class based on chrono
+- Update: Add autoreconf step to lib zvbi
+
+v1.15.4
+- Update: Remove p8-platforms and add local StringUtils for cpp17
+- Update: Nettle patch for xcode 12
+
+v1.15.3
+- Update: gnutls 3.6.15 and nettle 3.6 bump
+
+v1.15.2
+- Update: bump to fix version number
+
+v1.15.1
+- Fixed: Use correct index for streams using a program number, fixes EIT data embedded in streams
+- Update: FFmpeg to 4.3.1
+
+v1.15.0
+- Added: Add fast open for manifest stream and test setting for realtime off
+- Fixed: Honour realtime stream property
+- Fixed: Fix using prev button to seek back to start of stream
+- Fixed: Ensure no slash at end of timeshift buffer path
+- Fixed: Make sure write segment file is closed when buffer is destroyed
+- Fixed: Use overwrite when opening files for write for compatibility with SMB on Android
+- Fixed: Don't start timeshift and exit if index file cannot be created
+- Update: If any timeshift file cannot be created log free disk space
+- Fixed: Avoid crash for zero byte or partial timeshift segment files
+- Fixed: Only read ffmpeg logging setting on stream start
+- Update: Redact username and password for urls in log statements
+- Fixed: Only create timeshift directory if it does not exist
+
+v1.14.5
+- Fixed: Fix lintian spellings and mimetype log statement
+- Update: Readme
+
+v1.14.4
+- Fixed: Use kodi's own FFmpeg for ubuntu packaging
+
+v1.14.3
+- Update: Use FFmpeg 4.3
+
+v1.14.2
+- Fixed: Debian packaging
+
+v1.14.1
+- Update: Kodi API Bump
+
+v1.14.0
+- Added: Add HLS bandwidth limit and teletext/fps advanced settings
+- Fixed: Add missing ATTRIBUTE_HIDDEN qualifer to InputSteamFFmpegDirect class
+- Fixed: Fix memory leak for DemuxStreams
+- Update: README
+
+v1.13.0
+- Added: Add setting for user to limit the length of the timeshift buffer
+
+v1.12.0
+- Added: Support seeking for VOD streams or regular file playback
+- Fixed: Update HLS iformat name and remove hls workaround which is fixed in current FFmpeg
+- Added: Timeshift for live streams (experimental)
+- Added: Add support for Kodi user-agent and cookies when calling FFmpeg directly
+- Added: Support multiple occurrences of year, month and day in catchup format specifiers
+- Added: Add option to turn FFmpeg logging on/off
+
+v1.11.0
+- Update: inputstream API 2.3.1
+- Update: Global API 1.2.0
+
+v1.10.0
+- Added: Continued playback of catchtup streams which don't support delayed live streams
+- Added: Skip unsupported seeks like ones too close to live or those less one minute for streams that only allow a 1 minute granulaity
+- Added: Limit seeking for terminating 1 second streams to within 1 minute of live and for 60 streams 2 minutes
+- Update: Debian control file
+- Update: gas-preprocessor to latest version and remove patch that is no longer required
+- Update: .gitignore
+- Fixed: Fix arch typo ffmpeg darwin_embedded
+- Fixed: Cleanup apple frameworks usage in cmakelists
+- Added: Change logging implementation and deprecate use of NOTICE level
+- Added: Allow streams to be opened using cURL in addition to FFmpeg
+- Update: Fix TS Streams by disallowing streaminfo for realtime streams
+- Update: MKV Attachment and IsTransportStreamReady() updates from kodi
+
+v1.9.2
+- Update: Use generic mimetype from stream and remove old mime_type property
+
+v1.9.1
+- Update: Inpustream API 2.3.0
+
+v1.9.0
+- Added: HTTP Proxy support
+- Update: Remove PauseStream for Inputstream API 2.2.0
+- Fixed: fix changelog.in for debian packaging
+
+v1.8.2
+- Fixed: Ubuntu packaging
+- Added: Updated RTP patch
+
+v1.8.1
+- Fixed: Suppress verbose logging on libxml2 on osx that causes travis builds to fail
+
+v1.8.0
+- Added: Support live URL in addition to catchup URL
+- Added: Support resuming from pause and to catchup stream
+- Update: Remove CanSeekStream and CanPauseStream for Inputstream API v2.1.0
+- Update: .gitignore
+
+v1.7.3
+- Update: Remove pthreads library as now w32pthreads is used instead
+- Update: libxml2 disable unused components for common depends and remove unrequired patch
+- Update: Update libxml2 to 2.9.10 for windows, disable html module and remove unrequired patches
+- Update: Enable asm for gnutls and nettle for darwin_embedded
+
+v1.7.2
+- Update: w32pthreads
+- Fixed: gnutls disable tools for OSX 10.15.4 compatibility
+- Fixed: libxml2 patch for OSX 10.15.4/Xcode 11.4 compatibility
+- Update: SPDX, headers and badges
+- Update: gnutls to 3.6.13
+- Update: gmp on android to 6.2.0
+
+v1.7.1
+- Fixed: tvOS build
+
+v1.7.0
+- Update: remove unrequired gnutls patch
+- Fixed: Replace ;'s workaround for cmake bug for ffmpeg LDFLAGS
+- Added: Patch for ffmpeg using rtp protocol where sources option is not retained
+- Update: Document programme_catchup_id stream property in README
+- Added: Support for timestamp catchup format specifier
+- Added: Support duration units format specifer to convert duration to mins or hours
+- Update: Update darwin deprecated thread call
+- Fixed: validate duration format specifier and cap to time now
+- Added: Add optional stream property for live catchup url
+- Added: Support for offset catchup format specifier
+- Fixed: Disable Neon for arm for iOS/tvOS
+- Fixed: Raspberry Pi build
+
+v1.6.0
+- Added: Support catchup-id stream property
+- Added: Enable pthreads for FFmpeg on Windows to allow circular buffer for UDP streams
+- Added: Fanart and icon
+- Added: Move from appveyor to Azure DevOps to windows CI
+- Added: Source and license to addon.xml
+- Added: p8-platform to addon depends
+- Fixed: Remove kodi protocol options before opening URL
+- Fixed: Wrong mms/rtp/udp url being used
+- Fixed: Android linkage for ffmpeg broken
+- Fixed: Travis status image
+- Update: To gnutls-3.6.12
+
+v1.5.0
+- Update: FFmpeg-n4.2.2, patches refreshed
+
+v1.4.1
+- Update: Cleanup logging
+
+v1.4.0
+- Added: gnutls patch to add libdl to support newer OSes
+- Added: Add support for mms and rtp/udp streams with sources
+- Fixed: Add workaround for CMake and Frameworks on Darwin
+
+v1.3.0
+- Added: Support for Windows and iOS
+- Update: To gmp-6.2.0
+- Update: To nettle-3.5.1
+- Update: To gnutls-3.6.11.1
+
+v1.2.1
+- Fixed: Support for XCode build with GCC via travis
+
+v1.2.0
+- Added: Jenkinsfile and .travel.yml
+- Added: Support for Android and linux
+- Fixed: Some depnds errors for iOS, still more to fix
+- Added: Clang and g++ build supported from Travis, osx travis not working
+
+v1.1.0
+- Added: Support for chapters
+
+v1.0.0
+- Added: Initial version working for both normal streams and those supporting catchup
+
+Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/inputstream.ffmpegdirect/changelog.txt
+    </news>
     <summary lang="ca_ES">Client InputStream per a fluxos FFmpeg (libavformat)</summary>
+    <summary lang="cs_CZ">Klient toků FFmpeg (libavformat) protokolu InputStream</summary>
     <summary lang="da_DK">InputStream-klient til FFmpeg-streams (libavformat)</summary>
     <summary lang="de_DE">InputStream-Client für FFmpeg-Streams (libavformat)</summary>
     <summary lang="en_GB">InputStream Client for FFmpeg streams (libavformat)</summary>
+    <summary lang="es_ES">Cliente de InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="es_MX">Cliente InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="fi_FI">InputStream asiakasohjelma FFmpeg suoratoistoille (libavformat)</summary>
+    <summary lang="fr_FR">Client InputStream pour les flux FFmpeg (format libav)</summary>
+    <summary lang="hr_HR">InputStream klijent za FFmpeg strujanja (libavformat)</summary>
     <summary lang="ko_KR">FFmpeg 스트림용 InputStream 클라이언트(libavformat)</summary>
     <summary lang="pl_PL">Klient InputStream dla strumieni FFmpeg (libavformat)</summary>
     <summary lang="ru_RU">InputStream клиент для FFmpeg потоков (libavformat)</summary>
     <summary lang="zh_CN">FFmpeg 流的 InputStream 客户端（libavformat）</summary>
     <description lang="ca_ES">Client InputStream per a fluxos que es poden obrir mitjançant el libavformat de FFmpeg o el cURL de Kodi. S’admeten formats de flux comuns, com ara TS simple, HLS i DASH (sense DRM), així com molts altres.[CR][CR]El complement també és compatible amb els serveis Archive/Catchup , on hi ha una finestra de reproducció (normalment en dies) i pot canviar de temps en aquest interval.[CR][CR]Per a la documentació, visiteu: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="cs_CZ">Klient protokolu InputStream pro toky, které mohou být otevřeny pomocí FFmpeg libavformat nebo Kodi cURL.Běžné formáty toků jako prosté TS, HLS, DASH (bez DRM) a mnoho dalších jsou podporovány.[CR][CR]Doplněk má též podporu pro služby Archive/Catchup, které mají dobu pro opětovné přehrání (obvykle ve dnech) a mohou mít v tomto období časový posun.[CR][CR]Pro dokumentaci navštivte: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="da_DK">InputStream-klient til streams, der kan åbnes af enten FFmpeg&apos;s libavformat eller Kodi&apos;s cURL. Almindelige streamformater som f.eks. almindelig TS, HLS og DASH (uden DRM) understøttes såvel som mange andre.[CR][CR]Add-on&apos;et har også understøttelse af Arkiv-/Catchup-tjenester, hvor der er et afspilningsvindue (normalt i dage) og kan tidsforskyde på tværs af dette spænd.[CR][CR]For dokumentation besøg: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="de_DE">InputStream-Client für Streams, die entweder mit dem libav-Format von FFmpeg oder mit cURL von Kodi geöffnet werden können. Gängige Stream-Formate wie TS, HLS und DASH (ohne DRM) werden ebenso unterstützt wie viele andere.[CR][CR]Das Addon unterstützt auch Archiv-/Aufholdienste, bei denen Wiedergabefenster vorhanden sind (normalerweise in Tagen), und kann über diesen Zeitraum hinweg eine Zeitverschiebung bewirken.[CR][CR]Dokumentation unter: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="en_GB">InputStream Client for streams that can be opened by either FFmpeg&apos;s libavformat or Kodi&apos;s cURL. Common stream formats such as plain TS, HLS and DASH (without DRM) are supported as well as many others.[CR][CR]The addon also has support for Archive/Catchup services where there is a replay windows (usually in days) and can timeshift across that span.[CR][CR]For documenation visit: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="es_ES">Un cliente de InputStream que puede abrir flujos con libavformat de FFmpeg o cURL de Kodi. Los formatos flujos comunes como son TS puro, HLS y DASH (sin DRM) se soportan bien, así como muchos otros.[CR][CR]El addon también tiene soporte para los servicios de Archivado/Rebobinado si hay ventanas de reproducción (normalmente días) en las que se pueda volver a ver.[CR][CR]La documentación está en: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="es_MX">Cliente InputStream para flujos de datos que pueden abrirse con libavformat de FFmpeg o cURL integrado en Kodi. Formatos de flujo comunes tales como TS simple, HLS y DASH (sin DRM) también están soportados, al igual que muchos otros.[CR][CR]El complemento también soporta servicios Archive/Catchup donde hay un espacio de repetición (usualmente en días) y se puede mover a través del tiempo de dicho espacio.[CR][CR]Para documentación visita: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="fi_FI">InputStream asiakasohjelma suoratoistoille, jotka voidaan avata joko FFmpegin libavformaatilla tai Kodin cURL:llä. Yleisiä suoratoistomuotoja, kuten tavallinen TS, HLS ja DASH (ilman DRM:ää), tuetaan sekä monia muita.[CR][CR]Lisäosa tukee myös Arkisto-/Catchup-palveluita, joissa on uusintaikkunoita (yleensä päivissä) ja voi siirtyä aikavälillä.[CR][CR]Dokumentaatiot löytyvät osoitteesta: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="fr_FR">InputStream Client pour les flux pouvant être ouverts soit par le libavformat de FFmpeg, soit par le cURL de Kodi. Les formats de flux courants tels que TS, HLS et DASH (sans DRM) sont pris en charge ainsi que bien d&apos;autres. et peut être décalé dans le temps dans la période.[CR][CR]Pour la documentation, visitez : https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="hr_HR">InputStream klijent za strujanja koja se mogu otvoriti ili FFmpeg libavformatom ili Kodijevim cURL-om. Uobičajeni formati strujanja poput običnog TS, HLS i DASH (bez DRM zaštite sadržaja) formata su podržani kao i mnogi drugi.[CR][CR]Dodatak ima još podršku za Arhive/Hvatanje usluga gdje postoji prozor ponovne raprodukcije (uobičajeno u danima) i može se vremenski premotavati u zadanom vremenskom razdoblju.[CR][CR]Za dokumentaciju posjetite: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ko_KR">FFmpeg의 libavformat 또는 Kodi의 cURL로 열 수 있는 스트림용 InputStream 클라이언트. 일반 TS, HLS 및 DASH(DRM 제외)와 같은 일반적인 스트림 형식은 물론 다른 많은 형식도 지원됩니다.[CR][CR]이 애드온은 재생 창(보통 며칠)이 있는 아카이브/따라잡기 서비스도 지원합니다. 해당 범위에서 타임시프트할 수 있습니다.[CR][CR]문서를 보려면 https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md를 방문하세요</description>
     <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
-    <path>inputstream.ffmpegdirect+android-aarch64/inputstream.ffmpegdirect-20.5.0.zip</path>
   </extension>
 </addon>
 
 <addon
   id="inputstream.ffmpegdirect"
-  version="20.5.0"
+  version="19.0.3"
   name="Inputstream FFmpeg Direct"
   provider-name="Ross Nicholson">
   <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
+<import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
 <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.global.filesystem" minversion="1.1.7" version="1.1.7"/>
+<import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6"/>
 <import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4"/>
 <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
+<import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1"/></requires>
   <extension
     point="kodi.inputstream"
     name="ffmpegdirect"
@@ -408,189 +984,317 @@
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
     </assets>
+    <news>
+v19.0.3
+- Revert: Update source URL to kodi mirror
+
+v19.0.2
+- Update source URL to kodi mirror
+
+v19.0.1
+- Translations updates from Weblate
+
+v19.0.0
+- Changed test builds to released 'Kodi 19 Matrix'
+- Increased version to 19.0.0
+  - With start of Kodi 20 Nexus, takes addon as major the same version number as Kodi.
+    This done to know easier to which Kodi the addon works.
+
+v1.21.8
+Translations updates from Weblate
+  - am_et, bs_ba, cy_gb, es_ar, eu_es, fa_ir, ml_in, mn_mn, mt_mt, my_mm, ro_md, si_lk, ta_in, tg_tj, uk_ua, uz_uz
+
+v1.21.7
+- Translations updates from Weblate
+  - de_de, pl_pl
+
+v1.21.6
+- Translations updates from Weblate
+  - da_dk
+
+v1.21.5
+Translations updates from Weblate
+  - he_il, zh_cn
+
+v1.21.4
+- Workaround/hack for incorrect program change detection for catchup streams
+- Simplify program number property logic
+- Language update from Weblate
+
+v1.21.3
+- Fixed: fix hls bitrate selection
+
+v1.21.2
+- Fixed: Allow timezone shift when live URLs have placeholders
+
+v1.21.1
+- Fixed: remove workaround for ffmpeg deprecated function on windowsstore
+- Fixed: Replace deprecated av_init_packet() from ffmpeg
+
+v1.21.0
+- Update: FFmpeg to 4.4
+- Update: Update gas preprocessor for ffmpeg4.4
+- Fixed: Ignore deprecation warning as errors for ffmpegs av_init_packet() for windowsstore
+
+v1.20.1
+- Fixed: release version fix
+
+v1.20.0
+- Update: FFmpeg to 4.3.2
+- Added: If open_mode is default make sure the right protocols default to open with ffmpeg
+
+v1.19.4
+- Fixed: Fix locking on EOF detection of terminating catchup stream by using std:recursive_mutex
+
+v1.19.3
+- Update: move verbose playback timeshift logging to debug level
+- Update: Update cmakelists to reference FFMPEGDIRECT at build time
+
+v1.19.2
+- Update: Demuxer additions from kodi
+
+v1.19.1
+- Fixed: Ensure all values in GetTimes() default to zero
+
+v1.19.0
+- Added: FFmpeg patch for satip improvements
+- Added: SafeLocaltime and custom catchup timestamp formats
+- Added: Now timestamp and custom timestamp format for live catchup URL
+- Added: Use curl for mingw package downloads
+
+v1.18.2
+- Update: Redact inputstream property URLs when logged
+
+v1.18.1
+- Update: Add temporary ffmpeg patch for embedded EIT (EPG) data in mepgts streams
+
+v1.18.0
+- Update: inputstream API 3.0.1
+  - Fix wrong flags bit shift
+
+v1.17.0
+- Update: inputstream API 3.0.0
+
+v1.16.0
+- Update: Inputstream API 2.3.4
+- Added: German translation
+- Added: Debian build test to Travis CI
+
+v1.15.5
+- Update: Use add-on supplied StringUtils and remove local version
+- Update: Remove local threading code and use addon supplied instead
+- Update: Use new addon supplied CEndTime class based on chrono
+- Update: Add autoreconf step to lib zvbi
+
+v1.15.4
+- Update: Remove p8-platforms and add local StringUtils for cpp17
+- Update: Nettle patch for xcode 12
+
+v1.15.3
+- Update: gnutls 3.6.15 and nettle 3.6 bump
+
+v1.15.2
+- Update: bump to fix version number
+
+v1.15.1
+- Fixed: Use correct index for streams using a program number, fixes EIT data embedded in streams
+- Update: FFmpeg to 4.3.1
+
+v1.15.0
+- Added: Add fast open for manifest stream and test setting for realtime off
+- Fixed: Honour realtime stream property
+- Fixed: Fix using prev button to seek back to start of stream
+- Fixed: Ensure no slash at end of timeshift buffer path
+- Fixed: Make sure write segment file is closed when buffer is destroyed
+- Fixed: Use overwrite when opening files for write for compatibility with SMB on Android
+- Fixed: Don't start timeshift and exit if index file cannot be created
+- Update: If any timeshift file cannot be created log free disk space
+- Fixed: Avoid crash for zero byte or partial timeshift segment files
+- Fixed: Only read ffmpeg logging setting on stream start
+- Update: Redact username and password for urls in log statements
+- Fixed: Only create timeshift directory if it does not exist
+
+v1.14.5
+- Fixed: Fix lintian spellings and mimetype log statement
+- Update: Readme
+
+v1.14.4
+- Fixed: Use kodi's own FFmpeg for ubuntu packaging
+
+v1.14.3
+- Update: Use FFmpeg 4.3
+
+v1.14.2
+- Fixed: Debian packaging
+
+v1.14.1
+- Update: Kodi API Bump
+
+v1.14.0
+- Added: Add HLS bandwidth limit and teletext/fps advanced settings
+- Fixed: Add missing ATTRIBUTE_HIDDEN qualifer to InputSteamFFmpegDirect class
+- Fixed: Fix memory leak for DemuxStreams
+- Update: README
+
+v1.13.0
+- Added: Add setting for user to limit the length of the timeshift buffer
+
+v1.12.0
+- Added: Support seeking for VOD streams or regular file playback
+- Fixed: Update HLS iformat name and remove hls workaround which is fixed in current FFmpeg
+- Added: Timeshift for live streams (experimental)
+- Added: Add support for Kodi user-agent and cookies when calling FFmpeg directly
+- Added: Support multiple occurrences of year, month and day in catchup format specifiers
+- Added: Add option to turn FFmpeg logging on/off
+
+v1.11.0
+- Update: inputstream API 2.3.1
+- Update: Global API 1.2.0
+
+v1.10.0
+- Added: Continued playback of catchtup streams which don't support delayed live streams
+- Added: Skip unsupported seeks like ones too close to live or those less one minute for streams that only allow a 1 minute granulaity
+- Added: Limit seeking for terminating 1 second streams to within 1 minute of live and for 60 streams 2 minutes
+- Update: Debian control file
+- Update: gas-preprocessor to latest version and remove patch that is no longer required
+- Update: .gitignore
+- Fixed: Fix arch typo ffmpeg darwin_embedded
+- Fixed: Cleanup apple frameworks usage in cmakelists
+- Added: Change logging implementation and deprecate use of NOTICE level
+- Added: Allow streams to be opened using cURL in addition to FFmpeg
+- Update: Fix TS Streams by disallowing streaminfo for realtime streams
+- Update: MKV Attachment and IsTransportStreamReady() updates from kodi
+
+v1.9.2
+- Update: Use generic mimetype from stream and remove old mime_type property
+
+v1.9.1
+- Update: Inpustream API 2.3.0
+
+v1.9.0
+- Added: HTTP Proxy support
+- Update: Remove PauseStream for Inputstream API 2.2.0
+- Fixed: fix changelog.in for debian packaging
+
+v1.8.2
+- Fixed: Ubuntu packaging
+- Added: Updated RTP patch
+
+v1.8.1
+- Fixed: Suppress verbose logging on libxml2 on osx that causes travis builds to fail
+
+v1.8.0
+- Added: Support live URL in addition to catchup URL
+- Added: Support resuming from pause and to catchup stream
+- Update: Remove CanSeekStream and CanPauseStream for Inputstream API v2.1.0
+- Update: .gitignore
+
+v1.7.3
+- Update: Remove pthreads library as now w32pthreads is used instead
+- Update: libxml2 disable unused components for common depends and remove unrequired patch
+- Update: Update libxml2 to 2.9.10 for windows, disable html module and remove unrequired patches
+- Update: Enable asm for gnutls and nettle for darwin_embedded
+
+v1.7.2
+- Update: w32pthreads
+- Fixed: gnutls disable tools for OSX 10.15.4 compatibility
+- Fixed: libxml2 patch for OSX 10.15.4/Xcode 11.4 compatibility
+- Update: SPDX, headers and badges
+- Update: gnutls to 3.6.13
+- Update: gmp on android to 6.2.0
+
+v1.7.1
+- Fixed: tvOS build
+
+v1.7.0
+- Update: remove unrequired gnutls patch
+- Fixed: Replace ;'s workaround for cmake bug for ffmpeg LDFLAGS
+- Added: Patch for ffmpeg using rtp protocol where sources option is not retained
+- Update: Document programme_catchup_id stream property in README
+- Added: Support for timestamp catchup format specifier
+- Added: Support duration units format specifer to convert duration to mins or hours
+- Update: Update darwin deprecated thread call
+- Fixed: validate duration format specifier and cap to time now
+- Added: Add optional stream property for live catchup url
+- Added: Support for offset catchup format specifier
+- Fixed: Disable Neon for arm for iOS/tvOS
+- Fixed: Raspberry Pi build
+
+v1.6.0
+- Added: Support catchup-id stream property
+- Added: Enable pthreads for FFmpeg on Windows to allow circular buffer for UDP streams
+- Added: Fanart and icon
+- Added: Move from appveyor to Azure DevOps to windows CI
+- Added: Source and license to addon.xml
+- Added: p8-platform to addon depends
+- Fixed: Remove kodi protocol options before opening URL
+- Fixed: Wrong mms/rtp/udp url being used
+- Fixed: Android linkage for ffmpeg broken
+- Fixed: Travis status image
+- Update: To gnutls-3.6.12
+
+v1.5.0
+- Update: FFmpeg-n4.2.2, patches refreshed
+
+v1.4.1
+- Update: Cleanup logging
+
+v1.4.0
+- Added: gnutls patch to add libdl to support newer OSes
+- Added: Add support for mms and rtp/udp streams with sources
+- Fixed: Add workaround for CMake and Frameworks on Darwin
+
+v1.3.0
+- Added: Support for Windows and iOS
+- Update: To gmp-6.2.0
+- Update: To nettle-3.5.1
+- Update: To gnutls-3.6.11.1
+
+v1.2.1
+- Fixed: Support for XCode build with GCC via travis
+
+v1.2.0
+- Added: Jenkinsfile and .travel.yml
+- Added: Support for Android and linux
+- Fixed: Some depnds errors for iOS, still more to fix
+- Added: Clang and g++ build supported from Travis, osx travis not working
+
+v1.1.0
+- Added: Support for chapters
+
+v1.0.0
+- Added: Initial version working for both normal streams and those supporting catchup
+
+Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/inputstream.ffmpegdirect/changelog.txt
+    </news>
     <summary lang="ca_ES">Client InputStream per a fluxos FFmpeg (libavformat)</summary>
+    <summary lang="cs_CZ">Klient toků FFmpeg (libavformat) protokolu InputStream</summary>
     <summary lang="da_DK">InputStream-klient til FFmpeg-streams (libavformat)</summary>
     <summary lang="de_DE">InputStream-Client für FFmpeg-Streams (libavformat)</summary>
     <summary lang="en_GB">InputStream Client for FFmpeg streams (libavformat)</summary>
+    <summary lang="es_ES">Cliente de InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="es_MX">Cliente InputStream para flujos FFmpeg (libavformat)</summary>
     <summary lang="fi_FI">InputStream asiakasohjelma FFmpeg suoratoistoille (libavformat)</summary>
+    <summary lang="fr_FR">Client InputStream pour les flux FFmpeg (format libav)</summary>
+    <summary lang="hr_HR">InputStream klijent za FFmpeg strujanja (libavformat)</summary>
     <summary lang="ko_KR">FFmpeg 스트림용 InputStream 클라이언트(libavformat)</summary>
     <summary lang="pl_PL">Klient InputStream dla strumieni FFmpeg (libavformat)</summary>
     <summary lang="ru_RU">InputStream клиент для FFmpeg потоков (libavformat)</summary>
     <summary lang="zh_CN">FFmpeg 流的 InputStream 客户端（libavformat）</summary>
     <description lang="ca_ES">Client InputStream per a fluxos que es poden obrir mitjançant el libavformat de FFmpeg o el cURL de Kodi. S’admeten formats de flux comuns, com ara TS simple, HLS i DASH (sense DRM), així com molts altres.[CR][CR]El complement també és compatible amb els serveis Archive/Catchup , on hi ha una finestra de reproducció (normalment en dies) i pot canviar de temps en aquest interval.[CR][CR]Per a la documentació, visiteu: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="cs_CZ">Klient protokolu InputStream pro toky, které mohou být otevřeny pomocí FFmpeg libavformat nebo Kodi cURL.Běžné formáty toků jako prosté TS, HLS, DASH (bez DRM) a mnoho dalších jsou podporovány.[CR][CR]Doplněk má též podporu pro služby Archive/Catchup, které mají dobu pro opětovné přehrání (obvykle ve dnech) a mohou mít v tomto období časový posun.[CR][CR]Pro dokumentaci navštivte: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="da_DK">InputStream-klient til streams, der kan åbnes af enten FFmpeg&apos;s libavformat eller Kodi&apos;s cURL. Almindelige streamformater som f.eks. almindelig TS, HLS og DASH (uden DRM) understøttes såvel som mange andre.[CR][CR]Add-on&apos;et har også understøttelse af Arkiv-/Catchup-tjenester, hvor der er et afspilningsvindue (normalt i dage) og kan tidsforskyde på tværs af dette spænd.[CR][CR]For dokumentation besøg: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="de_DE">InputStream-Client für Streams, die entweder mit dem libav-Format von FFmpeg oder mit cURL von Kodi geöffnet werden können. Gängige Stream-Formate wie TS, HLS und DASH (ohne DRM) werden ebenso unterstützt wie viele andere.[CR][CR]Das Addon unterstützt auch Archiv-/Aufholdienste, bei denen Wiedergabefenster vorhanden sind (normalerweise in Tagen), und kann über diesen Zeitraum hinweg eine Zeitverschiebung bewirken.[CR][CR]Dokumentation unter: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="en_GB">InputStream Client for streams that can be opened by either FFmpeg&apos;s libavformat or Kodi&apos;s cURL. Common stream formats such as plain TS, HLS and DASH (without DRM) are supported as well as many others.[CR][CR]The addon also has support for Archive/Catchup services where there is a replay windows (usually in days) and can timeshift across that span.[CR][CR]For documenation visit: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="es_ES">Un cliente de InputStream que puede abrir flujos con libavformat de FFmpeg o cURL de Kodi. Los formatos flujos comunes como son TS puro, HLS y DASH (sin DRM) se soportan bien, así como muchos otros.[CR][CR]El addon también tiene soporte para los servicios de Archivado/Rebobinado si hay ventanas de reproducción (normalmente días) en las que se pueda volver a ver.[CR][CR]La documentación está en: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="es_MX">Cliente InputStream para flujos de datos que pueden abrirse con libavformat de FFmpeg o cURL integrado en Kodi. Formatos de flujo comunes tales como TS simple, HLS y DASH (sin DRM) también están soportados, al igual que muchos otros.[CR][CR]El complemento también soporta servicios Archive/Catchup donde hay un espacio de repetición (usualmente en días) y se puede mover a través del tiempo de dicho espacio.[CR][CR]Para documentación visita: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="fi_FI">InputStream asiakasohjelma suoratoistoille, jotka voidaan avata joko FFmpegin libavformaatilla tai Kodin cURL:llä. Yleisiä suoratoistomuotoja, kuten tavallinen TS, HLS ja DASH (ilman DRM:ää), tuetaan sekä monia muita.[CR][CR]Lisäosa tukee myös Arkisto-/Catchup-palveluita, joissa on uusintaikkunoita (yleensä päivissä) ja voi siirtyä aikavälillä.[CR][CR]Dokumentaatiot löytyvät osoitteesta: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="fr_FR">InputStream Client pour les flux pouvant être ouverts soit par le libavformat de FFmpeg, soit par le cURL de Kodi. Les formats de flux courants tels que TS, HLS et DASH (sans DRM) sont pris en charge ainsi que bien d&apos;autres. et peut être décalé dans le temps dans la période.[CR][CR]Pour la documentation, visitez : https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+    <description lang="hr_HR">InputStream klijent za strujanja koja se mogu otvoriti ili FFmpeg libavformatom ili Kodijevim cURL-om. Uobičajeni formati strujanja poput običnog TS, HLS i DASH (bez DRM zaštite sadržaja) formata su podržani kao i mnogi drugi.[CR][CR]Dodatak ima još podršku za Arhive/Hvatanje usluga gdje postoji prozor ponovne raprodukcije (uobičajeno u danima) i može se vremenski premotavati u zadanom vremenskom razdoblju.[CR][CR]Za dokumentaciju posjetite: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ko_KR">FFmpeg의 libavformat 또는 Kodi의 cURL로 열 수 있는 스트림용 InputStream 클라이언트. 일반 TS, HLS 및 DASH(DRM 제외)와 같은 일반적인 스트림 형식은 물론 다른 많은 형식도 지원됩니다.[CR][CR]이 애드온은 재생 창(보통 며칠)이 있는 아카이브/따라잡기 서비스도 지원합니다. 해당 범위에서 타임시프트할 수 있습니다.[CR][CR]문서를 보려면 https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md를 방문하세요</description>
     <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
-    <path>inputstream.ffmpegdirect+windows-x86_64/inputstream.ffmpegdirect-20.5.0.zip</path>
-  </extension>
-</addon>
-
-<addon
-  id="inputstream.rtmp"
-  version="20.3.0"
-  name="RTMP Input"
-  provider-name="spiff">
-  <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
-<import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
-  <extension
-    point="kodi.inputstream"
-    name="rtmp"
-    protocols="rtmp|rtmpt|rtmpe|rtmpte|rtmps"
-    listitemprops="SWFPlayer|swfurl|PageURL|PlayPath|TcUrl|IsLive|swfvfy"
-    library_android="libinputstream.rtmp.so" />
-  <extension point="xbmc.addon.metadata">
-    <platform>android-aarch64</platform>
-    <license>GPL-2.0-or-later</license>
-    <source>https://github.com/xbmc/inputstream.rtmp</source>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-    <summary lang="ca_ES">Client per a transmissió RTMP</summary>
-    <summary lang="cs_CZ">Klient přenosů RTMP</summary>
-    <summary lang="da_DK">Klient til RTMP-streams</summary>
-    <summary lang="de_DE">Client für RTMP-Streams</summary>
-    <summary lang="en_GB">Client for RTMP streams</summary>
-    <summary lang="es_ES">Cliente para flujos RTMP</summary>
-    <summary lang="es_MX">Cliente para flujos RTMP</summary>
-    <summary lang="fi_FI">Asiakaspääte RTMP-mediavirroille</summary>
-    <summary lang="hr_HR">Klijent za RTMP strujanja</summary>
-    <summary lang="it_IT">Client per flussi RTMP</summary>
-    <summary lang="ko_KR">RTMP 스트림용 클라이언트</summary>
-    <summary lang="pl_PL">Klient strumieni RTMP</summary>
-    <summary lang="ru_RU">Клиент для трансляции потоков RTMP</summary>
-    <summary lang="zh_CN">RTMP 流的客户端</summary>
-    <description lang="ca_ES">El protocol de missatgeria en temps real (RTMP) és un protocol de xarxa propietari desenvolupat per Adobe Inc. per transmetre àudio, vídeo i altres dades a través d&apos;Internet des d&apos;un servidor multimèdia a un reproductor flash.[CR][CR]Aquest complement implementa el suport de transmissió RTMP per a Kodi i per als complements instal·lats.</description>
-    <description lang="cs_CZ">Real Time Messaging Protocol (RTMP) je patentovaný síťový protokol vyvinutý společností Adobe Inc. pro přenos zvuku, videa a dalších dat přes internet z multimediálního serveru do přehrávače.[CR][CR]Tento doplněk implementuje podporu proudů RTMP pro Kodi a instalované doplňky.</description>
-    <description lang="da_DK">Real Time Messaging Protocol (RTMP) er en proprietær netværksprotokol udviklet af Adobe Inc. til at overføre lyd, video og andre data via internettet fra en medieserver til en flashafspiller.[CR][CR]Dette add-on implementerer RTMP-understøttelse af streaming til Kodi og installerede add-ons.</description>
-    <description lang="de_DE">Das Real Time Messaging Protocol (RTMP) ist ein proprietäres Netzwerkprotokoll, das von Adobe Inc. entwickelt wurde, um Audio-, Video- und andere Daten über das Internet von einem Medienserver zu einem Flash Player zu übertragen.[CR][CR]Dieses Addon implementiert die RTMP-Streaming-Unterstützung für Kodi und installierte Add-Ons.</description>
-    <description lang="en_GB">The Real Time Messaging Protocol (RTMP) is a proprietary network protocol developed by Adobe Inc. to transmit audio, video and other data over the Internet from a media server to a flash player.[CR][CR]This addon implements RTMP streaming support for Kodi and installed add-ons.</description>
-    <description lang="es_ES">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, vídeo y otros datos por Internet desde un servidor de contenido a un reproductor flash.[CR][CR]Este addon implementa el soporte para RTMP en Kodi y para el resto de addons instalados.</description>
-    <description lang="es_MX">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, video y otros datos por internet desde un servidor de medios a un reproductor flash.[CR][CR]Este complemento implementa el soporte de reproducción RTMP para Kodi y para cualquier complemento instalado.</description>
-    <description lang="fi_FI">Real Time Messaging Protocol (RTMP) on Adoben kehittämä verkkoprotokolla äänen, videon ja muun tiedon siirtoon madiapalvelimen ja Flash-soittimen välillä Internetin välityksellä.[CR][CR]Tämä lisäosa mahdollistaa RTMP-suoratoiston Kodille ja asennetuille lisäosille.</description>
-    <description lang="hr_HR">Protokol slanja poruka u stvarnom vremenu (RTMP) je vlasnički mrežni protokol razvijen od strane Adobe Inc. za odašiljanje zvuka, videa i drugih podataka putem interneta s medijskog poslužitelja prema Flash reproduktoru.[CR][CR]Ovaj dodatak implementira podršku RTMP strujanja za Kodi i instalirane dodatke.</description>
-    <description lang="it_IT">Il Real Time Messaging Protocol (RTMP) è un protocollo di rete proprietario sviluppato da Adobe Inc. per trasmettere audio, video e altri dati su Internet da un server multimediale a un lettore flash.[CR][CR]Questo componente aggiuntivo implementa il supporto dello streaming RTMP per Kodi e per gli add-on.</description>
-    <description lang="ko_KR">실시간 메시징 프로토콜(RTMP)은 인터넷을 통해 미디어 서버에서 플래시 플레이어로 오디오, 비디오 및 기타 데이터를 전송하기 위해 Adobe Inc.에서 개발한 독점 네트워크 프로토콜입니다.[CR][CR]이 애드온은 Kodi와 설치된 애드온을 위한 RTMP 스트리밍 지원을 구현합니다.</description>
-    <description lang="pl_PL">Protokół RTMP (Real Time Messaging Protocol) to własnościowy protokół sieciowy opracowany przez firmę Adobe Inc. do przesyłania dźwięku, obrazu i innych danych przez Internet z serwera multimediów do odtwarzacza Flash.[CR][CR]Ten dodatek implementuje obsługę przesyłania strumieniowego RTMP dla Kodi i zainstalowanych dodatków.</description>
-    <description lang="ru_RU">Протокол обмена сообщениями в реальном времени (The Real Time Messaging Protocol - RTMP) - это запатентованный сетевой протокол, разработанный компанией Adobe Inc. для передачи аудио, видео и других данных через Интернет с медиа-сервера на флеш-плеер.[CR][CR]Это приложение реализует поддержку потоковой передачи RTMP для Kodi и установленных дополнений.</description>
-    <description lang="zh_CN">实时消息协议（RTMP）是 Adobe Inc. 开发的一种专有网络协议，用于通过互联网将音频、视频和其他数据从媒体服务器传输到 flash 播放器。[CR][CR]此插件实现对 Kodi 和已安装插件的 RTMP 流支持。</description>
-    <path>inputstream.rtmp+android-aarch64/inputstream.rtmp-20.3.0.zip</path>
-  </extension>
-</addon>
-
-<addon
-  id="inputstream.rtmp"
-  version="20.3.0"
-  name="RTMP Input"
-  provider-name="spiff">
-  <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
-<import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
-  <extension
-    point="kodi.inputstream"
-    name="rtmp"
-    protocols="rtmp|rtmpt|rtmpe|rtmpte|rtmps"
-    listitemprops="SWFPlayer|swfurl|PageURL|PlayPath|TcUrl|IsLive|swfvfy"
-    library_android="libinputstream.rtmp.so" />
-  <extension point="xbmc.addon.metadata">
-    <platform>android-armv7</platform>
-    <license>GPL-2.0-or-later</license>
-    <source>https://github.com/xbmc/inputstream.rtmp</source>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-    <summary lang="ca_ES">Client per a transmissió RTMP</summary>
-    <summary lang="cs_CZ">Klient přenosů RTMP</summary>
-    <summary lang="da_DK">Klient til RTMP-streams</summary>
-    <summary lang="de_DE">Client für RTMP-Streams</summary>
-    <summary lang="en_GB">Client for RTMP streams</summary>
-    <summary lang="es_ES">Cliente para flujos RTMP</summary>
-    <summary lang="es_MX">Cliente para flujos RTMP</summary>
-    <summary lang="fi_FI">Asiakaspääte RTMP-mediavirroille</summary>
-    <summary lang="hr_HR">Klijent za RTMP strujanja</summary>
-    <summary lang="it_IT">Client per flussi RTMP</summary>
-    <summary lang="ko_KR">RTMP 스트림용 클라이언트</summary>
-    <summary lang="pl_PL">Klient strumieni RTMP</summary>
-    <summary lang="ru_RU">Клиент для трансляции потоков RTMP</summary>
-    <summary lang="zh_CN">RTMP 流的客户端</summary>
-    <description lang="ca_ES">El protocol de missatgeria en temps real (RTMP) és un protocol de xarxa propietari desenvolupat per Adobe Inc. per transmetre àudio, vídeo i altres dades a través d&apos;Internet des d&apos;un servidor multimèdia a un reproductor flash.[CR][CR]Aquest complement implementa el suport de transmissió RTMP per a Kodi i per als complements instal·lats.</description>
-    <description lang="cs_CZ">Real Time Messaging Protocol (RTMP) je patentovaný síťový protokol vyvinutý společností Adobe Inc. pro přenos zvuku, videa a dalších dat přes internet z multimediálního serveru do přehrávače.[CR][CR]Tento doplněk implementuje podporu proudů RTMP pro Kodi a instalované doplňky.</description>
-    <description lang="da_DK">Real Time Messaging Protocol (RTMP) er en proprietær netværksprotokol udviklet af Adobe Inc. til at overføre lyd, video og andre data via internettet fra en medieserver til en flashafspiller.[CR][CR]Dette add-on implementerer RTMP-understøttelse af streaming til Kodi og installerede add-ons.</description>
-    <description lang="de_DE">Das Real Time Messaging Protocol (RTMP) ist ein proprietäres Netzwerkprotokoll, das von Adobe Inc. entwickelt wurde, um Audio-, Video- und andere Daten über das Internet von einem Medienserver zu einem Flash Player zu übertragen.[CR][CR]Dieses Addon implementiert die RTMP-Streaming-Unterstützung für Kodi und installierte Add-Ons.</description>
-    <description lang="en_GB">The Real Time Messaging Protocol (RTMP) is a proprietary network protocol developed by Adobe Inc. to transmit audio, video and other data over the Internet from a media server to a flash player.[CR][CR]This addon implements RTMP streaming support for Kodi and installed add-ons.</description>
-    <description lang="es_ES">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, vídeo y otros datos por Internet desde un servidor de contenido a un reproductor flash.[CR][CR]Este addon implementa el soporte para RTMP en Kodi y para el resto de addons instalados.</description>
-    <description lang="es_MX">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, video y otros datos por internet desde un servidor de medios a un reproductor flash.[CR][CR]Este complemento implementa el soporte de reproducción RTMP para Kodi y para cualquier complemento instalado.</description>
-    <description lang="fi_FI">Real Time Messaging Protocol (RTMP) on Adoben kehittämä verkkoprotokolla äänen, videon ja muun tiedon siirtoon madiapalvelimen ja Flash-soittimen välillä Internetin välityksellä.[CR][CR]Tämä lisäosa mahdollistaa RTMP-suoratoiston Kodille ja asennetuille lisäosille.</description>
-    <description lang="hr_HR">Protokol slanja poruka u stvarnom vremenu (RTMP) je vlasnički mrežni protokol razvijen od strane Adobe Inc. za odašiljanje zvuka, videa i drugih podataka putem interneta s medijskog poslužitelja prema Flash reproduktoru.[CR][CR]Ovaj dodatak implementira podršku RTMP strujanja za Kodi i instalirane dodatke.</description>
-    <description lang="it_IT">Il Real Time Messaging Protocol (RTMP) è un protocollo di rete proprietario sviluppato da Adobe Inc. per trasmettere audio, video e altri dati su Internet da un server multimediale a un lettore flash.[CR][CR]Questo componente aggiuntivo implementa il supporto dello streaming RTMP per Kodi e per gli add-on.</description>
-    <description lang="ko_KR">실시간 메시징 프로토콜(RTMP)은 인터넷을 통해 미디어 서버에서 플래시 플레이어로 오디오, 비디오 및 기타 데이터를 전송하기 위해 Adobe Inc.에서 개발한 독점 네트워크 프로토콜입니다.[CR][CR]이 애드온은 Kodi와 설치된 애드온을 위한 RTMP 스트리밍 지원을 구현합니다.</description>
-    <description lang="pl_PL">Protokół RTMP (Real Time Messaging Protocol) to własnościowy protokół sieciowy opracowany przez firmę Adobe Inc. do przesyłania dźwięku, obrazu i innych danych przez Internet z serwera multimediów do odtwarzacza Flash.[CR][CR]Ten dodatek implementuje obsługę przesyłania strumieniowego RTMP dla Kodi i zainstalowanych dodatków.</description>
-    <description lang="ru_RU">Протокол обмена сообщениями в реальном времени (The Real Time Messaging Protocol - RTMP) - это запатентованный сетевой протокол, разработанный компанией Adobe Inc. для передачи аудио, видео и других данных через Интернет с медиа-сервера на флеш-плеер.[CR][CR]Это приложение реализует поддержку потоковой передачи RTMP для Kodi и установленных дополнений.</description>
-    <description lang="zh_CN">实时消息协议（RTMP）是 Adobe Inc. 开发的一种专有网络协议，用于通过互联网将音频、视频和其他数据从媒体服务器传输到 flash 播放器。[CR][CR]此插件实现对 Kodi 和已安装插件的 RTMP 流支持。</description>
-    <path>inputstream.rtmp+android-armv7/inputstream.rtmp-20.3.0.zip</path>
-  </extension>
-</addon>
-
-<addon
-  id="inputstream.rtmp"
-  version="20.3.0"
-  name="RTMP Input"
-  provider-name="spiff">
-  <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2"/>
-<import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-<import addon="kodi.binary.instance.inputstream" minversion="3.2.0" version="3.2.0"/></requires>
-  <extension
-    point="kodi.inputstream"
-    name="rtmp"
-    protocols="rtmp|rtmpt|rtmpe|rtmpte|rtmps"
-    listitemprops="SWFPlayer|swfurl|PageURL|PlayPath|TcUrl|IsLive|swfvfy"
-    library_windows="inputstream.rtmp.dll" />
-  <extension point="xbmc.addon.metadata">
-    <platform>windows-x86_64</platform>
-    <license>GPL-2.0-or-later</license>
-    <source>https://github.com/xbmc/inputstream.rtmp</source>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-    <summary lang="ca_ES">Client per a transmissió RTMP</summary>
-    <summary lang="cs_CZ">Klient přenosů RTMP</summary>
-    <summary lang="da_DK">Klient til RTMP-streams</summary>
-    <summary lang="de_DE">Client für RTMP-Streams</summary>
-    <summary lang="en_GB">Client for RTMP streams</summary>
-    <summary lang="es_ES">Cliente para flujos RTMP</summary>
-    <summary lang="es_MX">Cliente para flujos RTMP</summary>
-    <summary lang="fi_FI">Asiakaspääte RTMP-mediavirroille</summary>
-    <summary lang="hr_HR">Klijent za RTMP strujanja</summary>
-    <summary lang="it_IT">Client per flussi RTMP</summary>
-    <summary lang="ko_KR">RTMP 스트림용 클라이언트</summary>
-    <summary lang="pl_PL">Klient strumieni RTMP</summary>
-    <summary lang="ru_RU">Клиент для трансляции потоков RTMP</summary>
-    <summary lang="zh_CN">RTMP 流的客户端</summary>
-    <description lang="ca_ES">El protocol de missatgeria en temps real (RTMP) és un protocol de xarxa propietari desenvolupat per Adobe Inc. per transmetre àudio, vídeo i altres dades a través d&apos;Internet des d&apos;un servidor multimèdia a un reproductor flash.[CR][CR]Aquest complement implementa el suport de transmissió RTMP per a Kodi i per als complements instal·lats.</description>
-    <description lang="cs_CZ">Real Time Messaging Protocol (RTMP) je patentovaný síťový protokol vyvinutý společností Adobe Inc. pro přenos zvuku, videa a dalších dat přes internet z multimediálního serveru do přehrávače.[CR][CR]Tento doplněk implementuje podporu proudů RTMP pro Kodi a instalované doplňky.</description>
-    <description lang="da_DK">Real Time Messaging Protocol (RTMP) er en proprietær netværksprotokol udviklet af Adobe Inc. til at overføre lyd, video og andre data via internettet fra en medieserver til en flashafspiller.[CR][CR]Dette add-on implementerer RTMP-understøttelse af streaming til Kodi og installerede add-ons.</description>
-    <description lang="de_DE">Das Real Time Messaging Protocol (RTMP) ist ein proprietäres Netzwerkprotokoll, das von Adobe Inc. entwickelt wurde, um Audio-, Video- und andere Daten über das Internet von einem Medienserver zu einem Flash Player zu übertragen.[CR][CR]Dieses Addon implementiert die RTMP-Streaming-Unterstützung für Kodi und installierte Add-Ons.</description>
-    <description lang="en_GB">The Real Time Messaging Protocol (RTMP) is a proprietary network protocol developed by Adobe Inc. to transmit audio, video and other data over the Internet from a media server to a flash player.[CR][CR]This addon implements RTMP streaming support for Kodi and installed add-ons.</description>
-    <description lang="es_ES">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, vídeo y otros datos por Internet desde un servidor de contenido a un reproductor flash.[CR][CR]Este addon implementa el soporte para RTMP en Kodi y para el resto de addons instalados.</description>
-    <description lang="es_MX">El Protocolo de Mensajería en Tiempo Real (RTMP) es un protocolo de red propietario desarrollado por Adobe Inc. para transmitir audio, video y otros datos por internet desde un servidor de medios a un reproductor flash.[CR][CR]Este complemento implementa el soporte de reproducción RTMP para Kodi y para cualquier complemento instalado.</description>
-    <description lang="fi_FI">Real Time Messaging Protocol (RTMP) on Adoben kehittämä verkkoprotokolla äänen, videon ja muun tiedon siirtoon madiapalvelimen ja Flash-soittimen välillä Internetin välityksellä.[CR][CR]Tämä lisäosa mahdollistaa RTMP-suoratoiston Kodille ja asennetuille lisäosille.</description>
-    <description lang="hr_HR">Protokol slanja poruka u stvarnom vremenu (RTMP) je vlasnički mrežni protokol razvijen od strane Adobe Inc. za odašiljanje zvuka, videa i drugih podataka putem interneta s medijskog poslužitelja prema Flash reproduktoru.[CR][CR]Ovaj dodatak implementira podršku RTMP strujanja za Kodi i instalirane dodatke.</description>
-    <description lang="it_IT">Il Real Time Messaging Protocol (RTMP) è un protocollo di rete proprietario sviluppato da Adobe Inc. per trasmettere audio, video e altri dati su Internet da un server multimediale a un lettore flash.[CR][CR]Questo componente aggiuntivo implementa il supporto dello streaming RTMP per Kodi e per gli add-on.</description>
-    <description lang="ko_KR">실시간 메시징 프로토콜(RTMP)은 인터넷을 통해 미디어 서버에서 플래시 플레이어로 오디오, 비디오 및 기타 데이터를 전송하기 위해 Adobe Inc.에서 개발한 독점 네트워크 프로토콜입니다.[CR][CR]이 애드온은 Kodi와 설치된 애드온을 위한 RTMP 스트리밍 지원을 구현합니다.</description>
-    <description lang="pl_PL">Protokół RTMP (Real Time Messaging Protocol) to własnościowy protokół sieciowy opracowany przez firmę Adobe Inc. do przesyłania dźwięku, obrazu i innych danych przez Internet z serwera multimediów do odtwarzacza Flash.[CR][CR]Ten dodatek implementuje obsługę przesyłania strumieniowego RTMP dla Kodi i zainstalowanych dodatków.</description>
-    <description lang="ru_RU">Протокол обмена сообщениями в реальном времени (The Real Time Messaging Protocol - RTMP) - это запатентованный сетевой протокол, разработанный компанией Adobe Inc. для передачи аудио, видео и других данных через Интернет с медиа-сервера на флеш-плеер.[CR][CR]Это приложение реализует поддержку потоковой передачи RTMP для Kodi и установленных дополнений.</description>
-    <description lang="zh_CN">实时消息协议（RTMP）是 Adobe Inc. 开发的一种专有网络协议，用于通过互联网将音频、视频和其他数据从媒体服务器传输到 flash 播放器。[CR][CR]此插件实现对 Kodi 和已安装插件的 RTMP 流支持。</description>
-    <path>inputstream.rtmp+windows-x86_64/inputstream.rtmp-20.3.0.zip</path>
   </extension>
 </addon>
 
@@ -609,7 +1313,7 @@
 		<language>en</language>
 		<license>GPL-2.0-or-later</license>
 		<forum></forum>
-		<website></website> 
+		<website></website>
 		<email></email>
 		<source></source>
 		<news></news>
@@ -653,19 +1357,19 @@
         <import addon="script.module.simplejson" />
         <import addon="script.module.six" />
         <import addon="script.module.kodi-six" />
-    <import addon="script.module.requests"/>
-    <import addon="script.module.beautifulsoup4"/>
+		<import addon="script.module.requests"/>
+		<import addon="script.module.beautifulsoup4"/>
         <import addon="plugin.video.youtube" optional="true" />
         <import addon="script.module.python.twitch" optional="true" />
-        <import addon="plugin.googledrive" optional="true" />        
+        <import addon="plugin.googledrive" optional="true" />
     </requires>
     <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
-    </extension>  
+    </extension>
     <extension point="xbmc.addon.metadata">
-    <summary>Resolver player é um addon de reprodução de link</summary>
-    <description>Todos os videos são de sites de terceiros, não hospedamos conteudo</description>
+		<summary>Resolver player é um addon de reprodução de link</summary>
+		<description>Todos os videos são de sites de terceiros, não hospedamos conteudo</description>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
         <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
@@ -872,7 +1576,12 @@
     <disclaimer lang="vi_VN">Đây là phần mềm không ổn định! Các tác giả không chịu trách nhiệm đối với bản ghi chương trình thất bại, hẹn giờ không chính xác, giờ lãng phí, hoặc bất kỳ tác dụng không mong muốn khác..</disclaimer>
     <disclaimer lang="zh_CN">这是不稳定版的软件！作者不对录像失败、错误定时造成时间浪费或其它不良影响负责。</disclaimer>
     <disclaimer lang="zh_TW">這是測試版軟體！其原創作者並無法對於以下情況負責，包含：錄影失敗，不正確的定時設定，多餘時數，或任何產生的其它不良影響...</disclaimer>
+    <platform>android-aarch64</platform>
     <path>pvr.aguia.de.fogo+android-aarch64/pvr.aguia.de.fogo-0.2.0.zip</path>
+    <assets>
+    	<fanart>fanart.jpg</fanart>
+      <icon>icon.png</icon>
+    </assets>
   </extension>
 </addon>
 
@@ -1038,6 +1747,12 @@
     <disclaimer lang="vi_VN">Đây là phần mềm không ổn định! Các tác giả không chịu trách nhiệm đối với bản ghi chương trình thất bại, hẹn giờ không chính xác, giờ lãng phí, hoặc bất kỳ tác dụng không mong muốn khác..</disclaimer>
     <disclaimer lang="zh_CN">这是不稳定版的软件！作者不对录像失败、错误定时造成时间浪费或其它不良影响负责。</disclaimer>
     <disclaimer lang="zh_TW">這是測試版軟體！其原創作者並無法對於以下情況負責，包含：錄影失敗，不正確的定時設定，多餘時數，或任何產生的其它不良影響...</disclaimer>
+    <platform>android-armv7</platform>
+    <path>pvr.aguia.de.fogo+android-armv7/pvr.aguia.de.fogo-0.2.0.zip</path>
+    <assets>
+      <fanart>fanart.jpg</fanart>
+      <icon>icon.png</icon>
+    </assets>
     <path>pvr.aguia.de.fogo+android-armv7/pvr.aguia.de.fogo-0.2.0.zip</path>
   </extension>
 </addon>
@@ -1204,7 +1919,12 @@
     <disclaimer lang="vi_VN">Đây là phần mềm không ổn định! Các tác giả không chịu trách nhiệm đối với bản ghi chương trình thất bại, hẹn giờ không chính xác, giờ lãng phí, hoặc bất kỳ tác dụng không mong muốn khác..</disclaimer>
     <disclaimer lang="zh_CN">这是不稳定版的软件！作者不对录像失败、错误定时造成时间浪费或其它不良影响负责。</disclaimer>
     <disclaimer lang="zh_TW">這是測試版軟體！其原創作者並無法對於以下情況負責，包含：錄影失敗，不正確的定時設定，多餘時數，或任何產生的其它不良影響...</disclaimer>
+    <platform>windows-x86_64</platform>
     <path>pvr.aguia.de.fogo+windows-x86_64/pvr.aguia.de.fogo-0.2.0.zip</path>
+    <assets>
+    	<fanart>fanart.jpg</fanart>
+      <icon>icon.png</icon>
+    </assets>
   </extension>
 </addon>
 
@@ -1263,19 +1983,19 @@ v7.6.10
 - Fixed: Fix episode number when there is no season
 - Fixed: Return server error if channels or groups could not be loaded due to missing file so they are not cleared in Kodi
 - Translations updates from Weblate
-  - id_id, ko_kr, pl_pl
+	- id_id, ko_kr, pl_pl
 
 v7.6.9
 - Translations updates from Weblate
-  - pl_pl
+	- pl_pl
 
 v7.6.8
 - Translations updates from Weblate
-  - zh_cn
+	- zh_cn
 
 v7.6.7
 - Translations updates from Weblate
-  - id_id, lt_lt
+	- id_id, lt_lt
 
 v7.6.6
 - Language update from Weblate
@@ -1809,19 +2529,19 @@ v7.6.10
 - Fixed: Fix episode number when there is no season
 - Fixed: Return server error if channels or groups could not be loaded due to missing file so they are not cleared in Kodi
 - Translations updates from Weblate
-  - id_id, ko_kr, pl_pl
+	- id_id, ko_kr, pl_pl
 
 v7.6.9
 - Translations updates from Weblate
-  - pl_pl
+	- pl_pl
 
 v7.6.8
 - Translations updates from Weblate
-  - zh_cn
+	- zh_cn
 
 v7.6.7
 - Translations updates from Weblate
-  - id_id, lt_lt
+	- id_id, lt_lt
 
 v7.6.6
 - Language update from Weblate
@@ -2297,7 +3017,7 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
     <disclaimer lang="tr_TR">Bu kararsız bir yazılımdır! Yazanlar oynatma hatası, yanlış EPG zamanları, harcanmış saatler ya da diğer etkilerden sorumlu değildir.</disclaimer>
     <disclaimer lang="zh_CN">这是不稳定版的软件！作者不对录像失败、错误定时造成时间浪费或其它不良影响负责。</disclaimer>
     <disclaimer lang="zh_TW">這是測試中的軟體！原創作者無法針對以下情況負責：包括播放失敗，不正確的電子節目表，多餘的時數，或任何不可預期的不良影響。</disclaimer>
-    </extension>
+  </extension>
 </addon>
 
 <addon
@@ -2355,19 +3075,19 @@ v7.6.10
 - Fixed: Fix episode number when there is no season
 - Fixed: Return server error if channels or groups could not be loaded due to missing file so they are not cleared in Kodi
 - Translations updates from Weblate
-  - id_id, ko_kr, pl_pl
+	- id_id, ko_kr, pl_pl
 
 v7.6.9
 - Translations updates from Weblate
-  - pl_pl
+	- pl_pl
 
 v7.6.8
 - Translations updates from Weblate
-  - zh_cn
+	- zh_cn
 
 v7.6.7
 - Translations updates from Weblate
-  - id_id, lt_lt
+	- id_id, lt_lt
 
 v7.6.6
 - Language update from Weblate
@@ -2848,7 +3568,7 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
 
 <addon id="repository.dregs" name="[COLOR red]Dr[/COLOR]e[COLOR black]Gs[/COLOR] [COLORcyan]Repository[/COLOR]" version="1.22" provider-name="Black Eagle">
   <requires>
-    <import addon="xbmc.addon" version="12.0.0"/>  
+    <import addon="xbmc.addon" version="12.0.0"/>
   </requires>
   <extension point="xbmc.addon.repository" name="[COLOR red]Dregs [COLOR cyan]Repositorio[/COLOR]">
     <dir>
@@ -2862,13 +3582,13 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
       <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/nexus/addons.xml.md5</checksum>
       <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/nexus</datadir>
       <hashes>false</hashes>
-  </dir>   
+  </dir>
   <dir minversion="19.0.0">
       <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml</info>
       <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml.md5</checksum>
       <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix</datadir>
       <hashes>false</hashes>
-  </dir>    
+  </dir>
   <dir minversion="17.0.0" maxversion="18.9.0">
       <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml</info>
       <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml.md5</checksum>
@@ -2920,17 +3640,17 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
     </extension>
 </addon>
 
-<addon id="script.blackarrow.kodilimpo" name="[COLORred]Blackarrow[/COLOR] [COLORcyan]kodi[/COLOR]limpo" provider-name="Black Eagle" version="1.9.1"> 
+<addon id="script.blackarrow.kodilimpo" name="[COLORred]Blackarrow[/COLOR] [COLORcyan]kodi[/COLOR]limpo" provider-name="Black Eagle" version="1.9.1">
   <requires>
-    <import addon="xbmc.python" version="3.0.0" /> 
+    <import addon="xbmc.python" version="3.0.0" />
   </requires>
   <extension library="default.py" point="xbmc.python.pluginsource">
         <provides>executable</provides>
   </extension>
-  <extension library="service.py" point="xbmc.service" start="startup"> 
+  <extension library="service.py" point="xbmc.service" start="startup">
         <provides>executable</provides>
   </extension>
-  <extension point="xbmc.addon.metadata"> 
+  <extension point="xbmc.addon.metadata">
     <platform>all</platform>
     <summary lang="en_GB">Clean up temporary files in Kodi.</summary>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
@@ -2993,28 +3713,27 @@ Full changelog here: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/pvr.
     </extension>
 </addon>
 
-<addon id="script.video.F4mProxy" 
-       name="F4mProxy" 
-       version="4.0.9" 
-       provider-name="Joel e Tiago">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-    <import addon="script.module.requests" />
+<addon id="script.video.F4mProxy"
+	     name="F4mProxy"
+	     version="4.0.9"
+	     provider-name="Joel e Tiago">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.requests" />
         <import addon="inputstream.ffmpegdirect" />
-  </requires>
-  <extension point="xbmc.python.module" library="lib" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>executable</provides>
-  </extension>
-    
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <summary lang="en">Proxy for f4m</summary>
-    <description lang="en">Use this addon to play F4m v1 and v2 streams</description>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-  </extension>
-</addon>
+		<provides>executable</provides>
+	</extension>
 
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Proxy for f4m</summary>
+		<description lang="en">Use this addon to play F4m v1 and v2 streams</description>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
+</addon>
 </addons>
