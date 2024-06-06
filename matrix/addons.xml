@@ -827,7 +827,7 @@ provider-name="Thks 2 stube Frkd by L.M. @by_black_eagle">
 
 </addon>
 
-<addon id="plugin.video.EspadaNegra" name="[COLOR silver]Espada[COLOR dimgrey] Negra [/COLOR]" version="1.2.2" provider-name="Black Eagle">
+<addon id="plugin.video.EspadaNegra" name="[COLOR silver]Espada[COLOR dimgrey] Negra [/COLOR]" version="1.2.4" provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
   <requires>
     <import addon="script.module.pycryptodome" />
     <import addon="script.module.dateutil" />
