@@ -639,6 +639,29 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.aguia-branca" name="[COLOR maroon]ÁGUIA[/COLOR] [COLOR gold]BRANCA[/COLOR]" version="21.41" provider-name="[COLOR yellow]by_flecha_negra[/COLOR]">
+    <requires>
+		<import addon="xbmc.python" version="3.0.0"/>
+		<import addon="script.module.requests" version="2.25.1+matrix.1"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">[COLORred] LIVE-TV, VOD, SÉRIES[/COLOR] KODi Matrix KODi Nexus</summary>
+		<description lang="en">[COLOR red]Águia[/COLOR] [COLORorange]Branca[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
+		<platform>all</platform>
+		<assets>
+       <icon>icon.png</icon>
+       <fanart>fanart.jpg</fanart>
+       <screenshot>resources/screenshots/1.jpg</screenshot>
+       <screenshot>resources/screenshots/2.jpg</screenshot>
+       <screenshot>resources/screenshots/3.jpg</screenshot>
+    </assets>
+	</extension>
+</addon>
+
 <addon id="plugin.video.aguia.hentai.18" name="[COLORlime]AGUIA[/COLOR] [COLORyellow]HENTAI+18[/COLOR]" version="0.0.2" provider-name="@By_Black Eagle">
     <requires>
         <import addon="script.module.simplejson" />
@@ -660,6 +683,45 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
+</addon>
+
+<addon id="plugin.video.aguiagold" name="[COLORred]Aguia[COLORgold]Gold[/COLOR]" version="3.2.3" provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
+  <extension point="xbmc.python.pluginsource"
+			library="default.py">
+		<provides>video</provides>
+  </extension>
+	<extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">[COLORred]Aguia[COLORgold]Gold[/COLOR]</summary>
+    <description lang="en_GB">[COLOR red]Aguia[/COLOR] [COLOR gold]Gold[/COLOR] [COLORorange]is an add-on from the  Blackeagle Team family. ALL LINKS ARE AVAILABLE ON THE INTERNET![/COLOR]</description>
+    <language>en</language>
+    <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+	<fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="plugin.video.aguiavavoo"
+version="20.6.7"
+name="[COLORred]Águia [COLORwhite]Vavoo[/COLOR]"
+provider-name="Thks 2 stube Frkd by L.M. @by_black_eagle">
+<requires>
+  <import addon="xbmc.python" version="3.0.0"/>
+  <import addon="script.module.requests" version="2.22.0"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="service.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">Aguiavavoo Live TV</summary>
+ <description lang="en">[COLOR silver]Águia[COLOR dimgrey] Vavoo[/COLOR] [COLORorange]é um addon da familia  blackeagle team.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
+    <disclaimer lang="en_GB">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content.</disclaimer>
+  <assets>
+	<icon>icon.png</icon>
+	<fanart>fanart.jpg</fanart>
+  </assets>
+</extension>
 </addon>
 
 <addon id="plugin.video.arrownegra.play.tv" name="[COLORgrey]ArrowNegra[/COLOR] [COLORred]Play[/COLOR] [COLORcyan]Tv[/COLOR]" version="1.9.1.7" provider-name="[COLOR orange]Black Eagle[/COLOR]">
@@ -876,6 +938,26 @@
 	</extension>
 	<extension point="xbmc.service" library="service.py" start="login">
 	</extension>
+</addon>
+
+<addon id="plugin.video.jetproxy" version="1.0.3.1" name="JetProxy" provider-name="t4ils">
+<requires>
+  <import addon="xbmc.python" version="3.0.0"/>
+  <import addon="script.module.routing"/>
+  <import addon="script.module.requests"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.service" library="service.py" />
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">JetProxy</summary>
+  <description lang="en_GB">JetProxy</description>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+  </assets>
+</extension>
 </addon>
 
 <addon id="plugin.video.resolverurl_player" version="1.0.0" name="[B]RESOLVER PLAYER[/B]" provider-name="OnePlay Team">
